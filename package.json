@@ -100,3 +100,117 @@
     "eslint-config-prettier": "6.0.0"
   }
 }
+buildscript {
+
+    repositories {
+        maven {
+            url "$mavenUrl"
+            credentials {
+                username "$mavenUser"
+                password "$mavenPassword"
+            }
+        }
+    }
+    dependencies {
+        classpath 'org.github.ngbinh.scalastyle:gradle-scalastyle-plugin_2.11:1.0.1'
+        classpath 'com.adtran:scala-multiversion-plugin:1.0.36'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
+    }
+}
+
+subprojects {
+    apply plugin: 'scala'
+    apply plugin: 'java'
+    apply plugin: 'scalaStyle'
+    apply plugin: 'com.adtran.scala-multiversion-plugin'
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    group 'hsbc.emf'
+    version '0.1'
+
+    repositories {
+        maven {
+            url "$mavenUrl"
+            credentials {
+                username "$mavenUser"
+                password "$mavenPassword"
+            }
+        }
+    }
+
+    sourceSets {
+        main.scala.srcDir 'src'
+        main.resources.srcDir 'src/resources'
+        test.scala.srcDir 'tests'
+        test.resources.srcDir  'tests/resources'
+    }
+
+    scalaStyle {
+        configLocation = "$rootDir/scalastyle-config.xml"
+        includeTestSourceDirectory = true
+        source = "src/hsbc/emf"
+        testSource = "tests/hsbc/emf"
+    }
+
+    compileScala {
+        scalaCompileOptions.additionalParameters = ["-target:jvm-1.8"]
+
+        dependsOn scalaStyle
+    }
+
+    dependencies {
+        implementation "org.scala-lang:scala-library:%scala-version%"
+        implementation "org.scala-lang:scala-reflect:%scala-version%"
+        implementation "org.apache.logging.log4j:log4j-api-scala_%%:11.0"
+        implementation "org.apache.logging.log4j:log4j-api:2.14.0"
+        implementation "org.apache.logging.log4j:log4j-core:2.14.0"
+        implementation "joda-time:joda-time:2.10.5"
+        implementation "com.lmax:disruptor:3.3.6"
+        implementation "org.apache.spark:spark-avro_%%:$sparkVersion"
+        implementation 'org.graalvm.js:js:21.0.0.2'
+        implementation group: 'org.graalvm.js', name: 'js-scriptengine', version: '21.0.0.2'
+        compileOnly "org.apache.spark:spark-sql_%%:$sparkVersion"
+        compileOnly "org.apache.spark:spark-hive_%%:$sparkVersion"
+        testImplementation "org.scalatest:scalatest_%%:3.0.8"
+        testImplementation "org.scalamock:scalamock_%%:4.4.0"
+        testImplementation "junit:junit:4.12"
+        testImplementation "org.mockito:mockito-all:1.10.19"
+    }
+
+    shadowJar{
+        def classname = project.gradle.startParameter.projectProperties.get("classname")
+        if (classname == null) {
+            classname = ""
+        }
+
+        manifest {
+            attributes("Implementation-Title": "SparkEmf",
+                    "Main-Class": classname,
+                    "Implementation-Version": version)
+        }
+    }
+
+    configurations {
+        testImplementation.extendsFrom compileOnly
+    }
+
+
+    task scalaTest(dependsOn: ['testClasses'], type: JavaExec) {
+        main = 'org.scalatest.tools.Runner'
+        args = ['-R', 'build/classes/scala/test', '-o',
+                '-u', "${project.rootDir}/build/reports/xml/allTests"]
+        classpath = sourceSets.test.runtimeClasspath
+    }
+    test.dependsOn scalaTest
+}
+
+rootProject.name = 'emf-scala'
+
+include ':application'
+
+
+scalaVersions = 2.12.10, 2.11.12
+sparkVersion = 2.4.5
