@@ -1,0 +1,4158 @@
+cat: .: Is a directory
+*.class
+*.log
+*.imlcat: ./.idea: Is a directory
+TRDS-DL-L0-Extractor<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="TRDS-DL-L0-Extractor" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TRDS-DL-L0-Extractor" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TRDS-DL-L0-Extractor.iml" filepath="$PROJECT_DIR$/TRDS-DL-L0-Extractor.iml" />
+    </modules>
+  </component>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="customVMPath" />
+  </component>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects" value="PREVIEW" />
+        <entry key="$USER_HOME$/IdeaProjects/emf-spark" value="PREVIEW" />
+        <entry key="$USER_HOME$/IdeaProjects/emf-spark1" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="345" />
+    <option name="width" value="720" />
+    <option name="height" value="572" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../configexample-master/configexample-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../exercises-pureconfig-main/exercises-pureconfig-main" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../pure-spark-2.2-master/pure-spark-2.2-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../spark-config-example-master/spark-config-example-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../spark-seed.g8-master/spark-seed.g8-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../typesafe-config-example-master/typesafe-config-example-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.hsbc.trds</groupId>
+  <artifactId>trds-lake-launcher</artifactId>
+  <version>1.0.0</version>
+  <name>trdslake</name>
+  <description>the common libs for spark jobs</description>
+
+  <properties>
+    <job.version>1.0.8-SNAPSHOT</job.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.hsbc.trds</groupId>
+      <artifactId>TRDS-DL-L0-Extractor</artifactId>
+      <version>${job.version}</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>dsnexus-releases</id>
+      <url>https://dsnexus.uk.hibm.hsbc:8081/nexus/content/repositories/releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dsnexus-snapshots</id>
+      <url>https://dsnexus.uk.hibm.hsbc:8081/nexus/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+</project><?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.hsbc.trds</groupId>
+  <artifactId>TRDS-DL-L0-Extractor</artifactId>
+  <version>1.0.13.1b.2-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <java.version>1.8</java.version>
+    <scala.version>2.11.12</scala.version>
+    <scala.binary.version>2.11</scala.binary.version>
+    <scalatest.version>3.2.2</scalatest.version>
+    <spark.version>2.4.5</spark.version>
+    <spark.binary.version>2.4.5</spark.binary.version>
+    <slf4j.version>1.7.25</slf4j.version>
+    <avro.version>1.8.2</avro.version>
+    <aws-s3.version>1.11.319</aws-s3.version>
+    <coherence.version>12.2.1.0.3.1</coherence.version>
+    <lombok.version>1.18.10</lombok.version>
+<!--    <app.main.class>com.hsbc.trds.scala.stream</app.main.class>-->
+    <jackson.version>2.10.2</jackson.version>
+    <sol-jms.version>10.9.0</sol-jms.version>
+    <assertj-core.version>3.21.0</assertj-core.version>
+  </properties>
+
+  <scm>
+    <connection>scm:git:git@alm-github.systems.uk.hsbc:CATS/TRDS-DL-L0-Extractor.git
+    </connection>
+    <developerConnection>scm:git:git@alm-github.systems.uk.hsbc:CATS/TRDS-DL-L0-Extractor.git
+    </developerConnection>
+    <url>https://alm-github.systems.uk.hsbc/CATS/TRDS-DL-L0-Extractor.git</url>
+    <tag>HEAD</tag>
+  </scm>
+
+
+  <distributionManagement>
+    <!-- use the following if you're not using a release version. -->
+    <repository>
+      <id>dsnexus</id>
+      <name>
+      </name>
+      <url>https://dsnexus.uk.hibm.hsbc:8081/nexus/content/repositories/releases
+      </url>
+    </repository>
+    <snapshotRepository>
+      <id>dsnexus-snapshots</id>
+      <name>
+      </name>
+      <url>https://dsnexus.uk.hibm.hsbc:8081/nexus/content/repositories/snapshots
+      </url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-s3</artifactId>
+      <version>${aws-s3.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_${scala.binary.version}</artifactId>
+      <version>${spark.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+        </exclusion>
+        <!-- Comment below exclusion to run locally-->
+        <exclusion>
+          <groupId>org.apache.hadoop</groupId>
+          <artifactId>hadoop-client</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- Comment below exclusion to run locally-->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-client</artifactId>
+      <version>2.10.0</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_${scala.binary.version}</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.9.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.ibm.mq</groupId>
+      <artifactId>com.ibm.mq.allclient</artifactId>
+      <version>9.2.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_${scala.binary.version}</artifactId>
+      <version>${scalatest.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe</groupId>
+      <artifactId>config</artifactId>
+      <version>1.3.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hsbc.fsa</groupId>
+      <artifactId>TR_FSA_PIPELINES</artifactId>
+      <version>1.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming_${scala.binary.version}</artifactId>
+      <version>${spark.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jul-to-slf4j</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.solacesystems</groupId>
+      <artifactId>sol-jms</artifactId>
+      <version>${sol-jms.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.solacesystems</groupId>
+      <artifactId>sol-jcsmp</artifactId>
+      <version>${sol-jms.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    <!--  <version>29.0-jre</version> -->
+      <version>11.0.2</version>
+    </dependency>
+
+   <dependency>
+      <groupId>com.databricks</groupId>
+      <artifactId>spark-avro_2.11</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <!--parquet writer -->
+    <dependency>
+      <groupId>org.apache.parquet</groupId>
+      <artifactId>parquet-avro</artifactId>
+      <version>1.11.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj-core.version}</version>
+    </dependency>
+
+
+    <!-- Uncomment below to run locally-->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.hadoop</groupId>-->
+<!--      <artifactId>hadoop-aws</artifactId>-->
+<!--      <version>3.0.0</version>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--      <groupId>net.java.dev.jets3t</groupId>-->
+<!--      <artifactId>jets3t</artifactId>-->
+<!--      <version>0.9.4</version>-->
+<!--      <exclusions>-->
+<!--        <exclusion>-->
+<!--          <groupId>commons-codec</groupId>-->
+<!--          <artifactId>commons-codec</artifactId>-->
+<!--        </exclusion>-->
+<!--      </exclusions>-->
+<!--    </dependency>-->
+
+    <!-- Uncomment below to run locally-->
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--      <artifactId>jackson-annotations</artifactId>-->
+<!--      <version>${jackson.version}</version>-->
+<!--    </dependency>-->
+
+  </dependencies>
+
+  <build>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+
+          <excludes>
+<!--            <exclude>**/*.properties</exclude>-->
+<!--            <exclude>**/*.conf</exclude>-->
+            <exclude>**/*.sh</exclude>
+            <exclude>**/*.json</exclude>
+            <exclude>**/*.avsc</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <executions>
+          <execution>
+            <id>default-compile</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.scalatest</groupId>
+        <artifactId>scalatest-maven-plugin</artifactId>
+        <version>2.0.0</version>
+        <configuration>
+          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+          <junitxml>.</junitxml>
+          <filereports>TestSuite.txt</filereports>
+        </configuration>
+        <executions>
+          <execution>
+            <id>test</id>
+            <goals>
+
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.2.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <recompileMode>incremental</recompileMode>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <providerImplementations>
+            <git>git</git>
+          </providerImplementations>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-gitexe</artifactId>
+            <version>1.9.5</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-git-commons</artifactId>
+            <version>1.9.5</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.maven.release</groupId>
+            <artifactId>maven-release-manager</artifactId>
+            <version>2.5.3</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.9.5</version>
+        <configuration>
+          <providerImplementations>
+            <git>git</git>
+          </providerImplementations>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-gitexe</artifactId>
+            <version>1.9.5</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-git-commons</artifactId>
+            <version>1.9.5</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+
+      <!--
+
+                         <plugin>
+                             <groupId>org.apache.avro</groupId>
+                             <artifactId>avro-maven-plugin</artifactId>
+                             <version>${avro.version}</version>
+                             <executions>
+                                 <execution>
+                                     <phase>generate-resources</phase>
+                                     <goals>
+                                         <goal>schema</goal>
+                                     </goals>
+                                     <configuration>
+                                         <sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
+                                         <outputDirectory>${project.basedir}/target/generated-sources/</outputDirectory>
+                                     </configuration>
+                                 </execution>
+                             </executions>
+                         </plugin>
+
+-->
+
+<!-- comment this plugin to build uber/fat jar -->
+      <!--
+                          <plugin>
+                              <artifactId>maven-assembly-plugin</artifactId>
+                              <version>3.2.0</version>
+                              <configuration>
+                                  <descriptors>
+                                      <descriptor>src/main/assembly/assembly.xml</descriptor>
+                                  </descriptors>
+                                 <tarLongFileMode>posix</tarLongFileMode>
+                              </configuration>
+                              <executions>
+                                  <execution>
+                                      <phase>package</phase>
+                                      <id>make-assembly</id>
+                                      <goals>
+                                          <goal>single</goal>
+                                      </goals>
+                                  </execution>
+                              </executions>
+                          </plugin>
+-->
+
+
+<!-- comment this plugin to build non fat jar -->
+            <plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <version>3.3.0</version>
+              <configuration>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <tarLongFileMode>posix</tarLongFileMode>
+              </configuration>
+              <executions>
+                <execution>
+                  <id>assemble-all</id>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>single</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+      <!-- comment this plugin to build non fat jar -->
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-shade-plugin</artifactId>
+              <version>3.2.4</version>
+              <configuration>
+                <relocations>
+                  <relocation>
+                    <pattern>org.apache.avro</pattern>
+                    <shadedPattern>shaded.org.apache.avro</shadedPattern>
+                  </relocation>
+                  <relocation>
+                    <pattern>com.google.</pattern>
+                    <shadedPattern>com.shaded_pkg.google.</shadedPattern>
+                  </relocation>
+                  <relocation>
+                    <pattern>org.apache.http.</pattern>
+                    <shadedPattern>shdhttp.org.apache.http</shadedPattern>
+                  </relocation>
+                </relocations>
+                <artifactSet>
+                  <excludes>
+                    <exclude>net.sourceforge.saxon:saxon:jar:</exclude>
+                  </excludes>
+                </artifactSet>
+                <filters>
+                  <filter>
+                    <artifact>*:*</artifact>
+
+                    <excludes>
+                      <exclude>META-INF/*.SF</exclude>
+                      <exclude>META-INF/*.DSA</exclude>
+                      <exclude>META-INF/*.RSA</exclude>
+                      <exclude>net.sourceforge.saxon:saxon</exclude>
+                    </excludes>
+
+                  </filter>
+                </filters>
+                <transformers>
+                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                    <manifestEntries>
+                      <Main-Class>${app.main.class}</Main-Class>
+                      <Class-Path>.</Class-Path>
+                    </manifestEntries>
+                  </transformer>
+                  <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                </transformers>
+              </configuration>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>shade</goal>
+                  </goals>
+                </execution>
+              </executions>
+
+            </plugin>
+    </plugins>
+  </build>
+  <profiles>
+<!--    <profile>-->
+<!--      <id>direct-runner</id>-->
+<!--      <activation>-->
+<!--        <activeByDefault>true</activeByDefault>-->
+<!--      </activation>-->
+
+<!--    </profile>-->
+<!--    <profile>-->
+<!--      <id>spark-runner</id>-->
+<!--      &lt;!&ndash; Makes the SparkRunner available when running a pipeline. Additionally,-->
+<!--           overrides some Spark dependencies to Beam-compatible versions. &ndash;&gt;-->
+<!--      <properties>-->
+<!--        <netty.version>4.1.17.Final</netty.version>-->
+<!--      </properties>-->
+<!--      <dependencies>-->
+
+<!--      </dependencies>-->
+<!--    </profile>-->
+  </profiles>
+</project>
+# TRDS_Lake
+cat: ./s3codeproj3: input file is output file
+cat: ./src: Is a directory
+cat: ./src/main: Is a directory
+cat: ./src/main/assembly: Is a directory
+<assembly
+        xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd http://maven.apache.org/ASSEMBLY/2.0.0 ">
+    <id>bundle</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>\</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <excludes>
+                <exclude>**/*.xml</exclude>
+                <exclude>**/*.properties</exclude>
+                <exclude>**/*.conf</exclude>
+                <exclude>**.*.sh</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>**/*.sh</include>
+            </includes>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+            <lineEnding>unix</lineEnding>
+            <filtered>false</filtered>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/avro</directory>
+            <outputDirectory>schema</outputDirectory>
+            <includes>
+                <include>**/*.avsc</include>
+            </includes>
+            <filtered>false</filtered>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources</directory>
+            <outputDirectory>conf</outputDirectory>
+            <includes>
+                <include>**/*.conf</include>
+                <include>**/*.json</include>
+                <include>**/*.properties</include>
+                <include>**/*.jks</include>
+            </includes>
+            <filtered>false</filtered>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>org.apache.avro:avro:jar:${avro.version}</include>
+                <include>org.apache.avro:avro-mapred:jar:${avro.version}</include>
+                <include>org.apache.parquet:parquet-avro:jar:1.8.1</include>
+                <include>org.apache.httpcomponents:httpcore:jar:4.4.14</include>
+                <include>com.solacesystems:sol-jcsmp:jar:${sol-jms.version}</include>
+                <include>com.solacesystems:sol-jms:jar:${sol-jms.version}</include>
+                <include>com.databricks:spark-avro_2.11:jar:3.2.0</include>
+                <include>com.ibm.mq:com.ibm.mq.allclient:jar:9.2.1.0</include>
+                <include>com.amazonaws:aws-java-sdk-s3:jar:${aws-s3.version}</include>
+                <include>com.hsbc.fsa:TR_FSA_PIPELINES:jar:1-0-SNAPSHOT</include>
+                <include>org.apache.spark:spark-streaming_${scala.binary.version}:jar:${spark.version}</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>cat: ./src/main/java: Is a directory
+cat: ./src/main/java/com: Is a directory
+cat: ./src/main/java/com/hsbc: Is a directory
+cat: ./src/main/java/com/hsbc/trds: Is a directory
+cat: ./src/main/java/com/hsbc/trds/lambda: Is a directory
+package com.hsbc.trds.lambda;
+
+import com.hsbc.trds.model.MQDocument;
+import com.hsbc.trds.stream.L0MQSolaceHelper;
+import org.apache.avro.generic.GenericRecord;
+import org.apache.spark.api.java.function.Function;
+
+import java.util.Properties;
+
+public class GenericRecordFunction implements Function<MQDocument, GenericRecord> {
+
+    private String batchId;
+    private Properties ecsProperties;
+    private L0MQSolaceHelper l0MQSolaceHelper;
+
+    public GenericRecordFunction(String batchId, Properties ecsProperties) {
+        this.batchId = batchId;
+        this.ecsProperties = ecsProperties;
+        this.l0MQSolaceHelper = L0MQSolaceHelper.getInstance();
+    }
+
+    @Override
+    public GenericRecord call(MQDocument mqDocument) throws Exception {
+        return l0MQSolaceHelper.createGenericRecord(mqDocument,batchId);
+    }
+}
+package com.hsbc.trds.lambda;
+
+import com.databricks.spark.avro.SchemaConverters;
+import com.hsbc.fsa.message.util.ParquetUtils;
+import org.apache.avro.generic.GenericRecord;
+import org.apache.spark.api.java.function.Function;
+import org.apache.spark.sql.Row;
+
+public class GenericRecordRowFunction implements Function<GenericRecord, Row> {
+
+    SchemaConverters.SchemaType sqlType;
+
+    public GenericRecordRowFunction(SchemaConverters.SchemaType sqlType) {
+        this.sqlType = sqlType;
+    }
+
+
+    @Override
+    public Row call(GenericRecord genericRecord) throws Exception {
+        return ParquetUtils.genericRecordRow(genericRecord,sqlType);
+    }
+}package com.hsbc.trds.lambda;
+
+import scala.runtime.AbstractFunction1;
+
+import java.io.Serializable;
+
+
+public abstract class SerializableAbstractFunction1<T, S>
+        extends AbstractFunction1<T, S> implements Serializable {
+}package com.hsbc.trds.lambda;
+
+import com.hsbc.trds.stream.L0MQSolaceHelper;
+import org.apache.spark.api.java.function.ForeachFunction;
+import org.apache.spark.sql.Row;
+
+import java.util.Properties;
+
+public class SerializableForEachFunction implements ForeachFunction<Row> {
+
+    private Properties solaceProperties;
+    private String encKey;
+    private String ecsParquetPath;
+
+    private L0MQSolaceHelper l0MQSolaceHelper;
+
+    public SerializableForEachFunction(Properties solaceProperties, String encKey, String ecsParquetPath) {
+        this.solaceProperties = solaceProperties;
+        this.encKey = encKey;
+        this.ecsParquetPath = ecsParquetPath;
+        this.l0MQSolaceHelper = L0MQSolaceHelper.getInstance();
+    }
+
+    @Override
+    public void call(Row row) throws Exception {
+        l0MQSolaceHelper.sendMessageToSolace(row, solaceProperties, encKey, ecsParquetPath);
+    }
+}
+package com.hsbc.trds.lambda;
+
+import com.hsbc.fsa.config.ConfigLoader;
+import com.hsbc.trds.model.MQDocument;
+import com.hsbc.trds.stream.L0MQSolaceHelper;
+import com.solacesystems.jcsmp.JCSMPProperties;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.function.VoidFunction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
+
+public class SerializableVoidFunction implements VoidFunction<JavaRDD<MQDocument>> {
+
+    private ConfigLoader configLoader;
+    private String environment;
+    private String inputJurisdiction;
+    private String typeOfMessage;
+    private Properties ecsProperties;
+    private Properties solaceProperties;
+
+    private L0MQSolaceHelper l0MQSolaceHelper;
+    private String encKey;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SerializableVoidFunction.class);
+
+    public SerializableVoidFunction(ConfigLoader configLoader, String environment
+            , String inputJurisdiction, String typeOfMessage, Properties ecsProperties,Properties solaceProperties,
+                                    String encKey){
+
+        this.configLoader = configLoader;
+        this.environment = environment;
+        this.inputJurisdiction = inputJurisdiction;
+        this.typeOfMessage = typeOfMessage;
+        this.ecsProperties = ecsProperties;
+        this.solaceProperties = solaceProperties;
+        this.l0MQSolaceHelper = L0MQSolaceHelper.getInstance();
+        this.encKey = encKey;
+
+    }
+
+    @Override
+    public void call(JavaRDD<MQDocument> mqDocumentJavaRDD) {
+        LOGGER.info("***************JavaRDD<MQDocument> mqDocumentJavaRDD COUNT [{}]",
+                mqDocumentJavaRDD.count());
+        mqDocumentJavaRDD.foreach(x -> {
+            LOGGER.info("mqDocumentJavaRDD , javaRdd="+l0MQSolaceHelper.getTrimmedDataIfRequired(x.toString()));
+        });
+        l0MQSolaceHelper.processReceivedMQMessage(configLoader, environment, inputJurisdiction, typeOfMessage, ecsProperties,
+                solaceProperties, mqDocumentJavaRDD,encKey);
+    }
+}
+cat: ./src/main/java/com/hsbc/trds/model: Is a directory
+package com.hsbc.trds.model;
+
+import lombok.Getter;
+import lombok.ToString;
+
+import java.io.Serializable;
+
+@ToString(includeFieldNames = true)
+@Getter
+public final class MQDocument implements Serializable {
+
+    public static final long serialVersionUID = 1234L;
+
+    private String jurisdiction;
+    private String reportType;
+    private String assetClass;
+    private String putDate;
+    private String putTime;
+    private String content;
+    private String messageUniqueId;
+    private String applicationTimestamp;
+
+    public MQDocument(String jurisdiction, String reportType, String assetClass, String putDate, String putTime,
+                      String content, String messageUniqueId, String applicationTimestamp) {
+        this.jurisdiction = jurisdiction;
+        this.reportType = reportType;
+        this.assetClass = assetClass;
+        this.putDate = putDate;
+        this.putTime = putTime;
+        this.content = content;
+        this.messageUniqueId = messageUniqueId;
+        this.applicationTimestamp = applicationTimestamp;
+    }
+
+}
+cat: ./src/main/java/com/hsbc/trds/solace: Is a directory
+package com.hsbc.trds.solace;
+
+
+import com.solacesystems.jcsmp.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
+
+
+public class SolaceConnectionManager {
+    private static final Logger logger = LoggerFactory.getLogger(SolaceConnectionManager.class);
+    public static final String HOST = "tcp://128.10.3.107:55555";
+    public static final String VPN_NAME = "FIN_SM_NP_SSGU";
+    public static final String USERNAME = "GB-SVC-TRDS";
+    public static final String PASSWORD = "7533-8d2cEF6F8";
+
+    private JCSMPSession session;
+
+    public void connect() throws Exception {
+        //establish solace session
+        JCSMPProperties properties = new JCSMPProperties();
+        properties.setProperty(JCSMPProperties.HOST, HOST);
+        properties.setProperty(JCSMPProperties.VPN_NAME, VPN_NAME);
+        properties.setProperty(JCSMPProperties.USERNAME, USERNAME);
+        properties.setProperty(JCSMPProperties.PASSWORD, PASSWORD);
+        //properties.setProperty(JCSMPProperties.PUB_ACK_TIME, 10000);
+        session = JCSMPFactory.onlyInstance().createSession(properties);
+
+        if (HOST.contains(",")) {
+            //ha - automatic reconnects
+            JCSMPChannelProperties channelProperties = (JCSMPChannelProperties)properties.getProperty(JCSMPProperties.CLIENT_CHANNEL_PROPERTIES);
+            channelProperties.setConnectRetries(3);
+            channelProperties.setReconnectRetries(3);
+            channelProperties.setReconnectRetryWaitInMillis(2000);
+            channelProperties.setConnectRetriesPerHost(3); //Solace recommendeds 3 or more
+        }
+    }
+
+    public void connectSolace(Properties properties) throws Exception {
+        //establish solace session
+        JCSMPProperties Solaceproperties = new JCSMPProperties();
+        Solaceproperties.setProperty(JCSMPProperties.HOST, properties.get("host"));
+        Solaceproperties.setProperty(JCSMPProperties.VPN_NAME, properties.get("vpn"));
+        Solaceproperties.setProperty(JCSMPProperties.USERNAME, properties.get("username"));
+        Solaceproperties.setProperty(JCSMPProperties.PASSWORD, properties.get("password"));
+        //properties.setProperty(JCSMPProperties.PUB_ACK_TIME, 10000);
+        session = JCSMPFactory.onlyInstance().createSession(Solaceproperties);
+
+        if (HOST.contains(",")) {
+            //ha - automatic reconnects
+            JCSMPChannelProperties channelProperties = (JCSMPChannelProperties)Solaceproperties.getProperty(JCSMPProperties.CLIENT_CHANNEL_PROPERTIES);
+            channelProperties.setConnectRetries(3);
+            channelProperties.setReconnectRetries(3);
+            channelProperties.setReconnectRetryWaitInMillis(2000);
+            channelProperties.setConnectRetriesPerHost(3); //Solace recommendeds 3 or more
+        }
+    }
+
+    public JCSMPSession getSession() {
+        return session;
+    }
+
+    public XMLMessageProducer createProducer() throws Exception {
+        return session.getMessageProducer(new JCSMPStreamingPublishEventHandler() {
+            @Override
+            public void handleError(String s, JCSMPException e, long l) {
+                logger.error("error connecting to solace: {} error code: {}", s, l, e);
+            }
+
+            @Override
+            public void responseReceived(String s) {
+                logger.debug("response received from solace: {}", s);
+            }
+        });
+    }
+
+    public void disconnect() {
+        if(!session.isClosed()) {
+            session.closeSession();
+        }
+    }
+}
+cat: ./src/main/java/com/hsbc/trds/stream: Is a directory
+package com.hsbc.trds.stream;
+
+import com.databricks.spark.avro.SchemaConverters;
+import com.hsbc.fsa.config.ConfigLoader;
+import com.hsbc.fsa.config.Decrypter;
+import com.hsbc.fsa.message.util.JmsStreamUtils;
+import com.hsbc.fsa.solace.SolaceConnectionManager;
+import com.hsbc.trds.lambda.GenericRecordFunction;
+import com.hsbc.trds.lambda.GenericRecordRowFunction;
+import com.hsbc.trds.lambda.SerializableAbstractFunction1;
+import com.hsbc.trds.lambda.SerializableForEachFunction;
+import com.hsbc.trds.lambda.SerializableVoidFunction;
+import com.hsbc.trds.model.MQDocument;
+import com.solacesystems.jcsmp.BytesXMLMessage;
+import com.solacesystems.jcsmp.DeliveryMode;
+import com.solacesystems.jcsmp.JCSMPException;
+import com.solacesystems.jcsmp.JCSMPFactory;
+import com.solacesystems.jcsmp.JCSMPProperties;
+import com.solacesystems.jcsmp.SDTException;
+import com.solacesystems.jcsmp.SDTMap;
+import com.solacesystems.jcsmp.Topic;
+import com.solacesystems.jcsmp.XMLMessageProducer;
+import com.typesafe.config.Config;
+import org.apache.avro.Schema;
+import org.apache.avro.SchemaBuilder;
+import org.apache.avro.generic.GenericData;
+import org.apache.avro.generic.GenericRecord;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.log4j.Level;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.deploy.SparkHadoopUtil;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SQLContext;
+import org.apache.spark.sql.SaveMode;
+import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.types.StructType;
+import org.apache.spark.storage.StorageLevel;
+import org.apache.spark.streaming.Duration;
+import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
+import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import org.apache.spark.streaming.dstream.ReceiverInputDStream;
+import org.apache.spark.streaming.jms.MQConsumerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import scala.Function1;
+import scala.Option;
+
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+import java.io.Serializable;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Enumeration;
+import java.util.Properties;
+import java.util.UUID;
+
+import static com.hsbc.trds.stream.ReportingConstants.APPLICATION_TIMESTAMP;
+import static com.hsbc.trds.stream.ReportingConstants.ASSET_CLASS;
+import static com.hsbc.trds.stream.ReportingConstants.BATCH_ID;
+import static com.hsbc.trds.stream.ReportingConstants.DATE_TIME_NANO;
+import static com.hsbc.trds.stream.ReportingConstants.ECS_LOCATION;
+import static com.hsbc.trds.stream.ReportingConstants.JURISDICTION;
+import static com.hsbc.trds.stream.ReportingConstants.MESSAGE_UNIQUE_ID;
+import static com.hsbc.trds.stream.ReportingConstants.PUT_DATE;
+import static com.hsbc.trds.stream.ReportingConstants.PUT_TIME;
+import static com.hsbc.trds.stream.ReportingConstants.REPORT_TYPE;
+import static com.hsbc.trds.stream.ReportingConstants.XML_CONTENT;
+import static java.util.Objects.isNull;
+
+public class L0MQSolaceHelper implements Serializable {
+
+
+    public static final String FILE_NAME = "dsl-trds-L0.conf";
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(L0MQSolaceHelper.class);
+
+    private Boolean shouldDisplayFullXmlIn;
+    private Integer howManyCharsOfXmlInLogs;
+
+    private L0MQSolaceHelper() {}
+
+    private static L0MQSolaceHelper instance;
+
+    public static L0MQSolaceHelper getInstance() {
+        if (instance == null) {
+            instance = new L0MQSolaceHelper();
+        }
+        return instance;
+    }
+
+    public void receiveEventsFromMQ(String[] args, ConfigLoader configLoader, String environment) throws InterruptedException {
+        org.apache.log4j.Logger.getLogger("org").setLevel(Level.WARN);
+        String inputJurisdiction = args[0].toUpperCase();
+        String typeOfMessage = args[1].toUpperCase();
+        String encKey = args[2];
+        LOGGER.info("ThreadNameAndId [{}] - DSL config file picked from [{}]", getThreadNameAndId(), FILE_NAME);
+        Properties ecsProperties = configLoader.getProperties(FILE_NAME, environment.concat(".ecs"));
+        boolean checkPointEnabled = configLoader.getString(FILE_NAME, environment.concat(".checkpoint.enabled")).equals("true");
+        String checkPointDir = ecsProperties.getProperty("checkPointDir");
+        LOGGER.info("ThreadNameAndId [{}] - checkPointEnabled [{}] and checkPointDir is [{}]", getThreadNameAndId(), checkPointEnabled, checkPointDir);
+        setUpHadoopConfig(encKey, ecsProperties);
+        initXmlContentsLengthForLogs(configLoader, environment);
+        JavaStreamingContext streamingContext = sparkStreamingContext(configLoader, environment, typeOfMessage, encKey);
+        LOGGER.debug("*********** streaming context hasCode [{}] created = ", streamingContext.hashCode());
+
+        Function1<Message, Option<MQDocument>> msgConverter = new SerializableAbstractFunction1<Message, Option<MQDocument>>() {
+            @Override
+            public Option<MQDocument> apply(Message msg) {
+                return accessMQDocument(msg);
+            }
+        };
+        LOGGER.debug("*********** msgConverter created = [{}]", msgConverter);
+        try {
+            MQConsumerFactory consumerFactory = getMqConsumerFactory(configLoader, environment, typeOfMessage);
+
+            ReceiverInputDStream<MQDocument> streamOfMsgs = JmsStreamUtils.createAsynchronousJmsQueueStream(streamingContext.ssc(),
+                    consumerFactory,
+                    msgConverter,
+                    Session.CLIENT_ACKNOWLEDGE, StorageLevel.MEMORY_AND_DISK_SER_2(),
+                    scala.reflect.ClassTag$.MODULE$.apply(MQDocument.class));
+            LOGGER.info("Thread [{}], CLIENT_ACKNOWLEDGE MODE ************", getThreadNameAndId());
+
+            JavaReceiverInputDStream<MQDocument> javaStream =
+                    JavaReceiverInputDStream.fromReceiverInputDStream(streamOfMsgs, scala.reflect.ClassTag$.MODULE$
+                            .apply(MQDocument.class));
+
+            // processReceivedMQMessage
+            javaStream.foreachRDD(new SerializableVoidFunction(configLoader, environment, inputJurisdiction, typeOfMessage,
+                    ecsProperties, configLoader.getProperties(FILE_NAME, environment.concat(".solace")), encKey));
+            LOGGER.info("******** Stream processing started...");
+        } catch (Exception ex){
+            LOGGER.error("Exception when processMQStreamMessages. Full stackTrace is [{}]", ex.toString());
+            //TODO - graceful shutdown
+             streamingContext.stop();
+        }
+
+        streamingContext.start();
+        streamingContext.awaitTermination();
+
+    }
+
+    private void setUpHadoopConfig(String encKey, Properties ecsProperties) {
+        // TODO - Magic - DO NOT delete
+        Configuration hadoopConf = SparkHadoopUtil.get().conf();
+        hadoopConf.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"));
+        hadoopConf.set("fs.s3a.secret.key", Decrypter.decrypt(ecsProperties.getProperty("secret1"),encKey));
+        hadoopConf.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"));
+        hadoopConf.set("fs.s3a.path.style.access", "true");
+    }
+
+    private MQConsumerFactory getMqConsumerFactory(ConfigLoader configLoader, String environment, String typeOfMessage) {
+        Config mqConfig = configLoader.getConfig(FILE_NAME, environment.concat(".mq"));
+        String host = mqConfig.getString("host");
+        String queueMgr = mqConfig.getString("queuemgr");
+        int port = mqConfig.getInt("port");
+        String channelName = mqConfig.getString("channel-name");
+        String queueName = mqConfig.getString(typeOfMessage.concat("-").concat("QUEUE"));
+
+        return new MQConsumerFactory(host,port,queueMgr,queueName,channelName, "");
+    }
+
+    private String getThreadNameAndId() {
+        return Thread.currentThread().getName() + "-" + Thread.currentThread().getId();
+    }
+
+    private void initXmlContentsLengthForLogs(final ConfigLoader configLoader, final String environment) {
+        if (isNull(shouldDisplayFullXmlIn) && isNull(howManyCharsOfXmlInLogs)) {
+            final Properties xmlLogProperties = configLoader.getProperties(FILE_NAME, environment.concat(".showXmlInLogs"));
+            howManyCharsOfXmlInLogs = Integer.parseInt(xmlLogProperties.getProperty("howManyCharsOfXmlInLogs"));
+            shouldDisplayFullXmlIn = Boolean.parseBoolean(xmlLogProperties.getProperty("showFullXml"));
+            LOGGER.info("***** Config Prop howManyCharsOfXmlInLogs [{}] and shouldDisplayFullXmlIn [{}]", howManyCharsOfXmlInLogs, shouldDisplayFullXmlIn);
+        }
+    }
+
+    public String getTrimmedDataIfRequired(final String data) {
+        return shouldDisplayFullXmlIn ? data :
+                data.length() >= howManyCharsOfXmlInLogs ? data.substring(0, howManyCharsOfXmlInLogs) : data;
+    }
+
+    public void processReceivedMQMessage(ConfigLoader configLoader, String environment, String inputJurisdiction,
+                                          String typeOfMessage, Properties ecsProperties,
+                                          Properties solaceProperties, JavaRDD<MQDocument> rdd, String encKey) {
+        rdd.cache();
+        String batchId = String.format("L0-batch-%s-%s-%s",inputJurisdiction,typeOfMessage, UUID.randomUUID().toString());
+        Dataset<Row> rawDS = processStreamBatchDataset(configLoader, environment,typeOfMessage, ecsProperties, rdd, batchId, encKey);
+        rawDS.cache();
+        String ecsLoc = String.format("%s%s", ecsProperties.getProperty("s3bucketName1"),
+                ecsProperties.getProperty(ECS_LOCATION));
+        String[] writePartColumns = new String[]{ASSET_CLASS, PUT_DATE};
+
+        int noOfPartitions = Integer.parseInt(ecsProperties.getProperty("repartition-count"));
+        final String ecsParquetPath = String.format("%s/%s/%s", ecsLoc, inputJurisdiction, typeOfMessage);
+        rawDS.repartition(noOfPartitions).write().partitionBy(writePartColumns).mode(SaveMode.Append)
+                .parquet(ecsParquetPath);
+
+        // Calls sendMessageToSolace
+       rawDS.foreach(new SerializableForEachFunction(solaceProperties, encKey, ecsParquetPath));
+    }
+
+
+    Dataset<Row> processStreamBatchDataset(ConfigLoader configLoader, String environment, String typeOfMessage,
+                                                   Properties ecsProperties, JavaRDD<MQDocument> rddOfMqDocs, String batchId,
+                                                   String encKey) {
+        SQLContext sqlContext = sparkSession(configLoader,environment,encKey).sqlContext();
+        LOGGER.debug("ThreadNameAndId [{}] - ***************rddOfMqDocs [{}]", getThreadNameAndId(), rddOfMqDocs);
+        LOGGER.info("***************RDD of MqDocuments has size [{}]", rddOfMqDocs.count());
+        // forEach taking to executors
+        rddOfMqDocs.foreach(mqDocumentRdd -> LOGGER.info("*************** Record in RDD  [{}]",
+                getTrimmedDataIfRequired(mqDocumentRdd.toString())));
+        // GenericRecordFunction calling createGenericRecord
+        JavaRDD<GenericRecord> ecsStoreParRdd = rddOfMqDocs.map(new GenericRecordFunction(batchId, ecsProperties));
+        ecsStoreParRdd.cache();
+        SchemaConverters.SchemaType sqlType = SchemaConverters.toSqlType(cftcSchema(typeOfMessage));
+        JavaRDD<Row> rowRdd = ecsStoreParRdd.map(new GenericRecordRowFunction(sqlType));
+        rowRdd.cache();
+        return sqlContext.createDataFrame(rowRdd, (StructType) sqlType.dataType());
+    }
+
+    public JCSMPProperties jcsmpProperties(Properties properties, String key) {
+        JCSMPProperties solaceProperties = new JCSMPProperties();
+        solaceProperties.setProperty(JCSMPProperties.HOST, properties.get("host"));
+        solaceProperties.setProperty(JCSMPProperties.VPN_NAME, properties.get("vpn"));
+        solaceProperties.setProperty(JCSMPProperties.USERNAME, properties.get("username"));
+        solaceProperties.setProperty(JCSMPProperties.PASSWORD, Decrypter.decrypt((String)properties.get("password"),key));
+        solaceProperties.setProperty("publishTopic", properties.get("basePublishTopic"));
+        return solaceProperties;
+    }
+
+    public void sendMessageToSolace(Row row, Properties properties, String encKey, final String ecsParquetPath) throws Exception {
+        SolaceConnectionManager solaceConnectionManager = new SolaceConnectionManager();
+
+        solaceConnectionManager.connectSolace(properties,encKey);
+        String basePublishTopic = properties.getProperty("basePublishTopic");
+        Topic topic = JCSMPFactory.onlyInstance().createTopic(basePublishTopic);
+        XMLMessageProducer producer = solaceConnectionManager.createProducer();
+        BytesXMLMessage payloadMessage = generateSolaceMessage(DeliveryMode.PERSISTENT, row, ecsParquetPath);
+        sendMessageSolace(producer, payloadMessage, topic, row);
+        producer.close();
+        solaceConnectionManager.disconnect();
+    }
+
+    public void sendMessageSolace(XMLMessageProducer producer, BytesXMLMessage payloadMessage, Topic topic, Row row)
+            throws JCSMPException{
+        producer.send(payloadMessage, topic);
+        LOGGER.info("\nThreadNameAndId [{}] - For Row [{}], Message [{}] sent successfully to SOLACE",
+                getThreadNameAndId(), getTrimmedDataIfRequired(row.toString()), getTrimmedDataIfRequired(new String(payloadMessage.getBytes())));
+    }
+
+    public BytesXMLMessage generateSolaceMessage(DeliveryMode deliveryMode, Row row, String ecsParquetPath) throws SDTException {
+        JCSMPFactory factory = JCSMPFactory.onlyInstance();
+        BytesXMLMessage message = factory.createMessage(BytesXMLMessage.class);
+        String jurisdiction = row.getAs(JURISDICTION);
+        String reportType = row.getAs(REPORT_TYPE);
+        String assetClass = row.getAs(ASSET_CLASS);
+        String putDate = row.getAs(PUT_DATE);
+        String putTime = row.getAs(PUT_TIME);
+        String messageUniqueId = row.getAs(MESSAGE_UNIQUE_ID);
+        SDTMap properties = factory.createMap();
+        properties.putString(JURISDICTION, jurisdiction);
+        properties.putString(REPORT_TYPE, reportType);
+        properties.putString(ASSET_CLASS, assetClass);
+        properties.putString(PUT_DATE, putDate);
+        properties.putString(PUT_TIME, putTime);
+        properties.putString(MESSAGE_UNIQUE_ID,messageUniqueId);
+        properties.putString(APPLICATION_TIMESTAMP, row.getAs(APPLICATION_TIMESTAMP));
+        properties.putString(ECS_LOCATION, ecsParquetPath + "/assetClass=" + assetClass.toUpperCase() + "/putDate=" + putDate + "/");
+        String xmlContent = row.getAs(XML_CONTENT);
+        LOGGER.info("ThreadNameAndId [{}] - Going to publish this message to Solace with Headers [{}], " +
+                        "messageUniqueId [{}], MessagePayload = [{}]", getThreadNameAndId(), properties,
+                messageUniqueId, getTrimmedDataIfRequired(xmlContent));
+        byte[] payload = xmlContent.getBytes();
+        message.writeBytes(payload);
+        message.setProperties(properties);
+        message.setDeliveryMode(deliveryMode);
+        return message;
+    }
+
+
+    /**
+     * Generates a time stamp in the form of yyyyMMddHHmmssSSSSSS
+      * @return datetime till nano seconds
+     */
+    String generateApplicationTimestamp() {
+        final String dateTillNanoSecs = DateTimeFormatter.ofPattern(DATE_TIME_NANO).format(LocalDateTime.now());
+        LOGGER.info("Generated applicationTimestamo as [{}]", dateTillNanoSecs);
+        return dateTillNanoSecs;
+    }
+
+    public GenericRecord createGenericRecord(MQDocument message, String batchId) {
+         LOGGER.info("ThreadNameAndId [{}], The messageUniqueId is [{}] for batchId [{}]",
+                getThreadNameAndId(), message.getMessageUniqueId(), batchId);
+        GenericRecord cftcRecord = new GenericData.Record(cftcSchema(message.getReportType()));
+        cftcRecord.put(JURISDICTION,message.getJurisdiction());
+        cftcRecord.put(REPORT_TYPE, message.getReportType());
+        cftcRecord.put(ASSET_CLASS, message.getAssetClass());
+        cftcRecord.put(PUT_DATE,message.getPutDate());
+        cftcRecord.put(PUT_TIME, message.getPutTime());
+        cftcRecord.put(APPLICATION_TIMESTAMP, message.getApplicationTimestamp());
+        cftcRecord.put(MESSAGE_UNIQUE_ID, message.getMessageUniqueId());
+        cftcRecord.put(BATCH_ID, batchId);
+        cftcRecord.put(XML_CONTENT, message.getContent());
+        LOGGER.info("ThreadNameAndId [{}], cftcRecord is [{}] for message [{}]",
+                getThreadNameAndId(), cftcRecord, getTrimmedDataIfRequired(message.toString()));
+        return cftcRecord;
+    }
+
+    public Schema cftcSchema(String typeOfMessage) {
+        return SchemaBuilder.record(String.format("L0.%s",typeOfMessage)).fields()
+                .name(JURISDICTION).type().nullable().stringType().noDefault()
+                .name(REPORT_TYPE).type().nullable().stringType().noDefault()
+                .name(ASSET_CLASS).type().nullable().stringType().noDefault()
+                .name(PUT_DATE).type().nullable().stringType().noDefault()
+                .name(PUT_TIME).type().nullable().stringType().noDefault()
+                .name(MESSAGE_UNIQUE_ID).type().nullable().stringType().noDefault()
+                .name(APPLICATION_TIMESTAMP).type().stringType().noDefault()
+                .name(BATCH_ID).type().nullable().stringType().noDefault()
+                .name(XML_CONTENT).type().nullable().stringType().noDefault()
+                .endRecord();
+    }
+
+    public Option<MQDocument> accessMQDocument(Message msg) {
+        Option<MQDocument> mqDocument;
+        try {
+            if (msg instanceof TextMessage) {
+                logMessageDebugInformation(msg);
+                String jmsIbmPutDate = msg.getStringProperty("JMS_IBM_PutDate");
+                String jmsIbmPutTime = msg.getStringProperty("JMS_IBM_PutTime");
+                String jmsIbmMqmdAppIdentity = msg.getStringProperty("JMS_IBM_MQMD_ApplIdentityData");
+                String[] appIdentities = jmsIbmMqmdAppIdentity.split("\\.");
+                String jurisdiction = appIdentities[0].trim();
+                String reportType = appIdentities[1].trim();
+                String assetClass = appIdentities[2].trim();
+                String messageUniqueId = autoGenerateMessageUniqueId();
+                String applicationTimestamp = generateApplicationTimestamp();
+                LOGGER.info("ThreadNameAndId [{}], This message is for jurisdiction [{}], reportType [{}], assetClass [{}], messageUniqueId [{}] and applicationTimestamp [{}]. " +
+                                "The full message is [{}]", getThreadNameAndId(),
+                        jurisdiction, reportType, assetClass, messageUniqueId, applicationTimestamp, getTrimmedDataIfRequired(msg.toString()));
+                String content = ((TextMessage) msg).getText();
+                mqDocument = Option.apply(new MQDocument(jurisdiction, reportType, assetClass, jmsIbmPutDate, jmsIbmPutTime, content, messageUniqueId, applicationTimestamp));
+            }
+            else {
+                LOGGER.warn("Received record is not type of Jms TextMessage");
+                mqDocument = Option.empty();
+            }
+        } catch(JMSException jmsException) {
+            LOGGER.error("Error while processing input message. StackTrace is [{}]", jmsException.toString());
+            mqDocument = Option.empty();
+        }
+        return  mqDocument;
+    }
+
+    String autoGenerateMessageUniqueId() {
+        String ipAddress = "Unknown-Machine";
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            ipAddress = ip.toString();
+        } catch (UnknownHostException e) {
+            LOGGER.warn("Error fetching IP address of executor machine");
+        }
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_TIME_NANO);
+        final String msgId = ipAddress + "-" + now.format(formatter) + "-" + UUID.randomUUID().toString();
+        LOGGER.info("Generated msg unique message is [{}]", msgId);
+        return msgId;
+    }
+
+    private void logMessageDebugInformation(Message msg) throws JMSException {
+        Enumeration<String> msgEnum = msg.getPropertyNames();
+        while (msgEnum.hasMoreElements()){
+            String msgHeader = msgEnum.nextElement();
+            LOGGER.debug("Header attribute [{}] :: Value [{}]", msgHeader, msg.getStringProperty(msgHeader));
+        }
+    }
+
+    public SparkSession sparkSession(ConfigLoader config, String environment, String encKey) {
+        String appName = config.getString(FILE_NAME, "appName");
+        String mode = config.getString(FILE_NAME, "mode");
+        SparkConf sparkConf = new SparkConf().setAppName(appName)
+                .set("spark.streaming.receiver.writeAheadLog.enable", "true")
+                .setMaster(mode);
+
+        SparkSession sparkSession = SparkSession.builder().config(sparkConf).getOrCreate();
+        Properties ecsProperties = config.getProperties(FILE_NAME, environment.concat(".ecs"));
+
+        sparkSession.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", ecsProperties.getProperty("uid1"));
+        sparkSession.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key",
+                Decrypter.decrypt(ecsProperties.getProperty("secret1"),encKey));
+        sparkSession.sparkContext().hadoopConfiguration().set("fs.s3a.endpoint", ecsProperties.getProperty("host1"));
+        sparkSession.sparkContext().hadoopConfiguration().set("fs.s3a.path.style.access", "true");
+
+        return sparkSession;
+    }
+
+    public JavaStreamingContext sparkStreamingContext(ConfigLoader config, String environment, String typeOfMessage, String encKey){
+
+        String appName = config.getString(FILE_NAME, "appName").concat("-").concat(typeOfMessage);
+        String mode = config.getString(FILE_NAME, "mode");
+        SparkConf sparkConf = new SparkConf().setAppName(appName)
+                .set("spark.streaming.receiver.writeAheadLog.enable", "true")
+                .setMaster(mode);
+
+        Properties ecsProperties = config.getProperties(FILE_NAME, environment.concat(".ecs"));
+
+        JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
+        Configuration hadoopConf = sparkContext.hadoopConfiguration();
+
+        hadoopConf.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"));
+        hadoopConf.set("fs.s3a.secret.key", Decrypter.decrypt(ecsProperties.getProperty("secret1"),encKey));
+        hadoopConf.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"));
+        hadoopConf.set("fs.s3a.path.style.access", "true");
+
+        JavaStreamingContext streamingContext = new JavaStreamingContext(sparkContext,
+                new Duration(Long.parseLong(ecsProperties.getProperty("batchIntervalInMillis"))));
+
+        boolean checkPointEnabled = config.getString(FILE_NAME, environment.concat(".checkpoint.enabled")).equals("true");
+
+        if(checkPointEnabled) {
+            streamingContext.checkpoint(ecsProperties.getProperty("checkPointDir").concat("/").concat(typeOfMessage));
+        }
+
+        return streamingContext;
+    }
+
+    void setShouldDisplayFullXmlIn(Boolean shouldDisplayFullXmlIn) {
+        this.shouldDisplayFullXmlIn = shouldDisplayFullXmlIn;
+    }
+
+    void setHowManyCharsOfXmlInLogs(Integer howManyCharsOfXmlInLogs) {
+        this.howManyCharsOfXmlInLogs = howManyCharsOfXmlInLogs;
+    }
+}
+package com.hsbc.trds.stream;
+
+import com.hsbc.fsa.config.ConfigLoader;
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import static org.apache.log4j.Logger.getLogger;
+
+public class L0MQSparkStreamProcessor {
+
+    private static final org.apache.log4j.Logger LOGGER = LogManager.getLogger(L0MQSparkStreamProcessor.class);
+
+
+
+    public static void main(String[] args) throws InterruptedException {
+
+        getLogger("org.apache.spark").setLevel(Level.WARN);
+
+        LOGGER.info("********************************************************************************");
+        LOGGER.info("********************************************************************************");
+        LOGGER.info("********************************************************************************");
+        LOGGER.info("********************************************************************************");
+        LOGGER.info("Going to start L0MQSparkStreamProcessor for args [" + Arrays.stream(args).collect(Collectors.joining(", ")) + "] ");
+        String environment = System.getProperty("env");
+        LOGGER.info("L0 stream connected to an MQ environment ["+environment+"]");
+        ConfigLoader configLoader = new ConfigLoader();
+        L0MQSolaceHelper solaceHelper = L0MQSolaceHelper.getInstance();
+        solaceHelper.receiveEventsFromMQ(args, configLoader, environment);
+        LOGGER.info("Process finished successfully. Existing now...");
+    }
+}
+package com.hsbc.trds.stream;
+
+public class ReportingConstants {
+    public static final String JURISDICTION = "jurisdiction";
+    public static final String REPORT_TYPE = "reportType";
+    public static final String ASSET_CLASS = "assetClass";
+    public static final String PUT_DATE = "putDate";
+    public static final String PUT_TIME = "putTime";
+    public static final String MESSAGE_UNIQUE_ID = "messageUniqueId";
+    public static final String ECS_LOCATION = "ecsLocation";
+    public static final String APPLICATION_TIMESTAMP = "applicationTimestamp";
+    public static final String BATCH_ID = "batchId";
+    public static final String XML_CONTENT = "xmlContent";
+    public static final String DATE_TIME_NANO = "yyyyMMddHHmmssSSSSSS";
+}
+cat: ./src/main/java/com/hsbc/trds/utils: Is a directory
+package com.hsbc.trds.utils;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+
+public class CompressionUtils {
+
+    private static ThreadLocal<byte[]> threadLocalDecompresionBuffers = ThreadLocal.withInitial(() -> new byte[10240]);
+
+    public static byte[] compress(String payload) {
+
+        if(payload == null) return null;
+        ByteArrayOutputStream boas = new ByteArrayOutputStream();
+        GZIPOutputStream gos = null;
+
+        try {
+            gos = new GZIPOutputStream(boas);
+            gos.write(payload.getBytes());
+            gos.close();
+        } catch (IOException var7) {
+            throw new RuntimeException("Failed to gzip document content", var7);
+        } finally {
+            closeQuietly(gos, boas);
+        }
+
+        return boas.toByteArray();
+
+    }
+
+
+    public static String decompress(byte[] packedContent) {
+        if(packedContent == null || packedContent.length == 0) return null;
+        ByteArrayOutputStream boas = new ByteArrayOutputStream();
+        ByteArrayInputStream bois = new ByteArrayInputStream(packedContent);
+        GZIPInputStream gos = null;
+        byte[] buffer = (byte[])threadLocalDecompresionBuffers.get();
+
+        try {
+            gos = new GZIPInputStream(bois);
+
+            int read;
+            while((read = gos.read(buffer)) != -1) {
+                boas.write(buffer, 0, read);
+            }
+        } catch (IOException var9) {
+            throw new RuntimeException("Failed to gzip document content", var9);
+        } finally {
+            closeQuietly(gos, boas, bois);
+        }
+
+        byte[] decompressed = boas.toByteArray();
+        boas = null;
+        gos = null;
+        bois = null;
+        return new String(decompressed);
+    }
+
+    private static void closeQuietly(Closeable... closables) {
+        Closeable[] arr = closables;
+        int len = closables.length;
+
+        for(int i = 0; i < len; ++i) {
+            Closeable closeable = arr[i];
+            if (closeable != null) {
+                try {
+                    closeable.close();
+                } catch (IOException e) {
+                    ;
+                }
+            }
+        }
+
+    }
+
+}
+package com.hsbc.trds.utils;
+
+import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.io.ByteArrayInputStream;
+import java.util.LinkedHashMap;
+
+public class XmlMessageProcessor {
+    private static final Logger LOGGER = Logger.getLogger(XmlMessageProcessor.class);
+    private static final String RT_EXPRESSION_1 = "/publicExecutionReport/header[1]/messageId[1]";
+    private static final String RT_EXPRESSION_2 = "/publicExecutionReportRetracted/header[1]/messageId[1]";
+    private static final String BULK_EXPRESSION_1 = "/valuationReport/header[1]/messageId[1]";
+    private static final String BULK_EXPRESSION_2 = "/nonpublicExecutionReport/header[1]/messageId[1]";
+
+    //private static final String EXPRESSION = "//*[contains(@*,'Search')]";
+    private static final String CHAR_SET = "JMS_IBM_Character_Set";
+
+    public String process(String payload, String reportType) {
+        LinkedHashMap<String,String> dataMap = new LinkedHashMap<String,String>();
+        DocumentBuilder builder;
+
+        try {
+            builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc = builder.parse(new ByteArrayInputStream(payload.getBytes()));
+            XPath xPath =  XPathFactory.newInstance().newXPath();
+            Element node = null;
+            if (reportType.equalsIgnoreCase("REALTIME")) {
+                node = getRTNode(doc, xPath);
+            } else {
+                node = getBulkNode(doc, xPath);
+            }
+            if(node != null){
+                NodeList childList = node.getChildNodes();
+                for (int j = 0; j < childList.getLength(); j++) {
+                    if(childList.item(j).getNodeType() == Node.TEXT_NODE){
+                       // NamedNodeMap map = childList.item(j).getAttributes();
+                       // dataMap.put(map.getNamedItem("messageId").getTextContent(), childList.item(j).getTextContent());
+                        return childList.item(j).getTextContent();
+                    }
+                }
+            }else{
+                LOGGER.error("Message not in as expected format");
+            }
+        } catch (Exception e) {
+            LOGGER.error("Exception occurred while processing message" ,e);
+        }
+
+        return "";
+    }
+
+    private Element getRTNode(Document doc, XPath xPath) throws XPathExpressionException {
+        NodeList nodeList = (NodeList) xPath.compile(RT_EXPRESSION_2).evaluate(doc, XPathConstants.NODESET);
+        Element element = (Element) nodeList.item(0);
+        if (element == null) {
+            nodeList = (NodeList) xPath.compile(RT_EXPRESSION_1).evaluate(doc,XPathConstants.NODESET);
+            return (Element) nodeList.item(0);
+        }
+        return element;
+    }
+
+    private Element getBulkNode(Document doc, XPath xPath) throws XPathExpressionException {
+        NodeList nodeList = (NodeList) xPath.compile(BULK_EXPRESSION_1).evaluate(doc, XPathConstants.NODESET);
+        Element element = (Element) nodeList.item(0);
+        if (element == null) {
+            nodeList = (NodeList) xPath.compile(BULK_EXPRESSION_2).evaluate(doc,XPathConstants.NODESET);
+            return (Element) nodeList.item(0);
+        }
+        return element;
+    }
+
+}
+cat: ./src/main/resources: Is a directory
+appName = Trds-MQ-L0-extractor
+mode = yarn
+appName_parque_counter = TRDS-ECS-PARQUE-COUNTER
+
+prod{
+  ecs {
+    uid1 = "uk-gmb-cats-trds-prod-u"
+    host1 = "http://ecs-storage.it.global.hsbc:9020"
+    secret1 = "2aqFn5/aEXYPYKK7IyqF55jSgDpsBbLw5mePjA+EUjlDZDNDzkYg+jMp7pJaqXOAKaY2gHw+YYI="
+    bucketName1 = "uk-gmb-cats-trds-prod"
+    s3bucketName1 = "s3a://uk-gmb-cats-trds-prod/"
+    ecsLocation = "TRDS_LAKE_PROD/L0_MQ_PARQUET"
+    checkPointDir = "s3a://uk-gmb-cats-trds-prod/TRDS_LAKE_PROD/L0_CHECKPOINT"
+    batchIntervalInMillis = "300000"
+    batchInterval = "300"
+    repartition-count = "12"
+  }
+  checkpoint {
+    enabled = true
+  }
+  l1checkpoint{
+    enabled = true
+  }
+  partitions {
+    columns = "dslObjectType,businessDate"
+  }
+  mq {
+    ssl-encryption = "on"
+    keystore = "./TRDL.jks"
+    keystorePW = "HBhHsOrold51v/GlDYqvSh53yKhVferG"
+    encryptionType = "SSL"
+    keystoreType = "JKS"
+    provider = "SunX509"
+
+    truststore = "./TRDL.jks"
+    truststorePW = "HBhHsOrold51v/GlDYqvSh53yKhVferG"
+    truststore-type = "JKS"
+    truststore-provider = "SunX509"
+
+    host = "gbprdssag4.systems.uk.hsbc"
+    queuemgr = "PGBLHSSAG4"
+    port = "27395"
+    channel-name = "TRDL.GB"
+    REALTIME-QUEUE = "GB_SSAG.GB_GDSL.GB_TRDL.TRD"
+    BULK-QUEUE = "GB_SSAG.GB_NDSL.GB_TRDL.BULK"
+    ssl-cipher-suite = "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+  }
+
+  solace {
+    host = "gbwgdcsolaceprod.systems.uk.hsbc,gbsygdcsolaceprod.systems.uk.hsbc"
+    vpn = "FMO_SM_TRDL"
+    username = "GB-DL-SOLPUB-PRD"
+    password = "MDI3ngRr87mw2xKUuBXIgm1tlTiJle0F"
+    basePublishTopic = "TRDS_DATA_LAKE_SOL_PRD"
+    queue = "Q_TRDS_DATA_LAKE_SOL_PRD"
+  }
+
+  # showFullXml takes precedence over 'howManyCharsOfXmlInLogs' 
+  showXmlInLogs {
+    howManyCharsOfXmlInLogs=500
+    showFullXml=false
+  }
+}
+
+oat{
+  ecs {
+    uid1 = "uk-dsl-ss-1-s3-nonprod-u"
+    host1 = "http://ecs-storage.it.global.hsbc:9020"
+    secret1 = "DIvJYnG0WtBMCR8899jRCBDefIu7A63fB1F9U7QJgHmbea51tFwDrVI5esKT+TJw/MlccLwDGZ4="
+    bucketName1 = "uk-dsl-ss-1-s3-nonprod"
+    s3bucketName1 = "s3a://uk-dsl-ss-1-s3-nonprod/"
+    ecsLocation = "TRDS_LAKE/OAT/L0_MQ_PARQUET"
+    checkPointDir = "s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/L0_CHECKPOINT/OAT"
+    batchIntervalInMillis = "300000"
+    batchInterval = "300"
+    repartition-count = "12"
+  }
+  checkpoint {
+    enabled = true
+  }
+  l1checkpoint{
+    enabled = true
+  }
+  partitions {
+    columns = "dslObjectType,businessDate"
+  }
+  mq {
+    ssl-encryption = "on"
+    keystore = "./TRDL.jks"
+    keystorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    encryptionType = "SSL"
+    keystoreType = "JKS"
+    provider = "SunX509"
+
+    truststore = "./TRDL.jks"
+    truststorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    truststore-type = "JKS"
+    truststore-provider = "SunX509"
+
+    host = "gbtstssag4.systems.uk.hsbc"
+    queuemgr = "DGBLHSSAG4"
+    port = "15395"
+    channel-name = "TRDL.GB"
+    REALTIME-QUEUE = "GB_SSAG.GB_GDSL.GB_TRDL.TRD.OAT"
+    BULK-QUEUE = "GB_SSAG.GB_NDSL.GB_TRDL.BULK.OAT"
+    ssl-cipher-suite = "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+  }
+  solace {
+    host = "gbwgdcsolacetest.systems.uk.hsbc:55555"
+    vpn = "FMO_SM_NP_TRDL"
+    username = "GB-DL-SOLPUB"
+    password = "sJFI2JM6C3eTW66N4xbPBzJvXqj04YKY"
+    basePublishTopic = "TRDS_DATA_LAKE_SOL_OAT"
+    queue = "Q_TRDS_DATA_LAKE_SOL_OAT"
+  }
+
+  # showFullXml takes precedence over 'howManyCharsOfXmlInLogs' 
+  showXmlInLogs {
+    howManyCharsOfXmlInLogs=500
+    showFullXml=false
+  }
+}
+
+t03{
+  ecs {
+    uid1 = "uk-dsl-ss-1-s3-nonprod-u"
+    host1 = "http://ecs-storage.it.global.hsbc:9020"
+    secret1 = "DIvJYnG0WtBMCR8899jRCBDefIu7A63fB1F9U7QJgHmbea51tFwDrVI5esKT+TJw/MlccLwDGZ4="
+    bucketName1 = "uk-dsl-ss-1-s3-nonprod"
+    s3bucketName1 = "s3a://uk-dsl-ss-1-s3-nonprod/"
+    ecsLocation = "TRDS_LAKE/T03/L0_MQ_PARQUET"
+    checkPointDir = "s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/L0_CHECKPOINT/T03"
+    batchIntervalInMillis = "300000"
+    batchInterval = "300"
+    repartition-count = "12"
+  }
+  checkpoint {
+    enabled = true
+  }
+  l1checkpoint{
+    enabled = true
+  }
+  partitions {
+    columns = "dslObjectType,businessDate"
+  }
+  mq {
+    ssl-encryption = "on"
+    keystore = "./TRDL.jks"
+    keystorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    encryptionType = "SSL"
+    keystoreType = "JKS"
+    provider = "SunX509"
+
+    truststore = "./TRDL.jks"
+    truststorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    truststore-type = "JKS"
+    truststore-provider = "SunX509"
+
+    host = "gbtstssag4.systems.uk.hsbc"
+    queuemgr = "DGBLHSSAG4"
+    port = "15395"
+    channel-name = "TRDL.GB"
+    REALTIME-QUEUE = "GB_SSAG.GB_GDSL.GB_TRDL.TRD.T03"
+    BULK-QUEUE = "GB_SSAG.GB_NDSL.GB_TRDL.BULK.T03"
+    ssl-cipher-suite = "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+  }
+ 
+  solace {
+    host = "gbwgdcsolacetest.systems.uk.hsbc:55555"
+    vpn = "FMO_SM_NP_TRDL"
+    username = "GB-DL-SOLPUB"
+    password = "sJFI2JM6C3eTW66N4xbPBzJvXqj04YKY"
+    basePublishTopic = "TRDS_DATA_LAKE_SOL_UAT"
+    queue = "Q_TRDS_DATA_LAKE_SOL_UAT"
+  }
+
+  solmon {
+    host = "gbwgdcsolacetest.systems.uk.hsbc:55555"
+    vpn = "FIN_SM_NP_SSGU"
+    username = "GB-SVC-TRDS"
+    password = "N8FdQGbfxGnqRlidwzoBVekPyK6O+rKf"
+    basePublishTopic = "TRDS_DATA_LAKE_MNA_SOL_DEV"
+    queue = "Q_TRDS_DATA_LAKE_MNA_SOL_DEV"
+  }
+  
+  # showFullXml takes precedence over 'howManyCharsOfXmlInLogs' 
+  showXmlInLogs {
+    howManyCharsOfXmlInLogs=500
+    showFullXml=false
+  }
+}
+
+t05{
+  ecs {
+    uid1 = "uk-dsl-ss-1-s3-nonprod-u"
+    host1 = "http://ecs-storage.it.global.hsbc:9020"
+    secret1 = "DIvJYnG0WtBMCR8899jRCBDefIu7A63fB1F9U7QJgHmbea51tFwDrVI5esKT+TJw/MlccLwDGZ4="
+    bucketName1 = "uk-dsl-ss-1-s3-nonprod"
+    s3bucketName1 = "s3a://uk-dsl-ss-1-s3-nonprod/"
+    ecsLocation = "TRDS_LAKE/T05/L0_MQ_PARQUET"
+    checkPointDir = "s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/L0_CHECKPOINT/T05"
+    batchIntervalInMillis = "300000"
+    batchInterval = "300"
+    repartition-count = "12"
+  }
+  checkpoint {
+    enabled = true
+  }
+  l1checkpoint{
+    enabled = true
+  }
+  partitions {
+    columns = "dslObjectType,businessDate"
+  }
+  mq {
+    ssl-encryption = "on"
+    keystore = "./TRDL.jks"
+    keystorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    encryptionType = "SSL"
+    keystoreType = "JKS"
+    provider = "SunX509"
+
+    truststore = "./TRDL.jks"
+    truststorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    truststore-type = "JKS"
+    truststore-provider = "SunX509"
+
+    host = "gbtstssag4.systems.uk.hsbc"
+    queuemgr = "DGBLHSSAG4"
+    port = "15395"
+    channel-name = "TRDL.GB"
+    REALTIME-QUEUE = "GB_SSAG.GB_GDSL.GB_TRDL.TRD.T05"
+    BULK-QUEUE = "GB_SSAG.GB_NDSL.GB_TRDL.BULK.T05"
+    ssl-cipher-suite = "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+  }
+ solace {
+    host = "gbwgdcsolacetest.systems.uk.hsbc:55555"
+    vpn = "FIN_SM_NP_SSGU"
+    username = "GB-SVC-TRDS"
+    password = "N8FdQGbfxGnqRlidwzoBVekPyK6O+rKf"
+    basePublishTopic = "TRDS_DATA_LAKE_SOL_DEV"
+    queue = "Q_TRDS_DATA_LAKE_SOL_DEV"
+  }
+
+  # showFullXml takes precedence over 'howManyCharsOfXmlInLogs' 
+  showXmlInLogs {
+    howManyCharsOfXmlInLogs=500
+    showFullXml=true
+  }
+}
+
+ft{
+  ecs {
+    uid1 = "uk-dsl-ss-1-s3-nonprod-u"
+    host1 = "http://ecs-storage.it.global.hsbc:9020"
+    secret1 = "DIvJYnG0WtBMCR8899jRCBDefIu7A63fB1F9U7QJgHmbea51tFwDrVI5esKT+TJw/MlccLwDGZ4="
+    bucketName1 = "uk-dsl-ss-1-s3-nonprod"
+    s3bucketName1 = "s3a://uk-dsl-ss-1-s3-nonprod/"
+    ecsLocation = "TRDS_LAKE/T05_FT/L0_MQ_PARQUET"
+    checkPointDir = "s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/L0_CHECKPOINT/T05_FT"
+    batchIntervalInMillis = "300000"
+    batchInterval = "300"
+    repartition-count = "12"
+  }
+  checkpoint {
+    enabled = true
+  }
+  l1checkpoint{
+    enabled = true
+  }
+  partitions {
+    columns = "dslObjectType,businessDate"
+  }
+  mq {
+    ssl-encryption = "on"
+    keystore = "./TRDL.jks"
+    keystorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    encryptionType = "SSL"
+    keystoreType = "JKS"
+    provider = "SunX509"
+
+    truststore = "./TRDL.jks"
+    truststorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    truststore-type = "JKS"
+    truststore-provider = "SunX509"
+
+    host = "gbtstssag4.systems.uk.hsbc"
+    queuemgr = "DGBLHSSAG4"
+    port = "15395"
+    channel-name = "TRDL.GB"
+    REALTIME-QUEUE = "GB_SSAG.GB_TRDL.GB_TRDL.TRD.FT.T03"
+    BULK-QUEUE = "GB_SSAG.GB_TRDL.GB_TRDL.TRD.FT.T03"
+    ssl-cipher-suite = "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+  }
+  solace {
+    host = "gbwgdcsolacetest.systems.uk.hsbc:55555"
+    vpn = "FMO_SM_NP_TRDL"
+    username = "GB-DL-SOLPUB"
+    password = "sJFI2JM6C3eTW66N4xbPBzJvXqj04YKY"
+    basePublishTopic = "TRDS_DATA_LAKE_SOL_FT"
+    queue = "Q_TRDS_DATA_LAKE_SOL_FT"
+  }
+
+  # showFullXml takes precedence over 'howManyCharsOfXmlInLogs'
+  showXmlInLogs {
+    howManyCharsOfXmlInLogs=500
+    showFullXml=true
+  }
+}
+
+
+
+{
+  "type": "service_account",
+  "project_id": "hsbc-11007943-trds-dev",
+  "private_key_id": "7d578f7053333010557337201dc76539f368ae4f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDCbleC2W/em4q6\nBIytcIdNSqOUeqfp/lLKKC1X/Ql9qGijYo89FBodyFvOZFF7dkcB5AsMiaVy52sk\nGWqMZD0dh3CfKOUaGlvtslBTkIFtaT3IR/wM8qhDkGs6Wr3RhYaf7pOmMmQEGQNw\nfCfSP+SOVWfkKBkWo7Sc/8KHXVrfEF2ORqb14UBP4j5jAbJWJB0xNoytzVcuE8bZ\n4HzS5NIDOHqDCE/5D25ZgFbniYTdIHjSxKfTv2lXZpzvu+tBW9aSYpWrH0LWA7Vz\ngMbuN+zoFYjaaNgv4pNB/MCcqur9tf6j6aheFpi2Ugt/+kOb3Xdnc++DeulcSEpK\n9oAgzUyHAgMBAAECggEACe+Dj083NUPzid/zpGVMtLlstIi0DfQOHQCCmK14j7BM\ncJT3xuJBF2aGsnxT4aBArqsNmX1rM/z5b6XQ2Q3CRcEHE0sOsg/IxNPI4QxQYNvw\n6UwsaCj6SkGWCSxb6NoO8BtL9kE69S6mC1h83HShZFie73zRE2QYNbGoKiyuGRnx\nG29ot6W1w0HIfQQTjHNwIO7z18/Sw6xM3rE8nu3sT6O3t7t+Mk0Lj8XhbGnq13qJ\n7Y+ebwRv0rxZr/kKMKEYhMH8qt7gpZaw0CGyorH/zUUDz1GlcHHSBvTN4dU7R9lG\n7nHGSrAHKoTJzsukCn9g4CSByYWAq9dC3awVREamyQKBgQDy+yyxhry1+VBGF5Hh\n4UM68Ps7NiNipE2nsvGGfBjp9dKmZkVsaOQkNZACIiU/CKVileAx3wntYXbz9rV0\nFGqRtdR6RNxqC2I5f9T+WSPs8orvhQBvPw+ZdEvoifHjTj3PwpkNGY33zTASVikd\nkWYdyDvdnw3oejrYrAr5sNnlewKBgQDM2TwKJTEfK7i+rHksX9u3zEPR+3kkWiV6\nbEHM0avvk7OxwY0oEd7cANGWQh3tgryQw8S8/0SEWyFj/565F78c0VsqPWZtvSbE\nIB7YOP62GMtqJOjZTTibHEjloYFfW1ePSw4L+4IkbGKKbrtzsa+8HT2UOLe/bGpX\ne69LZcpZZQKBgQDWNt62PCVPAVfmE42HaINPCXlUQGx94ICd4kLQ38NPMGvgS7XU\n17yat6YYW2Ye5k54Vc3r6cjkwNKQTua2SfGSOI30pZT04MheDPcIringEgyvEcDK\nUvw7u63YexUH4sjXy6YHSIpC92D0KYXiDXfLteYhgsJOPMR4lWSvsVzI1QKBgCVH\nt6SFBj6M/288BkVsIJl/hCw33uEdwspX31W+JtNQBxjnh5/uOKfDQmFdIQMzksup\nxSk8L6UCzL3dLG61AqPk+fli+Twpe1+gFNz26mwLcSGdG/9IDXA1IpMf5GKNRg8e\n8qx9lj64tupIora4dKoAjE9oTxB4U5YePVW0bbH9AoGBAM7PCrZ76ipKqOoATB0E\nXSns17zX3nSviTFqeXNuJpmsphn7XAz/8ROM73RS1ZAA5fdpg+R/4bvUsV2aYw3E\nYi8ugKoQAUGndCr9QqkT5qCT4WsVp9x8IdKodJJeSc9Bf5ggR7lCNji9BdSb3ZkU\nZwboGN8xfJ8FtnR6R+K/6Bdq\n-----END PRIVATE KEY-----\n",
+  "client_email": "storage-admin@hsbc-11007943-trds-dev.iam.gserviceaccount.com",
+  "client_id": "104365758285129631244",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/storage-admin%40hsbc-11007943-trds-dev.iam.gserviceaccount.com"
+}
+{
+  "type": "service_account",
+  "project_id": "hsbc-11007943-trds-dev",
+  "private_key_id": "a3dc58a39c43e620e49656825c46546cc9facab9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxaEqFGQ6mmOzK\nAk59g32yXCG/Go6u+icNG0KWG8KUc1SMzKYRt3dkByEZVh4mFeADtfxAZ/QR2OCy\n9yFdqacxLKqYO0IryCeHdOHgt/uVZ38QmCkwgwop5A4OIXQVuJqNQLHcVdPoMxgy\npBbPrdIjlI8KfIHlq+9wf5omv6khx676b8Jep+GBprbDkJ0V4RhP+KkbS3TLmQq8\nTJLyrNsTb4kW2Rb2BeR61cx+GTc4ml0A7krfVwkBZlKoeqrryYWSW5WobMjfxhAJ\noUCZs0XnMdmNLhsb8HLb7Mzg566N4zr34msxaRxJQsjIGy6M19JZHb7HddbikWvq\nmybRTeHLAgMBAAECggEACCG7qLYpUcGYuPm6F067qD1I3rWc7LBSsesZ9j93f855\nhaqrwgwi0Nby0XJ9F0nRZtokod8h9N94DTv+r4hjPYHKoAe3VMJr7W2SHPbR9Vs1\nG9GdsbeP87OcYVFvPL+ldewNOwhEGlSdO1UCJqrVAwSAOf7TBXAIHaP7sOMAIagt\n1V/plOsqJjKsVTvoh+LAFRQYxmNXTrepDOajpAE31ewcUMdx9M0wsl/houdL/XZS\nsNLeCoHYzdpgdaa6UZpaKmjgVnZw9D0EGwtQ7r+jWEPZw9S+raGWBd4ojX613btL\nWbw0dLUpSOF314cxLn6ehWlWaLIW7xtZYF7yiQl2wQKBgQDvjpF4y+S6zQfysu2/\nLoEsA1KDWi++f7yRwhQC+Z2Jaa7LoyRWXnmxZehelk43v+WiL+98X+NcdmeeM0ZP\npOugEXJDEDtS+VE2iRhbGNgGaIQ2e5LBUnO9nr2h9DCQpR5MHs0TkQsg592jh8EB\nzNH6bFsgeEXEa0uGPxd9s4G/aQKBgQC9laXKWstpZtRot6VxhZqOkoOPjk6zDZF/\nv0Z+BZljdkjmn1vkBbloowZQAvvWgFlcdzYgMQ8sZeixC/E0urVaBOnFL6W/+8OQ\nNT/zTa0NDZM3YNFWLQBRETIHgLgxpH6ep1pandfYxxVRexDTS8zUg3DSoaNSG7kS\nsJmR8B6lEwKBgHYSwSTW6mAgGqDHDGPE2ioFYTAYzZuJfjohfJeSzNEj4+G/AXQI\nkNadMhEc6GSWEusD0XhuErRKL/xLrYYn9XMp5jWj1HmrJRpKLFUKQ7+02CW6drUO\nnLmDelhO8Xj5yZsfO1k/jkqjvhySFtF6UKyrp6azYT/U2p7KjhuI1JSxAoGBAKUE\nIK6loPA5hSEw2FybghAfD0xg/bd0U/TxtJX0obKlPocepokvQlcFr3TtY+8tAJsv\nWHlkumRWv9d7IZRX/4o/RItSEd+tcGeRMfzA26PE8SL+rrdnrCLj6LwHGkx7dYr6\n9/Zv9XTGtJObnuWL0NoZHpb4AoRxhQHznXgdnU7pAoGAf2TqwCFi4ChWiVrufP96\nMfHELVDx57Bm/qWIAYDxbC1v/SSbK/F8vbyoudwf+2A0+b9izAvLu96H9ysGCr3R\nTv8O83QfPdzEifo7Lw2PszpLGDYRXkC4wfuICKFDAKZaWkH8DoX3jUdScg1XRE1u\nKRMYfrEMTHU66YCyswsJGYQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pub-sub-admin@hsbc-11007943-trds-dev.iam.gserviceaccount.com",
+  "client_id": "113919012707230698168",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pub-sub-admin%40hsbc-11007943-trds-dev.iam.gserviceaccount.com"
+}
+{
+  "jobClass": "com.hsbc.trds.stream.L0MQSparkStreamProcessor",
+  "jobFolder": null,
+  "jobJar": "TRDS-DL-L0-Extractor-1.0-SNAPSHOT.jar",
+  "jobName": "TRDS-DL-L0-Extractor-DEV",
+  "language": "java",
+  "maxRuntime": 600,
+  "pipelineParams": [
+    "CFTC",
+	"BULK"
+  ],
+  "primaryPyFile": "string",
+  "pyFiles": [
+    "string"
+  ],
+  "resourceParams": {
+    "driverMemory": 4,
+    "executorCores": 1,
+    "executorMemory": 6,
+    "executorNum": 3,
+    "parallelism": 0	
+  },
+  "retryEnabled": true,
+  "retryMemory": 0,
+  "retryNum": 0,
+  "sparkParams": {
+    "spark.driver.extraJavaOptions": "-Denv=t05 -Dcom.ibm.mq.cfg.useIBMCipherMappings=false -Djavax.net.ssl.keyStore=./TRDL.jks -Djavax.net.ssl.keyStorePassword=MtADJTDd -Djavax.net.ssl.trustStore=./TRDL.jks -Djavax.net.ssl.trustStorePassword=MtADJTDd -Dconfig.file=./dsl-trds-L0.conf",
+    "spark.executor.extraJavaOptions": "-Denv=t05 -Dcom.ibm.mq.cfg.useIBMCipherMappings=false -Djavax.net.ssl.keyStore=./TRDL.jks -Djavax.net.ssl.keyStorePassword=MtADJTDd -Djavax.net.ssl.trustStore=./TRDL.jks -Djavax.net.ssl.trustStorePassword=MtADJTDd -Dconfig.file=./dsl-trds-L0.conf",
+    "spark.executor.memoryOverhead": "4096",
+    "spark.streaming.receiver.maxRate": "500",
+    "spark.streaming.stopGracefullyOnShutdown": "true",
+    "spark.streaming.receiver.blockStoreTimeout": "15000",
+    "spark.streaming.driver.writeAheadLog.allowBatching": "true",
+    "spark.streaming.driver.writeAheadLog.batchingTimeout": "15000",
+    "spark.yarn.dist.files": "./dsl-trds-L0.conf"
+  },
+  "tenant": "trds"
+}{
+  "jobClass": "com.hsbc.trds.stream.L0MQSparkStreamProcessor",
+  "jobFolder": null,
+  "jobJar": "TRDS-DL-L0-Extractor-1.0.10.jar",
+  "jobName": "TRDS-DL-L0-Extractor-PROD",
+  "language": "java",
+  "maxRuntime": -1,
+  "pipelineParams": [
+    "CFTC",
+    "REALTIME",
+    "cadstrds"
+  ],
+  "primaryPyFile": "string",
+  "pyFiles": [
+    "string"
+  ],
+  "resourceParams": {
+    "driverMemory": 4,
+    "executorCores": 1,
+    "executorMemory": 6,
+    "executorNum": 3,
+    "parallelism": 0
+  },
+  "retryEnabled": true,
+  "retryMemory": 0,
+  "retryNum": 1,
+  "sparkParams": {
+    "spark.driver.extraJavaOptions": "-Denv=prod -Dcom.ibm.mq.cfg.useIBMCipherMappings=false -Djavax.net.ssl.keyStore=/opt/disk1/.tenant_lib/trds_long/TRDL.jks  -Djavax.net.ssl.keyStorePassword=4yRbenR8 -Djavax.net.ssl.trustStore==/opt/disk1/.tenant_lib/trds_long/TRDL.jks  -Djavax.net.ssl.trustStorePassword=4yRbenR8",
+    "spark.executor.extraJavaOptions": "-Denv=prod -Dcom.ibm.mq.cfg.useIBMCipherMappings=false -Djavax.net.ssl.keyStore=/opt/disk1/.tenant_lib/trds_long/TRDL.jks -Djavax.net.ssl.keyStorePassword=4yRbenR8 -Djavax.net.ssl.trustStore==/opt/disk1/.tenant_lib/trds_long/TRDL.jks -Djavax.net.ssl.trustStorePassword=4yRbenR8",
+    "spark.executor.memoryOverhead": "4096",
+    "spark.streaming.receiver.maxRate": "500",
+    "spark.network.timeout": "300s",
+    "spark.rpc.askTimeout": "300s",
+    "spark.streaming.stopGracefullyOnShutdown": "true",
+    "spark.streaming.receiver.blockStoreTimeout": "15000",
+    "spark.streaming.driver.writeAheadLog.allowBatching": "true",
+    "spark.streaming.driver.writeAheadLog.batchingTimeout": "15000"
+  },
+  "tenant": "trds_long"
+}# Set everything to be logged to the file bagel/target/unit-tests.log
+log4j.rootCategory=DEBUG, console
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.target=System.err
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%d{yy/MM/dd HH:mm:ss} %p %c{1}: %m%n
+
+log4j.logger.org.apache=ERROR
+# Ignore messages below warning level from Jetty, because it's a bit verbose
+# Settings to quiet third party logs that are too verbose
+log4j.logger.org.eclipse.jetty=WARN
+log4j.logger.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
+log4j.logger.org.apache.spark.repl.SparkIMain$exprTyper=INFO
+log4j.logger.org.apache.spark.repl.SparkILoop$SparkILoopInterpreter=INFO
+log4j.logger.org.apache.spark=WARN
+log4j.logger.parquet=ERROR
+log4j.logger.org.apache.spark.sql.execution.datasources.parquet=ERROR
+log4j.logger.org.apache.spark.sql.execution.datasources.FileScanRDD=ERROR
+log4j.logger.org.apache.hadoop.io.compress.CodecPool=ERROR#!/bin/bash
+
+BASEDIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )"/../ && pwd )
+echo "BaseDir: , " $BASEDIR
+
+LIB_JARS=$(cd ${BASEDIR}; ls lib/ | awk -v prefix="${BASEDIR}/lib/" '{print prefix $1}' | paste -sd ',')
+EXEC_JARS=$(cd ${BASEDIR}; ls lib/ | awk -v prefix="${BASEDIR}/lib/" '{print prefix $1}' | paste -sd ':')
+
+echo $LIB_JARS
+
+cp -rf $BASEDIR/conf/* .
+
+spark-submit --conf spark.driver.extraJavaOptions="-Denv=dev -Dcom.ibm.mq.cfg.useIBMCipherMappings=false -Dconfig.file=./dsl-trds-L0.conf -Djavax.net.ssl.keyStore=./TRDL.jks -Djavax.net.ssl.keyStorePassword=MtADJTDd -Djavax.net.ssl.trustStore=./TRDL.jks -Djavax.net.ssl.trustStorePassword=MtADJTDd" \
+             --conf spark.executor.extraJavaOptions="-Denv=dev -Dcom.ibm.mq.cfg.useIBMCipherMappings=false -Dconfig.file=./dsl-trds-L0.conf -Djavax.net.ssl.keyStore=./TRDL.jks -Djavax.net.ssl.keyStorePassword=MtADJTDd -Djavax.net.ssl.trustStore=./TRDL.jks -Djavax.net.ssl.trustStorePassword=MtADJTDd" \
+             --conf spark.driver.extraClassPath="$EXEC_JARS" \
+             --conf spark.executor.extraClassPath="$EXEC_JARS" \
+             --conf spark.executor.memoryOverhead="4096" \
+             --conf spark.hadoop.fs.s3a.multiobjectdelete.enable="false" \
+             --conf spark.hadoop.fs.s3a.fast.upload="true" \
+             --conf spark.yarn.submit.waitAppCompletion="false" \
+             --conf spark.streaming.receiver.maxRate="300" \
+             --conf spark.streaming.stopGracefullyOnShutdown="true" \
+             --conf spark.yarn.maxAppAttempts="3" \
+             --conf spark.yarn.am.attemptFailuresValidityInterval="1h" \
+             --conf spark.yarn.keytab=$HOME/fdaapp01.keytab \
+             --conf spark.yarn.principal=fdaapp01@HBEU.ADROOT.HSBC \
+             --conf spark.yarn.queue=trds \
+             --files ./dsl-trds-L0.conf,./TRDL.jks \
+             --master yarn \
+             --deploy-mode cluster \
+             --driver-memory 4G \
+             --executor-memory 2G \
+             --driver-cores 4 \
+             --num-executors 4 \
+             --executor-cores 4 \
+             --class com.hsbc.trds.scala.stream.L0MQSparkStreamProcessor \
+             --jars $LIB_JARS \
+             --name "L0-MQ-Spark-Stream-Processor-$2-$4-$6" \
+             /dsl/app/dslt12/suneel/trds_lake-1.0-SNAPSHOT/trdslake-1.0-SNAPSHOT.jar $@
+
+
+þíþí          hsbc sha2 root  xˆŽ![ X.509  
+0‚	0‚ñ w!C‘ Œ´µEå¨M±çU50
+	*†H†÷
+ 010UHSBC ORCA G20
+151127114503Z
+401127115502Z010UHSBC ORCA G20‚"0
+	*†H†÷
+ ‚ 0‚
+‚ Ô¼«µÇÎæ¾ï0eê&üH²Ìy‡y7¯óªy”5-8g‘Ä	B˜¬
+ºÐìñåÊ¯A³<‹bu\N+a<k 
+íŠˆsò²6;½¸#&aÊNá‚X„¨îÅ3¢‰XRòîþ»¼–Xú«s}òù0?$1Jð2órªX¯™N,Xß@Ùl~˜;È4QRÐOn–ži]Ô‹ïg^9w<E&
+0ìÕ(jˆ(ýeõä¶ƒRÞ†û*HµÚ¾Ç<æSî;@wñ`¢6e\¤ÁBì®ŽKš^b”0~eîvêþ“ØÝèÝáhŒîÚ
+Æ?PP.!ÆØ§Üd¶<Y¡ £Q0O0U†0Uÿ0ÿ0U»……èýH™QÌþççÑg-ü0	+‚7 0
+	*†H†÷
+ ‚ ,~äy…MÀi²$â5€ÿM ”‡Bþ2ûg²õŒ±Žñ™cQ’x{I¼­×úm J…¡Te*m~h{2ìÍîïêwoþ0}^…±x$0…l)ýPb?Ø«˜ßWöªu
+Ïé%ô²4S–¯wý|ÿ×Ù>Ôÿi-Ÿ”?DŠ¡\_°ÂŸtÞÔÙŠî+ Ä\l%þõt€6‚üµ1Þ»lÊ/LTy„³A,ñÁµ¸„Úcµè9xîæP¯JÑœ¯ƒù>Kf¸uéŠžŸùxÛÝCÊFi¥yU\KÇÓZXÀÂ‘‹¶ùŸHKžªãþþMäª»ìšfƒ—¾­ØÎÑ°î*ONû    ibmwebspheremqtrdl  xˆŽ!<  0‚ý0
++* ‚é?G’Æì´å„¸€ÈþäGÕ¾@	q—VJ¤%cô2)Ñß»“ç´ÂÆÄãRø®N¸8µÅ=…Ì˜­dè¦cºtFvÇ^¯m‰­efÈD¿ÎFä×«âó‚?RRæÝO6¬BøuÞNôŒ¦I“]=žÿƒè"Bß0/@ôbËWü`l¥ð@¡úBîhâ=åBë9Öº&gn%ä$–kÀÒî<kÆ-š
+_r~¨"„ŒTmýDÛuf(o0M8pZC_J¨„õ…{ËýoWµ>´úÏæó‚AR-ËJr	ÿðiBÖ;á*>,$±&áÑ2)4V¢Û@ÜÓ-P#¯ATQ†¾ö	¸KH.^R7‰é9èvêÜÏ ®¯üŸÒô ,¸)Y©œaÎÖ…Ž@
+¸'fmôˆ=P:7üÎ9§ñ5J‹Ä©£t=È÷‹ÞçA_<©ÖÌ
+"†ñ®ôShÃ Ì§÷[Âœ,·+Õ,Ìú‡¯nJ¶Fv:SîzÁ<ièM"¹}zÕYb‡ÍŠü_¤"öÿ;ƒ(2»PF‰íaòaûù«ù•pdãžØK”úUDtSÚÖ±i'j¨‡ÉjãÇ>r;^­þÎ%{’†á_cqmUš=]jß• „uGÖ")ø}óvüµ«µ 
+!9ç¯,4@ƒdˆKR’wÝÎ~ïÐ×ÞÙT:N•ûAR¯áÈ
+³¢rîqË=9rL“¹[ëŽ27z5Fl‚Š³]¸íÂÞ›žjuú©M§=|èá¸e„p$s!°™HzT‡ÂfóÕÐ™7µ"’ÀãPîŒwT ¶b›GlVigv.÷7ÔÇý6‡	Tú Þs¸NT >ð<šrÔ{ÑYzíw2;Ð¸K@ðGÑÿu:û™hH«
+ˆPùÃ}¹›‰¼}ÕŠØ5r‹âG¾'fð]:Ýxs¹4™Á*¾Š÷øGÅAK.Ìý´qK¥v1¥+®ce\`KŠQåçÄáõÌ@`rÁYs¾ÍoÞ"†®˜4.Â]¶vQó¾‚IeÔp‹ŽQ85ÕùŠ4j˜~ÒKw3X;G‡¤î¹ÉÙñ¥­ªñ/cî>É‹tÇ°Ù•¶ÄoK»ògÉ;oÁgé‚Pñ„…fÓ×ýQŠfÁø·üœ>¥ç˜I®Œ|‘"4w–ïÎ$Y\)àkßA
+â	ÂNÀg +vk¥}Uè%Ú‹Å3ã	·x¥˜À@#F¾Õà=$2ÿØ!ä¬üœÓóg·()g>v#&Šêu.ÇQèvïPJõGu‡¤=žX™Ù×‹ùŸø¥¢kA8)j½àÔqð¥œÿfL<	ÑšÈMK5…Aj½©ÕnßR29ýRÿ‡þ¸ÜÎuZz6v•òØ ýŒ§b‡ñM˜eúí^¯Â2(˜ªdjD¢þóã§1×ô{è×Ó!úT±W=ŠÜ»›BšÙ‘»<?Æ–	hånÝFzãÛ½>0õšøz×oî³–Æ	“;ø‚o¢€`GžcH$ò‡®·*±q$¶>ÁÜ JÕ»òÕùñ&3Ý³ð
+A	
+Íg¬™p?‘.%í~2mˆ}S^ÚÜWÈ:dßfóÝoû]1fæê`·ÇÍêòâÄ¾OJt\îÛ®    X.509  0‚0‚ó   „3iáÿ/©Eƒ    „0
+	*†H†÷
+ 0c10
+	’&‰“ò,dHSBC10
+	’&‰“ò,dADROOT10
+	’&‰“ò,dHBEU10UHSBC Issuing CA02-G20
+210331132057Z
+230331132057Z0P10	UGB10
+UMQCDEV10	U
+EU10UAUTHENC10UTRDL_DEV0‚"0
+	*†H†÷
+ ‚ 0‚
+‚ ¹P0÷L#ØGE„j¥¥o#sVtµ?Ggà-ŽMNUF&³YçŠ]‹$è/yè¥ÉÑ:Ë
+xŒJm
+«Íßùˆ/Ëh(…Aöòo4Í_
+"ŸÂÝa&
+è)	¸ä±
+Ç~Àˆ¦¹¸n‰…vm[çs
+¤çàXÛ/ýÛsr¦Rk‹Öþ›ê!Â»:Á´ªs]G#Ã·öâ)>˜ŠÓ{cÁŠU=¹"8I‘Õº[¯yWÖr¾Ê
+ Y¼_ï¬uÁ8Ö¡´*SwuÍâŽ`ý¢¸E«¨"ïÄ‚÷FŽÙvƒ¹{êÁ“‹òOÿD¡ulìÇJŒÒê.ß £‚É0‚Å0U™èG	õ7Ñß0³>´=¢Ð§­
+âW0U#0€ùM=7œ”]­ƒA¶Íµ£#0‚dU‚[0‚W0‚S ‚O ‚K†Ãldap:///CN=HSBC%20Issuing%20CA02-G2,CN=GBW00140176,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=ADROOT,DC=HSBC?certificateRevocationList?base?objectClass=cRLDistributionPoint†Mhttp://pkicrl-internal.it.global.hsbc/CertEnroll/HSBC%20Issuing%20CA02-G2.crl†4http://pki.hsbc.com/pki/HSBC%20Issuing%20CA02-G2.crl0‚†+‚x0‚t0·+0†ªldap:///CN=HSBC%20Issuing%20CA02-G2,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=ADROOT,DC=HSBC?cACertificate?base?objectClass=certificationAuthority0v+0†jhttp://pkicrl-internal.it.global.hsbc/CertEnroll/GBW00140176.HBEU.ADROOT.HSBC_HSBC%20Issuing%20CA02-G2.crt0@+0†4http://pki.hsbc.com/pki/HSBC%20Issuing%20CA02-G2.crt0U 0=	+‚700.&+‚7†–ÿ†ÛK†¥‹4†‡Èsƒ°š*}‡ãÏI‚›îzd0U%0
++0	+‚7
+00
++0U0
+‚TRDL_DEV0
+	*†H†÷
+ ‚ Œ3ö!íöVoN*$™žˆ3žÎ1‰(Ö<6výï'dj0rÓ:ˆ:ƒœ_BéD‹XCÌ¿¤½ÌÇ'*ó^S³ÇÑ“ ËOÏ'‘Óöû52”m+a Z8:Oñüûï;ˆ±zùšÒ!%J²aIjŠ'@"¬vA,UíU±O&s(÷tw3ß¦½ÈxL%Ô-0µñ¢TôBU>JÈ Õuòóz;M…õ„
+:å)Ž&½7qrû(Ä¬Fa—Ž—~^Å’JéH­é¤	6í\†°lÑ*M=+¢×]Öý=$®I˜€ë¸Ç¼Q’äcÐa˜R#ó‚t\¿B”Ö4ª¾¯„þM X.509  0‚‰0‚q g   {×Ø«–ûÑ     0
+	*†H†÷
+ 010UHSBC ORCA G20
+151209111507Z
+301209112507Z0c10
+	’&‰“ò,dHSBC10
+	’&‰“ò,dADROOT10
+	’&‰“ò,dHBEU10UHSBC Issuing CA02-G20‚"0
+	*†H†÷
+ ‚ 0‚
+‚ ™$õ­µ`ðøµ*b
+ŸóÚ¹k ¯~TÈ\²‘—PØQµ£°…”yìÐo
+¢éU’ðj4µçõRç´þAIµh[kFŽ»©½¶”óéy­âJ]:g ÔªáXÀIÙžÖ«¥Oæ é‹”³
+ Â§Q°²eSüRFÍê­Y³£N¸¹3îûh’Õ»{3Ø6Ú'K0DcC†éMýŒìõÛÜn}ƒ%í´;¾„ª›«W¢Ù¼P¦§P¡gx¨9?0n8ÿ‚¥@qKð=RñDÜB[×¶±}ã
+â=?‰y´+O—MŒ~ux81ùÁ®B»Æ,Ï5\>9·¾	ö{ £‚€0‚|0	+‚7 0UùM=7œ”]­ƒA¶Íµ£#0	+‚7
+ S u b C A0U†0Uÿ0ÿ0U#0€»……èýH™QÌþççÑg-ü0óUë0è0å â ß†•ldap:///CN=HSBC%20ORCA%20G2,CN=GBW00134623,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=ADROOT,DC=HSBC?certificateRevocationList†Ehttp://pkicrl-internal.it.global.hsbc/CertEnroll/HSBC%20ORCA%20G2.crl0ø+ë0è0†+0†zldap:///CN=HSBC%20ORCA%20G2,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=ADROOT,DC=HSBC?cACertificate0]+0†Qhttp://pkicrl-internal.it.global.hsbc/CertEnroll/GBW00134623_HSBC%20ORCA%20G2.crt0
+	*†H†÷
+ ‚ JÞa—çK3l&E$nœvÞÞ‰d,lÐHûÎ@•„TÄ6`Ó:(ñôí¤gÕÐ{¦ŽTÜßÖ±@j(Aó/'+•‘™e»OÍ0à›¶‘o]ÇæŸ›mÚ/¸"êÊ4­Š>yK1‰PÎ«¹êyX?!Æ¸©ý†nHþ¼­”M’Z#¹¯Œ¬5!›|uÙ,4”ý“{v¿<ÀýŠJ¬a¥jê—½~y[¼žâ™^É·z´¬Gúóù7…ÄœQ.´­h~Þ‰ôeÒJ×Ø~„Åç¶Á*º2Íµþ³ßúÄåËÅ°}ƒ&xôsÑ]²Ãž`‹l X.509  
+0‚	0‚ñ w!C‘ Œ´µEå¨M±çU50
+	*†H†÷
+ 010UHSBC ORCA G20
+151127114503Z
+401127115502Z010UHSBC ORCA G20‚"0
+	*†H†÷
+ ‚ 0‚
+‚ Ô¼«µÇÎæ¾ï0eê&üH²Ìy‡y7¯óªy”5-8g‘Ä	B˜¬
+ºÐìñåÊ¯A³<‹bu\N+a<k 
+íŠˆsò²6;½¸#&aÊNá‚X„¨îÅ3¢‰XRòîþ»¼–Xú«s}òù0?$1Jð2órªX¯™N,Xß@Ùl~˜;È4QRÐOn–ži]Ô‹ïg^9w<E&
+0ìÕ(jˆ(ýeõä¶ƒRÞ†û*HµÚ¾Ç<æSî;@wñ`¢6e\¤ÁBì®ŽKš^b”0~eîvêþ“ØÝèÝáhŒîÚ
+Æ?PP.!ÆØ§Üd¶<Y¡ £Q0O0U†0Uÿ0ÿ0U»……èýH™QÌþççÑg-ü0	+‚7 0
+	*†H†÷
+ ‚ ,~äy…MÀi²$â5€ÿM ”‡Bþ2ûg²õŒ±Žñ™cQ’x{I¼­×úm J…¡Te*m~h{2ìÍîïêwoþ0}^…±x$0…l)ýPb?Ø«˜ßWöªu
+Ïé%ô²4S–¯wý|ÿ×Ù>Ôÿi-Ÿ”?DŠ¡\_°ÂŸtÞÔÙŠî+ Ä\l%þõt€6‚üµ1Þ»lÊ/LTy„³A,ñÁµ¸„Úcµè9xîæP¯JÑœ¯ƒù>Kf¸uéŠžŸùxÛÝCÊFi¥yU\KÇÓZXÀÂ‘‹¶ùŸHKžªãþþMäª»ìšfƒ—¾­ØÎÑ°î*ONû    hsbc sha2 intermediate  xˆŽ!L X.509  0‚‰0‚q g   {×Ø«–ûÑ     0
+	*†H†÷
+ 010UHSBC ORCA G20
+151209111507Z
+301209112507Z0c10
+	’&‰“ò,dHSBC10
+	’&‰“ò,dADROOT10
+	’&‰“ò,dHBEU10UHSBC Issuing CA02-G20‚"0
+	*†H†÷
+ ‚ 0‚
+‚ ™$õ­µ`ðøµ*b
+ŸóÚ¹k ¯~TÈ\²‘—PØQµ£°…”yìÐo
+¢éU’ðj4µçõRç´þAIµh[kFŽ»©½¶”óéy­âJ]:g ÔªáXÀIÙžÖ«¥Oæ é‹”³
+ Â§Q°²eSüRFÍê­Y³£N¸¹3îûh’Õ»{3Ø6Ú'K0DcC†éMýŒìõÛÜn}ƒ%í´;¾„ª›«W¢Ù¼P¦§P¡gx¨9?0n8ÿ‚¥@qKð=RñDÜB[×¶±}ã
+â=?‰y´+O—MŒ~ux81ùÁ®B»Æ,Ï5\>9·¾	ö{ £‚€0‚|0	+‚7 0UùM=7œ”]­ƒA¶Íµ£#0	+‚7
+ S u b C A0U†0Uÿ0ÿ0U#0€»……èýH™QÌþççÑg-ü0óUë0è0å â ß†•ldap:///CN=HSBC%20ORCA%20G2,CN=GBW00134623,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=ADROOT,DC=HSBC?certificateRevocationList†Ehttp://pkicrl-internal.it.global.hsbc/CertEnroll/HSBC%20ORCA%20G2.crl0ø+ë0è0†+0†zldap:///CN=HSBC%20ORCA%20G2,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=ADROOT,DC=HSBC?cACertificate0]+0†Qhttp://pkicrl-internal.it.global.hsbc/CertEnroll/GBW00134623_HSBC%20ORCA%20G2.crt0
+	*†H†÷
+ ‚ JÞa—çK3l&E$nœvÞÞ‰d,lÐHûÎ@•„TÄ6`Ó:(ñôí¤gÕÐ{¦ŽTÜßÖ±@j(Aó/'+•‘™e»OÍ0à›¶‘o]ÇæŸ›mÚ/¸"êÊ4­Š>yK1‰PÎ«¹êyX?!Æ¸©ý†nHþ¼­”M’Z#¹¯Œ¬5!›|uÙ,4”ý“{v¿<ÀýŠJ¬a¥jê—½~y[¼žâ™^É·z´¬Gúóù7…ÄœQ.´­h~Þ‰ôeÒJ×Ø~„Åç¶Á*º2Íµþ³ßúÄåËÅ°}ƒ&xôsÑ]²Ãž`‹l³XÂÈ#„¢g&¹Ã¥ÁÛ†Øºcat: ./src/main/scala: Is a directory
+cat: ./src/main/scala/com: Is a directory
+cat: ./src/main/scala/com/hsbc: Is a directory
+cat: ./src/main/scala/com/hsbc/trds: Is a directory
+cat: ./src/main/scala/com/hsbc/trds/scala: Is a directory
+cat: ./src/main/scala/com/hsbc/trds/scala/batch: Is a directory
+package com.hsbc.trds.scala.batch
+
+import com.hsbc.trds.scala.util.ConfigLoader
+import org.apache.log4j.{Level, Logger}
+import org.apache.spark.SparkConf
+import org.apache.spark.internal.Logging
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.col
+
+import java.util.Properties
+import scala.collection.mutable.ListBuffer
+
+object L0ParqueCounter extends Logging{
+
+  def main(args: Array[String]): Unit = {
+
+    Logger.getLogger("org").setLevel(Level.WARN)
+    val fileName = "dsl-trds-L0.conf"
+    val environment = System.getProperty("env")
+
+    val config = new ConfigLoader(Option(fileName))
+    //val mqConfig = config.getConfig(environment+".mq")
+    val ecsProperties = config.getProperties(environment+ ".ecs")
+
+    val sparkSession: SparkSession = getSparkSession(config,environment)
+    val date = args(0)
+    val jurisdiction = args(1)
+    val reportType = args(2)
+
+    val s3bucket = ecsProperties.getProperty("s3bucketName1")
+    val ecsLocation = ecsProperties.getProperty("ecsLocation")
+
+    val ecsRootForCounts = s"$s3bucket$ecsLocation/$jurisdiction/$reportType"
+
+    log.info("ecsRootForCounts" + ecsRootForCounts)
+
+
+    val listBuffer = new ListBuffer[String]
+    val assets = Array("COMMODITY", "CREDIT", "EQUITY", "FOREIGNEXCHANGE", "INTERESTRATE")
+
+    for (asset <- assets) {
+      listBuffer.append(ecsRootForCounts + "/" + "assetClass" + "=" + asset + "/" + "putDate" + "=" + date)
+    }
+
+    listBuffer.foreach( path => println("Parquet paths :" + path))
+
+    //val df = sparkSession.read.option("header", "true").parquet(listBuffer: _*)
+    val df = sparkSession.read.option("header", "true").parquet(ecsRootForCounts)
+    df.printSchema()
+
+    log.info("main df counts: " + df.count)
+
+    //val resultDf = df.groupBy("assetClass").count().where(s"putDate = '$date'")
+    //val resultDf = df.where("putDate = '$date'") //.groupBy("assetClass").count()
+    val resultDf = df.filter(col("putDate") === date)
+
+
+    val countsDf = resultDf.groupBy("assetClass").count()
+
+    countsDf.printSchema()
+
+
+    //log.info("resultDf count" + resultDf.count)
+
+    countsDf.foreach(row => println("count row is:" + row))
+
+//    df.createOrReplaceTempView("trds.parquet")
+//
+//    val resultDf = sparkSession.sql("SELECT assetClass, count(*) AS cnt FROM trds.parquet" +
+//      " GROUP BY assetClass HAVINGgroupBy putDate, count(")
+
+
+
+//    val countsDF = df.groupBy("assetClass","putDate").count()
+//    countsDF.printSchema()
+//
+//    countsDF.foreach(row => println("counts : " + row.toString()))
+
+    //sparkSession.read.parquet(Seq())
+
+
+  }
+
+  def getSparkSession(config: ConfigLoader,env: String):SparkSession = {
+
+    val appName = config.getString("appName_parque_counter")
+    val mode = config.getString("mode")
+    val ecsProperties = config.getProperties(env+ ".ecs")
+    val sparkConf = new SparkConf().setAppName(appName).setMaster(mode)
+    val sparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
+    primeSparkSessionForECSConnection(sparkSession, ecsProperties)
+    //GcsConfig.primeSparkSessionForGCSConnection(sparkSession)
+    sparkSession
+  }
+
+  def primeSparkSessionForECSConnection(spark: SparkSession, ecsProperties: Properties): Unit = {
+    // ECS S3 key
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+    // Secret key
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", ecsProperties.getProperty("secret1"))
+    // end point
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.path.style.access", "true")
+  }
+
+}
+package com.hsbc.trds.scala.batch
+
+import java.util.Properties
+
+import com.hsbc.trds.scala.util.ConfigLoader
+import org.apache.spark.SparkConf
+import org.apache.spark.internal.Logging
+import org.apache.spark.sql.{SaveMode, SparkSession}
+import org.apache.spark.sql.functions.{col, udf}
+import com.hsbc.trds.utils.XmlMessageProcessor
+import com.hsbc.fsa.config.Decrypter
+
+import scala.collection.mutable.ListBuffer
+
+object L0ParqueStats extends Logging{
+
+  def getNode(payload: String, reportType: String): String = {
+    val xmlMessageProcessor = new XmlMessageProcessor()
+    xmlMessageProcessor.process(payload, reportType)
+  }
+
+  def main(args: Array[String]): Unit = {
+
+    val controlEventId = udf((payload: String, reportType: String) => getNode(payload, reportType))
+
+    val fileName = "dsl-trds-L0.conf"
+    val environment = System.getProperty("env")
+
+    log.info("***************Going to run for env : "+environment)
+    val config = new ConfigLoader(Option(fileName))
+    //val mqConfig = config.getConfig(environment+".mq")
+    val ecsProperties = config.getProperties(environment+ ".ecs")
+
+    val date = args(0)
+    val jurisdiction = args(1)
+    val reportType = args(2)
+    val encKey = args(3)
+
+    val sparkSession: SparkSession = getSparkSession(config,environment,encKey)
+
+    val s3bucket = ecsProperties.getProperty("s3bucketName1")
+    val ecsLocation = ecsProperties.getProperty("ecsLocation")
+
+    log.info("***************Picked up s3bucket="+s3bucket+" and ecsLocation="+ecsLocation)
+
+    val ecsRootForCounts = s"$s3bucket$ecsLocation/$jurisdiction/$reportType"
+
+    log.info("***************ecsRootForCounts" + ecsRootForCounts)
+
+
+    val listBuffer = new ListBuffer[String]
+    val assets = Array("COMMODITY", "CREDIT", "EQUITY", "FOREIGNEXCHANGE", "INTERESTRATE")
+
+    for (asset <- assets) {
+      listBuffer.append(ecsRootForCounts + "/" + "assetClass" + "=" + asset + "/" + "putDate" + "=" + date)
+    }
+
+    listBuffer.foreach( path => log.info("***************Parquet paths :" + path))
+
+    //val df = sparkSession.read.option("header", "true").parquet(listBuffer: _*)
+    val df = sparkSession.read.option("header", "true").parquet(ecsRootForCounts)
+    df.printSchema()
+
+    //log.info("main df counts: " + df.count)
+
+    //val resultDf = df.groupBy("assetClass").count().where(s"putDate = '$date'")
+    //val resultDf = df.where("putDate = '$date'") //.groupBy("assetClass").count()
+    val resultDf = df.filter(col("putDate") === date).select(col("jurisdiction"),col("reportType"),
+          col("internalRecordId"),col("xmlContent"))
+
+    val finalDf = resultDf.withColumn("controlEventId", controlEventId(col("xmlContent"),
+      col("reportType"))).drop(col("xmlContent"))
+
+    val csvWitHeaderOptions: Map[String, String] = Map(
+      ("delimiter", "\t"),
+      ("header", "true")
+    )
+    val csvDestPath = "TRDS_LAKE/STATS".concat("/").concat(jurisdiction).concat("/").concat(reportType).concat("/").concat(date)
+
+    log.info("Going to write CSV at "+csvDestPath)
+    finalDf.coalesce(1).write.mode(SaveMode.Overwrite).options(csvWitHeaderOptions)
+     // .csv(s3bucket.concat("TRDS_LAKE/STATS").concat("/")
+      .csv(csvDestPath)
+
+    //finalDf.coalesce(1).write.mode(SaveMode.Overwrite).json(s3bucket.concat("TRDS_LAKE/STATS/")
+      //.concat(jurisdiction).concat("/").concat(reportType).concat("/").concat(date))
+
+    //TODO get L1 of gcs
+    //finalDF vs L1 comparision
+
+  //resultDf.printSchema()
+  //resultDf.write.csv(s3bucket.concat("TRDS_LAKE/STATS"))
+
+
+
+ // val countsDf = resultDf.groupBy("assetClass").count()
+
+  //countsDf.printSchema()
+
+
+  //log.info("resultDf count" + resultDf.count)
+
+  //countsDf.foreach(row => println("count row is:" + row))
+
+  //    df.createOrReplaceTempView("trds.parquet")
+  //
+  //    val resultDf = sparkSession.sql("SELECT assetClass, count(*) AS cnt FROM trds.parquet" +
+  //      " GROUP BY assetClass HAVINGgroupBy putDate, count(")
+
+
+
+  //    val countsDF = df.groupBy("assetClass","putDate").count()
+  //    countsDF.printSchema()
+  //
+  //    countsDF.foreach(row => println("counts : " + row.toString()))
+
+  //sparkSession.read.parquet(Seq())
+
+
+}
+
+  def getSparkSession(config: ConfigLoader,env: String, encKey: String):SparkSession = {
+
+  val appName = config.getString("appName_parque_counter")
+  val mode = config.getString("mode")
+  val ecsProperties = config.getProperties(env+ ".ecs")
+  val sparkConf = new SparkConf().setAppName(appName).setMaster(mode)
+  val sparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
+  primeSparkSessionForECSConnection(sparkSession, ecsProperties, encKey)
+  //GcsConfig.primeSparkSessionForGCSConnection(sparkSession)
+  sparkSession
+}
+
+  def primeSparkSessionForECSConnection(spark: SparkSession, ecsProperties: Properties, encKey : String): Unit = {
+  // ECS S3 key
+  spark.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+  // Secret key
+  spark.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", Decrypter.decrypt(ecsProperties.getProperty("secret1"),
+    encKey))
+  // end point
+  spark.sparkContext.hadoopConfiguration.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+  spark.sparkContext.hadoopConfiguration.set("fs.s3a.path.style.access", "true")
+}
+
+}cat: ./src/main/scala/com/hsbc/trds/scala/configuration: Is a directory
+package com.hsbc.trds.scala.configuration
+
+import org.apache.spark.internal.Logging
+
+case class StreamConfiguration(checkpointingEnabled: Boolean = false,
+                               checkpointPath: String = "",
+                               checkpointPathIntervalMs: Int = 0,
+                               repartition: Int = 2,
+                               endpoint: String = "",
+                               batchInterval: Int = 0,
+                               checkpointInterval: Int = 0,
+                               awaitTerminationTimeout: Int = 0
+                              ) extends Serializable {
+}
+
+object StreamConfiguration extends Logging {
+  val CONFIG_FILE: String  = "stream.conf"
+
+
+}
+
+package com.hsbc.trds.scala.configuration
+
+import java.io.File
+import java.util.Properties
+
+import com.typesafe.config.{Config, ConfigFactory}
+
+class TrdsConfig(fileNameOption: Option[String] = None) extends java.io.Serializable{
+
+  def baseConfig: Config = {
+    ConfigFactory.load()
+  }
+
+  def parseFile(file: File): Config = {
+    ConfigFactory.parseFile(file).withFallback(baseConfig)
+  }
+
+  def parseResources(fileName: String): Config = {
+    ConfigFactory.parseResources(fileName).withFallback(baseConfig)
+  }
+
+  val config: Config = {
+    if (fileNameOption.getOrElse("").isEmpty)
+      ConfigFactory.load
+    else
+      ConfigFactory
+        .systemProperties
+      .withFallback(ConfigFactory.systemEnvironment.withFallback
+        (ConfigFactory.systemEnvironment().withFallback(ConfigFactory.parseFile(new File(fileNameOption.getOrElse("")))
+        .resolve
+        )))
+  }
+
+  /**
+    * returns Config object for specified path.
+    *
+    * This object contains all the original APIs
+    *
+    * @param path - json path to a specific node
+    * @return - a Config object
+    */
+
+   def getConfig(path: String): Config = {
+     config.getConfig(path)
+   }
+
+  def getString(path: String): String = {
+    config.getString(path)
+  }
+
+  /**
+    * returns a string object based on the json path
+    *
+    * @param path
+    * @return
+    */
+  def getProperties(path: String): Properties = {
+    import scala.collection.JavaConversions._
+
+    val properties: Properties = new Properties()
+
+    config.getConfig(path)
+      .entrySet()
+      .map({
+        entry => properties.setProperty(entry.getKey, entry.getValue.unwrapped().toString)
+      })
+    properties
+  }
+
+
+}
+cat: ./src/main/scala/com/hsbc/trds/scala/monitor: Is a directory
+package com.hsbc.trds.scala.monitor
+
+import java.util.Properties
+
+import com.hsbc.trds.scala.util.ConfigLoader
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.{Row, SparkSession}
+import com.hsbc.fsa.config.Decrypter
+import org.apache.spark.sql.functions.col
+import com.hsbc.fsa.solace.SolaceConnectionManager
+import com.solacesystems.jcsmp.{BytesXMLMessage, JCSMPFactory, XMLMessageProducer}
+import com.solacesystems.jcsmp._
+import org.apache.spark.internal.Logging
+import scala.util.parsing.json.JSONObject
+
+import scala.collection.mutable.ListBuffer
+
+/**
+  * This class collects the data for given putdata,jurisdiction and reporttype.
+  *
+  * Counts the aggregates on each asset class and sends the results to solace monitoring and alert queues.
+  *
+  */
+object EcsCountsPublisher extends Logging{
+
+  def main(args: Array[String]): Unit = {
+    val fileName = "dsl-trds-L0.conf"
+    val environment = System.getProperty("env")
+
+    val config = new ConfigLoader(Option(fileName))
+    //val mqConfig = config.getConfig(environment+".mq")
+    val ecsProperties = config.getProperties(environment+ ".ecs")
+    val solaceProperties = config.getProperties(environment+ ".solmon")
+
+    val sparkSession: SparkSession = getSparkSession(config,environment)
+    val date = args(0)
+    val jurisdiction = args(1)
+    val reportType = args(2)
+
+    val s3bucket = ecsProperties.getProperty("s3bucketName1")
+    val ecsLocation = ecsProperties.getProperty("ecsLocation")
+
+    val ecsRootForCounts = s"$s3bucket$ecsLocation/$jurisdiction/$reportType"
+
+    log.info("ecsRootForCounts" + ecsRootForCounts)
+
+
+    val listBuffer = new ListBuffer[String]
+    val assets = Array("COMMODITY", "CREDIT", "EQUITY", "FOREIGNEXCHANGE", "INTERESTRATE")
+
+    for (asset <- assets) {
+      listBuffer.append(ecsRootForCounts + "/" + "assetClass" + "=" + asset + "/" + "putDate" + "=" + date)
+    }
+
+    //listBuffer.foreach( path => println("Parquet paths :" + path))
+
+    //val df = sparkSession.read.option("header", "true").parquet(listBuffer: _*)
+    val df = sparkSession.read.option("header", "true")
+      //.option("basePath",ecsRootForCounts)
+      .parquet(ecsRootForCounts)
+    df.printSchema()
+
+    //log.info("main df counts: " + df.count)
+
+    //val resultDf = df.groupBy("assetClass").count().where(s"putDate = '$date'")
+    //val resultDf = df.where("putDate = '$date'") //.groupBy("assetClass").count()
+    val resultDf = df.filter(col("putDate") === date)
+
+    println("resultDf schema" + resultDf.schema)
+
+    val countsDf = resultDf.groupBy("jurisdiction","reportType","putDate","assetClass").count()
+
+    println("countsDf schema" + countsDf.schema)
+
+    countsDf.foreach(row => sendCountsToMonitorSolace(row,solaceProperties))
+
+  }
+
+  /**
+    * Converts avro Row into Json string.
+    *
+    * @param row
+    * @return
+    */
+  def convertRowToJson(row: Row): String = {
+    val message = row.getValuesMap(row.schema.fieldNames)
+    JSONObject(message).toString()
+  }
+
+
+  def sendCountsToMonitorSolace(row: Row, properties: Properties): Unit = {
+    val solaceConnectionManager = new SolaceConnectionManager
+    solaceConnectionManager.connectSolace(properties,"cadstrds")
+    val basePublishTopic = properties.getProperty("basePublishTopic")
+    val topic:Topic = JCSMPFactory.onlyInstance().createTopic(basePublishTopic)
+    val producer: XMLMessageProducer = solaceConnectionManager.createProducer()
+    val textMessage = generateTextMessage(DeliveryMode.DIRECT, row)
+    //val payloadMessage: BytesXMLMessage = generateNotificationMessage(DeliveryMode.DIRECT, row, batchId, inputJurisdiction, typeOfMessage)
+    // ,currentTimestamp)
+    sendMessageToSolace(producer, textMessage, topic)
+    solaceConnectionManager.disconnect
+  }
+
+  def sendMessageToSolace(producer: XMLMessageProducer, payloadMessage: BytesXMLMessage, topic: Topic): Unit = {
+    producer.send(payloadMessage, topic)
+  }
+
+  def generateTextMessage(deliveryMode: DeliveryMode, row: Row): TextMessage = {
+    val factory = JCSMPFactory.onlyInstance()
+    val message = factory.createMessage(classOf[TextMessage])
+    val properties:SDTMap = factory.createMap()
+    properties.putString("jurisdiction", row.getAs[String]("jurisdiction"))
+    properties.putString("reportType", row.getAs[String]("reportType"))
+    properties.putInteger("putDate", row.getAs[Integer]("putDate"))
+    val payload = convertRowToJson(row)
+    log.info("payload is" + payload)
+    message.setText(payload)
+    message.setProperties(properties)
+    message.setDeliveryMode(deliveryMode)
+    message
+  }
+
+  def getSparkSession(config: ConfigLoader,env: String):SparkSession = {
+
+    val appName = config.getString("appName_parque_counter")
+    val mode = config.getString("mode")
+    val ecsProperties = config.getProperties(env+ ".ecs")
+    val sparkConf = new SparkConf().setAppName(appName).setMaster(mode)
+    val sparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
+    primeSparkSessionForECSConnection(sparkSession, ecsProperties)
+    //GcsConfig.primeSparkSessionForGCSConnection(sparkSession)
+    sparkSession
+  }
+
+  def primeSparkSessionForECSConnection(spark: SparkSession, ecsProperties: Properties): Unit = {
+    // ECS S3 key
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+
+    // Secret key
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key",
+          Decrypter.decrypt(ecsProperties.getProperty("secret1"),"cadstrds"))
+    // end point
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.path.style.access", "true")
+  }
+
+}
+cat: ./src/main/scala/com/hsbc/trds/scala/stream: Is a directory
+package com.hsbc.trds.scala.stream
+
+import java.io.ByteArrayInputStream
+import java.util
+import java.util.{Date, Properties, UUID}
+
+import com.amazonaws.services.s3.model.ObjectMetadata
+import com.hsbc.trds.scala.util.ECSS3API.ECSS3Config
+import com.hsbc.trds.scala.util._
+import com.hsbc.trds.utils.CompressionUtils
+import com.solacesystems.jcsmp.{BytesXMLMessage, JCSMPProperties}
+import org.apache.avro.generic.{GenericData, GenericRecord}
+import org.apache.avro.{Schema, SchemaBuilder}
+import org.apache.spark.internal.Logging
+import org.apache.spark.sql.{Row, SQLContext, SaveMode, SparkSession}
+import org.apache.spark.streaming.jms.SolaceMessageConsumerFactory
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.{SparkConf, SparkContext, sql}
+import com.databricks.spark.avro.SchemaConverters
+import com.hsbc.fsa.solace.SolaceConnectionManager
+import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema
+import org.apache.spark.sql.types.StructType
+import com.hsbc.fsa.message.util.{QueueSolaceDestinationInfo,SolaceStreamUtils}
+import com.solacesystems.jcsmp._
+
+import scala.concurrent.duration._
+
+case class ReceivedDocument(id: String,
+                            context: String,
+                            businessDate: Date,
+                            tradeVersion: Long,
+                            dslObjectType: String,
+                            dslUser: String,
+                            region: String,
+                            sourceSystem: String,
+                            docVersion: Long,
+                            payload: Array[Byte])
+
+object DslXmlSparkSolaceStream extends Logging{
+//
+//  def main(args: Array[String]): Unit = {
+//    test();
+//  }
+
+  def main(args: Array[String]): Unit = {
+    //val fileName = System.getProperty("config.file")
+    val fileName = "dsl-trds-L0.conf"
+    val environment = System.getProperty("env")
+
+    val config = new ConfigLoader(Option(fileName))
+    val solaceProperties = config.getProperties(environment+".solace")
+
+    val jcsmpProperties = new JCSMPProperties()
+
+    jcsmpProperties.setProperty(JCSMPProperties.HOST, solaceProperties.getProperty("host"))
+    jcsmpProperties.setProperty(JCSMPProperties.VPN_NAME, solaceProperties.getProperty("vpn"))
+    jcsmpProperties.setProperty(JCSMPProperties.USERNAME, solaceProperties.getProperty("username"))
+    jcsmpProperties.setProperty(JCSMPProperties.PASSWORD, solaceProperties.getProperty("password"))
+
+    receiveStreams(config,environment)
+  }
+
+  def sparkSession(config: ConfigLoader, env: String): SparkSession = {
+    val appName = config.getString("appName")
+    val mode = config.getString("mode")
+    val sparkConf = new SparkConf().setAppName(appName) //.concat(context.getPartitionTblName)
+      .setMaster(mode)
+    val sparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
+    val ecsProperties = config.getProperties(env+".ecs")
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", ecsProperties.getProperty("secret1"))
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.path.style.access", "true")
+    sparkSession
+  }
+
+  def sparkStreamingContext(config: ConfigLoader, env: String) : StreamingContext = {
+    val appName = config.getString("appName")
+    val mode = config.getString("mode")
+    val sparkConf = new SparkConf().setAppName(appName) //.concat(context.getPartitionTblName)
+      .setMaster(mode)
+
+    val ecsProperties = config.getProperties(env+".ecs")
+
+    val sparkContext = new SparkContext(sparkConf)
+    val hadoopConf = sparkContext.hadoopConfiguration
+
+    hadoopConf.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+    hadoopConf.set("fs.s3a.secret.key", ecsProperties.getProperty("secret1"))
+    hadoopConf.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+    //primeSparkSessionForECSConnection(sparkContext)
+
+    val ssc = new StreamingContext(sparkContext, Seconds(120))
+    val checkPointEnabled: Boolean =
+      if (config.getString(env+".checkpoint.enabled").equals("true")) true
+      else false
+    if (checkPointEnabled) {
+      ssc.checkpoint(ecsProperties.getProperty("checkPointDir"))
+    }
+
+   // primeSparkSessionForECSConnection(ssc.sparkContext)
+    ssc
+  }
+
+  def receiveStreams(config: ConfigLoader, env: String) = {
+    val solaceProperties = config.getProperties(env+".solace")
+
+    val jcsmpProperties = new JCSMPProperties()
+
+    jcsmpProperties.setProperty(JCSMPProperties.HOST, solaceProperties.getProperty("host"))
+    jcsmpProperties.setProperty(JCSMPProperties.VPN_NAME, solaceProperties.getProperty("vpn"))
+    jcsmpProperties.setProperty(JCSMPProperties.USERNAME, solaceProperties.getProperty("username"))
+    jcsmpProperties.setProperty(JCSMPProperties.PASSWORD, solaceProperties.getProperty("password"))
+
+
+    val ecsProperties = config.getProperties(env+".ecs")
+    val guestSolaceProperties = config.getProperties(env+".solace")
+
+    val queueName = solaceProperties.getProperty("queue")
+    val solaceDestinationInfo: QueueSolaceDestinationInfo = QueueSolaceDestinationInfo(queueName)
+
+    val bytesXmlConverter:BytesXMLMessage => Option[ReceivedDocument] = {
+      case msg: BytesXMLMessage =>
+        val props = msg.getProperties
+
+        /**
+          * Properties keys are as below.
+          *
+          *  context, id, streamCount, region, tradeVersion, dslUser, businessDate, trouxId, streamId,
+          *  dslObjectType, sourceSystem
+          */
+
+        val id = props.getString("id")
+        val context = props.getString("context")
+        val businessDate = new Date(props.getLong("businessDate"))
+        val tradeVersion = props.getLong("tradeVersion")
+        val dslObjectType = props.getString("dslObjectType")
+        val dslUser = props.getString("dslUser")
+        val region = props.getString("region")
+        val sourceSystem = props.getString("sourceSystem")
+        val docVersion = props.getLong("docVersion")
+
+        val document = ReceivedDocument(id,
+          context,
+          businessDate,
+          tradeVersion,
+          dslObjectType,
+          dslUser,
+          region,
+          sourceSystem,
+          docVersion,
+          msg.getBytes)
+        Some(document)
+      case _ => None
+    }
+
+    val ssc = sparkStreamingContext(config,env)
+
+        val stream = SolaceStreamUtils.createSynchronousSolaceQueueStream(ssc,
+          //JndiMessageConsumerFactory(props,jmsDestinationInfo),
+          SolaceMessageConsumerFactory(jcsmpProperties,solaceDestinationInfo),
+          bytesXmlConverter,
+          1000,
+          10.second,
+          20.seconds)
+
+
+
+//    val stream = SolaceStreamUtils.createAsynchronousSolaceQueueStream(ssc,
+//      SolaceMessageConsumerFactory(jcsmpProperties, solaceDestinationInfo),
+//      bytesXmlConverter)
+
+
+    stream.foreachRDD{
+      rdd => {
+        val batchId = "CFTC_BATCH".concat(UUID.randomUUID().toString)
+        val internalObjId = "OBJ.CFTC.".concat(UUID.randomUUID().toString)
+        val sqlContext = sparkSession(config,env).sqlContext
+        val ecsStoreParRdd = rdd.map(document => createGenericRecord(document,internalObjId, batchId, ecsProperties))
+        val sqlType = SchemaConverters.toSqlType(cftcSchema)
+        val rowRdd = ecsStoreParRdd.map(record => genericRecordRow(record,sqlType))
+        val df = sqlContext.createDataFrame(rowRdd, sqlType.dataType.asInstanceOf[StructType])
+        val partitionColumns = Array("dslObjectType","businessDate")
+
+        df.write
+          .partitionBy(partitionColumns: _*).mode(SaveMode.Append)
+          //.parquet(ecsProperties.getProperty("s3bucketName1").concat("TRDS_LAKE/DSL_SOLACE_PARQUET"))
+          .parquet("s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/DSL_SOLACE_PARQUET")
+
+        val countsDF = df.groupBy("dslObjectType","businessDate").count()
+
+        log.info("countsDF schema: ")
+        countsDF.printSchema
+
+        countsDF.foreach(row => sendNotificationToL1Solace(row,batchId,guestSolaceProperties))
+
+  //      rdd.foreach {
+   //       (message:ReceivedDocument) => {
+//            log.info(s" id = ${message.id}" +
+//              s" dslObjectType = ${message.dslObjectType}" +
+//              s" context = ${message.context}" +
+//              s" dslUser = ${message.dslUser}" +
+//              s" businessDate = ${message.businessDate}" +
+//              s" sourceSystem = ${message.sourceSystem}" +
+//              s" tradeVersion = ${message.tradeVersion}" +
+//              s" region = ${message.region}" +
+//              s" sourceSystem = ${message.sourceSystem}" +
+//              s" docVersion = ${message.docVersion}"
+//            )
+
+        //    saveToECS(message,ecsProperties)
+//
+//            log.info("record is : " + record)
+     //    }
+    //   }
+
+
+        //println("the count of batches: " + rdd.count)
+      }
+    }
+
+    stream.start()
+    ssc.start
+    ssc.awaitTermination()
+
+  }
+
+  def genericRecordRow(record: GenericRecord, sqlType: SchemaConverters.SchemaType) : Row = {
+    val objectArray = new Array[Any](record.asInstanceOf[GenericRecord].getSchema.getFields.size)
+    import scala.collection.JavaConversions._
+    for (field <- record.getSchema.getFields) {
+      objectArray(field.pos) = record.get(field.pos)
+    }
+    new GenericRowWithSchema(objectArray, sqlType.dataType.asInstanceOf[StructType])
+  }
+
+  def sendNotificationToL1Solace(row: Row, batchId: String, properties: Properties): Unit = {
+    val solaceConnectionManager = new SolaceConnectionManager
+    solaceConnectionManager.connectSolace(properties,"")
+    val basePublishTopic = properties.getProperty("basePublishTopic")
+    val topic:Topic = JCSMPFactory.onlyInstance().createTopic(basePublishTopic)
+    val producer: XMLMessageProducer = solaceConnectionManager.createProducer()
+    val payloadMessage: BytesXMLMessage = generateNotificationMessage(DeliveryMode.DIRECT, row, batchId)
+    sendMessageToSolace(producer, payloadMessage, topic)
+    solaceConnectionManager.disconnect
+  }
+
+  def generateNotificationMessage(deliveryMode: DeliveryMode, row: Row, batchId: String): BytesXMLMessage = {
+    val factory = JCSMPFactory.onlyInstance()
+    val message = factory.createMessage(classOf[BytesXMLMessage])
+    val payload = batchId.concat("_").concat(row.getAs[String]("dslObjectType"))
+                  .concat("_").concat("businessDate").concat("_")
+                  .concat(row.getAs[Long]("count").toString).getBytes
+    val properties= factory.createMap()
+    properties.putString("batchId", batchId)
+    properties.putString("dslObjectType", row.getAs[String]("dslObjectType"))
+    properties.putString("businessDate", row.getAs[String]("businessDate"))
+    properties.putLong("batchCount", row.getAs[Long]("count"))
+    message.writeBytes(payload)
+    message.setProperties(properties)
+    message.setDeliveryMode(deliveryMode)
+    message
+
+  }
+
+  def sendMessageToSolace(producer: XMLMessageProducer, payloadMessage: BytesXMLMessage, topic: Topic): Unit = {
+    producer.send(payloadMessage, topic)
+  }
+
+  def createGenericRecord(message: ReceivedDocument, internalObjId:String, batchId: String, properties: Properties): GenericRecord = {
+    val cftcRecord = new GenericData.Record(cftcSchema)
+    cftcRecord.put("uuid", message.id)
+    cftcRecord.put("dslObjectType", message.dslObjectType)
+    cftcRecord.put("businessDate", DateUtils.convertEpochLongDateIntoString(message.businessDate))
+    cftcRecord.put("context", message.context)
+    cftcRecord.put("dslUser", message.dslUser)
+    cftcRecord.put("sourceSystem", message.sourceSystem)
+    cftcRecord.put("region", message.region)
+    cftcRecord.put("tradeVersion", message.tradeVersion)
+    cftcRecord.put("docVersion", message.docVersion)
+    cftcRecord.put("internalObjectId", internalObjId)
+    cftcRecord.put("batchId", batchId)
+    cftcRecord.put("xmlContent", message.payload)
+    cftcRecord
+
+  }
+
+  def cftcSchema: Schema = {
+    SchemaBuilder.record("L0CftcRecord").fields()
+      .name("uuid").`type`().nullable().stringType().noDefault()
+      .name("dslObjectType").`type`().nullable().stringType().noDefault()
+      .name("businessDate").`type`().nullable().stringType().noDefault()
+      .name("context").`type`().nullable().stringType().noDefault()
+      .name("dslUser").`type`().nullable().stringType().noDefault()
+      .name("sourceSystem").`type`().nullable().stringType().noDefault()
+      .name("region").`type`().nullable().stringType().noDefault()
+      .name("tradeVersion").`type`().nullable().longType().noDefault()
+      .name("docVersion").`type`().nullable().longType().noDefault()
+      .name("internalObjectId").`type`().nullable().stringType().noDefault()
+      .name("batchId").`type`().nullable().stringType().noDefault()
+      .name("xmlContent").`type`().nullable().bytesBuilder().endBytes().noDefault()
+      .endRecord()
+  }
+
+
+  def saveToECS(message: ReceivedDocument,properties: Properties) = {
+
+    val uid1 = properties.getProperty("uid1")
+    val secret1 = properties.getProperty("secret1")
+    val host1 = properties.getProperty("host1")
+    val ecsLoc = properties.getProperty("ecsLocation")
+
+    val metadata = new ObjectMetadata()
+    metadata.setContentType("application/xml")
+    metadata.setContentLength(message.payload.length)
+
+    val userMetaData = new util.HashMap[String,String]()
+    userMetaData.put("id", message.id)
+    userMetaData.put("context", message.context)
+    userMetaData.put("dslUser", message.dslUser)
+    userMetaData.put("sourceSystem", message.sourceSystem)
+    userMetaData.put("region", message.region)
+    userMetaData.put("tradeVersion", ""+message.tradeVersion)
+    userMetaData.put("docVersion", ""+message.docVersion)
+
+    metadata.setUserMetadata(userMetaData)
+
+    val tradeId = message.id.split("_")(0)
+    //val timeInLong = System.currentTimeMillis()
+    val fileName = s"${message.id}_${message.region}_${tradeId}_${message.docVersion}.xml"
+    val businessDateYYYYMMDD = DateUtils.convertEpochLongDateIntoString(message.businessDate)
+    val bucketName = s"${ecsLoc}/DSL_OBJECT_TYPE=${message.dslObjectType}/BUSINESS_DATE=${businessDateYYYYMMDD}"
+    //log.info("the bucket path is : " + bucketName)
+    val config = new ECSS3Config(true, false,bucketName,"","")
+
+    val record: String = CompressionUtils.decompress(message.payload)
+    val inputStream = new ByteArrayInputStream(record.getBytes)
+    val amazonS3Client = ECSS3API.getAmazonS3Client(uid1,secret1,host1)
+
+    ECSS3API.putS3ObjectAsOutputStream(config, fileName, inputStream, amazonS3Client, false, metadata)
+  }
+
+}
+package com.hsbc.trds.scala.stream
+
+import java.util.{Properties, UUID}
+
+import com.databricks.spark.avro.SchemaConverters
+import com.hsbc.trds.scala.util.ConfigLoader
+import com.hsbc.fsa.message.util.JmsStreamUtils
+import com.hsbc.trds.solace.SolaceConnectionManager
+import com.solacesystems.jcsmp._
+import javax.jms.{Message, Session, TextMessage}
+import org.apache.avro.generic.{GenericData, GenericRecord}
+import org.apache.avro.{Schema, SchemaBuilder}
+import org.apache.spark.deploy.SparkHadoopUtil
+import org.apache.spark.internal.Logging
+import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema
+import org.apache.spark.sql.types.StructType
+import org.apache.spark.sql.{Row, SaveMode, SparkSession}
+import org.apache.spark.streaming.jms.MQConsumerFactory
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.{SparkConf, SparkContext}
+
+case class MQDocument(jurisdiction: String, reportType: String, assetClass: String, putDate: String,
+                      putTime: String, content: String)
+
+
+object L0MQSparkStreamProcessor extends Logging {
+
+  val usage =
+    """
+      |Usage: run.sh [JURISDICTION(CFTC/CSA)][String(REALTIME/BULK)]
+    """.stripMargin
+
+  def main(args: Array[String]): Unit = {
+    //    if (args.length < 3) {
+    //      println(usage)
+    //      sys.exit(1)
+    //    }
+    log.info("starting")
+
+
+    val fileName = "dsl-trds-L0.conf"
+    val environment = System.getProperty("env")
+    log.info("environment is" + environment)
+
+    val config = new ConfigLoader(Option(fileName))
+    //val mqConfig = config.getConfig(environment+".mq")
+    val ecsProperties = config.getProperties(environment+ ".ecs")
+
+    val checkPointEnabled: Boolean =
+      if (config.getString(environment+".checkpoint.enabled").equals("true")) true
+      else false
+    val checkPointDir = ecsProperties.getProperty("checkPointDir")
+
+    val hadoopConf = SparkHadoopUtil.get.conf
+
+    hadoopConf.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+    hadoopConf.set("fs.s3a.secret.key", ecsProperties.getProperty("secret1"))
+    hadoopConf.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+    hadoopConf.set("fs.s3a.path.style.access", "true")
+
+    if (checkPointEnabled) {
+      val streamContext = StreamingContext.getOrCreate(checkPointDir,()=>receiveEventsFromMQ(args, config, environment),hadoopConf)
+      streamContext.start()
+      streamContext.awaitTermination()
+    }
+  }
+
+  def receiveEventsFromMQ(args: Array[String],config: ConfigLoader, env: String): StreamingContext = {
+    val inputJurisdiction = args(0).toUpperCase
+    val typeOfMessage = args(1).toUpperCase
+    val mqConfig = config.getConfig(env+".mq")
+    val ecsProperties = config.getProperties(env+ ".ecs")
+    val guestSolaceProperties = config.getProperties(env+".solace")
+
+    val host = mqConfig.getString("host")
+    val queueMgr = mqConfig.getString("queuemgr")
+    val port = mqConfig.getInt("port")
+    val channelName = mqConfig.getString("channel-name")
+    // val queueName = mqConfig.getString(s"${jurisdiction}.${reportType}.${assetClass}.QUEUE")
+    val queueName = mqConfig.getString(s"$typeOfMessage-QUEUE")
+    //    val sslCipherSuite = mqConfig.getString("ssl-cipher-suite")
+    //    val sslContext = SSLContextFactory.createContext(mqConfig)
+
+
+    val msgConverter: Message => Option[MQDocument] = {
+      case msg: TextMessage =>
+        val msgEnum = msg.getPropertyNames
+
+        while (msgEnum.hasMoreElements) {
+          val msgHeader = msgEnum.nextElement()
+          log.info("Header attribute: " + msgHeader)
+          log.info(s"Header attribute $msgHeader and value is : ${msg.getStringProperty(msgHeader.toString)}")
+        }
+
+        val jmsIbmPutDate = msg.getStringProperty("JMS_IBM_PutDate")
+        val jmsIbmPutTime = msg.getStringProperty("JMS_IBM_PutTime")
+        val jmsIbmMqmdAppIdentity = msg.getStringProperty("JMS_IBM_MQMD_ApplIdentityData")
+        val jurisdiction = jmsIbmMqmdAppIdentity.split("\\.")(0).trim
+        val reportType = jmsIbmMqmdAppIdentity.split("\\.")(1).trim
+        val assetClass = jmsIbmMqmdAppIdentity.split("\\.")(2).trim
+        log.info(s"askr Jurisdiction - $jurisdiction - reporttype - $reportType - assetclass - $assetClass")
+        val content = msg.getText
+        //log.info(s"jmsIbmPutDate=${jmsIbmPutDate} and jmsIbmPutTime=${jmsIbmPutTime}")
+        //log.info(s" businessDate = ${jmsIbmPutDate}")
+        val mqDocument = MQDocument(jurisdiction,reportType,assetClass,jmsIbmPutDate,jmsIbmPutTime, content)
+        Some(mqDocument)
+      case _ =>  None
+    }
+
+    val ssc = sparkStreamingContext(config, env,typeOfMessage)
+
+    //    val stream = JmsStreamUtils.createSynchronousJmsQueueStream(ssc,
+    //      new MQConsumerFactory(host,port,queueMgr,queueName,channelName),
+    //      msgConverter,1000, 1.second, 10.seconds, StorageLevel.MEMORY_AND_DISK_SER_2)
+
+    val stream = JmsStreamUtils.createAsynchronousJmsQueueStream(ssc,
+      new MQConsumerFactory(host,port,queueMgr,queueName,channelName),msgConverter,Session.CLIENT_ACKNOWLEDGE)
+
+
+
+
+    stream.foreachRDD {
+      rdd => {
+        if (!rdd.isEmpty()) {
+          val batchId = s"L0-batch-${inputJurisdiction}-${typeOfMessage}-${UUID.randomUUID().toString}"
+          val sqlContext = sparkSession(config,env).sqlContext
+          val ecsStoreParRdd = rdd.map(document => {
+            createGenericRecord(document, batchId, ecsProperties)
+          })
+          val sqlType = SchemaConverters.toSqlType(cftcSchema(typeOfMessage))
+
+          val rowRdd = ecsStoreParRdd.map(record => genericRecordRow(record,sqlType))
+          val df = sqlContext.createDataFrame(rowRdd, sqlType.dataType.asInstanceOf[StructType])
+          val partitionColumns = Array("assetClass","putDate")
+
+          val ecsLoc = s"${ecsProperties.getProperty("s3bucketName1")}${ecsProperties.getProperty("ecsLocation")}"
+
+          df.write
+            .partitionBy(partitionColumns: _*).mode(SaveMode.Append)
+            // .parquet(s"s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/L0_MQ_PARQUET/${jurisdiction}/${reportType}/${currentTimestamp}")
+            .parquet(s"$ecsLoc/${inputJurisdiction}/${typeOfMessage}")
+          // .parquet(s"/TRDS_LAKE/L0_MQ_PARQUET/${jurisdiction}/${reportType}")
+
+
+          //val countsDF = df.groupBy("reportType","assetClass","putDate").count()
+          val countsDF = df.groupBy("assetClass","putDate").count()
+          //log.info("countsDF schema: ")
+          //countsDF.printSchema
+          //countsDF.foreach(row => sendNotificationToL1Solace(row,batchId,jurisdiction,reportType,currentTimestamp,
+          countsDF.foreach(row => sendNotificationToL1Solace(row,batchId,inputJurisdiction,typeOfMessage,
+            guestSolaceProperties))
+        }
+      }
+    }
+    //    stream.start()
+    //    ssc.start()
+    //    ssc.awaitTermination()
+    ssc
+  }
+
+  def genericRecordRow(record: GenericRecord, sqlType: SchemaConverters.SchemaType) : Row = {
+    val objectArray = new Array[Any](record.asInstanceOf[GenericRecord].getSchema.getFields.size)
+    import scala.collection.JavaConversions._
+    for (field <- record.getSchema.getFields) {
+      objectArray(field.pos) = record.get(field.pos)
+    }
+    new GenericRowWithSchema(objectArray, sqlType.dataType.asInstanceOf[StructType])
+  }
+
+  def createGenericRecord(message: MQDocument, batchId: String, properties: Properties): GenericRecord = {
+    log.info("Generic record: " + message.toString)
+    val internalObjId = s"tr-record-${message.jurisdiction}-${message.reportType}-${message.assetClass}-${UUID.randomUUID().toString}"
+
+    val cftcRecord = new GenericData.Record(cftcSchema(message.reportType))
+
+    cftcRecord.put("jurisdiction",message.jurisdiction)
+    cftcRecord.put("reportType", message.reportType)
+    cftcRecord.put("assetClass", message.assetClass)
+    cftcRecord.put("putDate",message.putDate)
+    cftcRecord.put("putTime", message.putTime)
+    cftcRecord.put("internalRecordId", internalObjId)
+    cftcRecord.put("batchId", batchId)
+    cftcRecord.put("xmlContent", message.content)
+
+    cftcRecord
+
+  }
+
+  def sendNotificationToL1Solace(row: Row, batchId: String, inputJurisdiction: String, typeOfMessage: String,
+                                 properties: Properties): Unit = {
+    val solaceConnectionManager = new SolaceConnectionManager
+    solaceConnectionManager.connectSolace(properties)
+    val basePublishTopic = properties.getProperty("basePublishTopic")
+    val topic:Topic = JCSMPFactory.onlyInstance().createTopic(basePublishTopic)
+    val producer: XMLMessageProducer = solaceConnectionManager.createProducer()
+    val payloadMessage: BytesXMLMessage = generateNotificationMessage(DeliveryMode.DIRECT, row, batchId, inputJurisdiction, typeOfMessage)
+    // ,currentTimestamp)
+    sendMessageToSolace(producer, payloadMessage, topic)
+    solaceConnectionManager.disconnect
+  }
+
+  def sendMessageToSolace(producer: XMLMessageProducer, payloadMessage: BytesXMLMessage, topic: Topic): Unit = {
+    producer.send(payloadMessage, topic)
+  }
+
+  def generateNotificationMessage(deliveryMode: DeliveryMode, row: Row, batchId: String,
+                                  inputJurisdiction: String, typeOfMessage: String
+                                 ): BytesXMLMessage = {
+    val factory = JCSMPFactory.onlyInstance()
+    val message = factory.createMessage(classOf[BytesXMLMessage])
+    val assetClass = row.getAs[String]("assetClass")
+    val putDate = row.getAs[String]("putDate")
+    val payload = batchId.concat("_").concat(inputJurisdiction).concat("_")
+      .concat(typeOfMessage)
+      .concat("_").concat(assetClass).concat("_")
+      .concat(putDate).getBytes
+    val properties= factory.createMap()
+    properties.putString("batchId", batchId)
+    properties.putString("jurisdiction", inputJurisdiction)
+    properties.putString("reportType", typeOfMessage)
+    properties.putString("assetClass", assetClass)
+    properties.putString("putDate", putDate)
+    properties.putLong("batchCount", row.getAs[Long]("count"))
+    message.writeBytes(payload)
+    message.setProperties(properties)
+    message.setDeliveryMode(deliveryMode)
+    message
+
+  }
+
+  def cftcSchema(typeOfMessage: String): Schema = {
+    SchemaBuilder.record(s"L0.${typeOfMessage}").fields()
+      .name("jurisdiction").`type`().nullable().stringType().noDefault()
+      .name("reportType").`type`().nullable().stringType().noDefault()
+      .name("assetClass").`type`().nullable().stringType().noDefault()
+      .name("putDate").`type`().nullable().stringType().noDefault()
+      .name("putTime").`type`().nullable().stringType().noDefault()
+      .name("internalRecordId").`type`().nullable().stringType().noDefault()
+      .name("batchId").`type`().nullable().stringType().noDefault()
+      .name("xmlContent").`type`().nullable().stringType().noDefault()
+      .endRecord()
+  }
+
+
+  def sparkSession(config: ConfigLoader, env: String): SparkSession = {
+    val appName = config.getString("appName")
+    val mode = config.getString("mode")
+    val sparkConf = new SparkConf().setAppName(appName) //.concat(context.getPartitionTblName)
+      .set("spark.streaming.receiver.writeAheadLog.enable", "true")
+      .setMaster(mode)
+    val sparkSession = SparkSession.builder().config(sparkConf).getOrCreate()
+    val ecsProperties = config.getProperties(env+".ecs")
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", ecsProperties.getProperty("secret1"))
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+    sparkSession.sparkContext.hadoopConfiguration.set("fs.s3a.path.style.access", "true")
+    sparkSession
+  }
+
+
+  def sparkStreamingContext(config: ConfigLoader, env: String,typeOfMessage: String): StreamingContext = {
+    val appName = config.getString("appName").concat("-").concat(typeOfMessage)
+    val mode = config.getString("mode")
+    val sparkConf = new SparkConf().setAppName(appName).setMaster(mode)
+
+    val ecsProperties = config.getProperties(env+".ecs")
+
+    val sparkContext = new SparkContext(sparkConf)
+    val hadoopConf = sparkContext.hadoopConfiguration
+
+    hadoopConf.set("fs.s3a.access.key", ecsProperties.getProperty("uid1"))
+    hadoopConf.set("fs.s3a.secret.key", ecsProperties.getProperty("secret1"))
+    hadoopConf.set("fs.s3a.endpoint", ecsProperties.getProperty("host1"))
+
+    val ssc = new StreamingContext(sparkContext, Seconds(ecsProperties.getProperty("batchInterval").toInt))
+    val checkPointEnabled: Boolean =
+      if (config.getString(env+".checkpoint.enabled").equals("true")) true
+      else false
+
+    if (checkPointEnabled) {
+      ssc.checkpoint(ecsProperties.getProperty("checkPointDir").concat("/").concat(typeOfMessage))
+    }
+
+    ssc
+  }
+}cat: ./src/main/scala/com/hsbc/trds/scala/util: Is a directory
+package com.hsbc.trds.scala.util
+
+import java.io.File
+import java.util.Properties
+
+import com.typesafe.config.{Config, ConfigFactory}
+
+class ConfigLoader (fileNameOption: Option[String] = None) extends java.io.Serializable{
+
+  def baseConfig: Config = {
+    ConfigFactory.load()
+  }
+
+  def parseFile(file: File): Config = {
+    ConfigFactory.parseFile(file).withFallback(baseConfig)
+  }
+
+  def parseResources(fileName: String): Config = {
+    ConfigFactory.parseResources(fileName).withFallback(baseConfig)
+  }
+
+  val config: Config = {
+    if (fileNameOption.getOrElse("").isEmpty)
+      ConfigFactory.load
+    else
+      ConfigFactory
+        .systemProperties
+        .withFallback(ConfigFactory.systemEnvironment.withFallback
+        //(ConfigFactory.systemEnvironment().withFallback(ConfigFactory.parseFile(new File(fileNameOption.getOrElse("")))
+          (ConfigFactory.systemEnvironment().withFallback(ConfigFactory.parseResources(fileNameOption.getOrElse(""))
+          .resolve
+        )))
+  }
+
+  /**
+    * returns Config object for specified path.
+    *
+    * This object contains all the original APIs
+    *
+    * @param path - json path to a specific node
+    * @return - a Config object
+    */
+
+  def getConfig(path: String): Config = {
+    config.getConfig(path)
+  }
+
+  def getString(path: String): String = {
+    config.getString(path)
+  }
+
+  /**
+    * returns a string object based on the json path
+    *
+    * @param path
+    * @return
+    */
+  def getProperties(path: String): Properties = {
+    import scala.collection.JavaConversions._
+
+    val properties: Properties = new Properties()
+
+    config.getConfig(path)
+      .entrySet()
+      .map({
+        entry => properties.setProperty(entry.getKey, entry.getValue.unwrapped().toString)
+      })
+    properties
+  }
+
+
+}package com.hsbc.trds.scala.util
+
+import java.io.File
+
+import com.hsbc.trds.scala.util.ECSS3API.ECSS3Config
+import com.typesafe.config.{Config, ConfigFactory}
+
+object ConfigObject {
+
+  def getConfig(fileNameOption: Option[String] = None): Config = {
+    if (fileNameOption.getOrElse("").isEmpty)
+      ConfigFactory.load
+    else
+      ConfigFactory
+        .systemProperties
+        .withFallback(ConfigFactory.systemEnvironment.withFallback
+        (ConfigFactory.systemEnvironment().withFallback(ConfigFactory.parseFile(new File(fileNameOption.getOrElse("")))
+          .resolve
+        )))
+
+  }
+
+  val config = getConfig()
+
+  val ecsS3Config = initEcsS3Config
+
+  val initEcsS3Config: ECSS3Config = {
+    val isMd5Validation = config.getString("aws_env.s3_disable_get_object_md5_validation")
+    val bucketName = config.getString("aws_env.bucket_name")
+    val s3_root = config.getString("aws_env.s3_root")
+    val isS3Storage = config.getString("aws_env.is_s3_storage")
+    //log("isS3Storage = " + isS3Storage)("INFO")
+    val s3_persistence_bucket_name = config.getString("aws_env.s3_persistence_bucket_name")
+    //log("s3_persistence_bucket_name = " + s3_persistence_bucket_name)("INFO")
+    new ECSS3Config(if ("true" == isS3Storage) true else false,
+      if ("true" == isMd5Validation) true else false, bucketName, s3_root, s3_persistence_bucket_name)
+  }
+
+
+
+
+
+}
+package com.hsbc.trds.scala.util
+
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.{Date, Locale, TimeZone}
+
+object DateUtils {
+
+  def main(args: Array[String]): Unit = {
+    val dat = new Date
+    println(convertDateToString(dat))
+
+    val datStr = "2021-01-13"
+    val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
+    val inputDate = dateFormat.parse(datStr)
+    println(convertDateToString(inputDate))
+
+    val datStrTime = "21/04/08 17:11:16"
+    val dateFormatTime = new SimpleDateFormat("yy/MM/dd HH:mm:ss")
+    val inputDateTime = dateFormatTime.parse(datStrTime)
+    println(convertDateToString(inputDateTime))
+
+
+//    val datStr1 = "Tue Feb 19 00:00:00 GMT 2019"
+//    val dateFormat1 = new SimpleDateFormat("yyyy-MM-dd")
+//    val inputDate1 = dateFormat.parse(datStr1)
+//    println(convertDateToString(inputDate))
+
+  //  longToDate(1552003200000L)
+
+
+  }
+
+  def convertStringToDate(dateStr: String,format: String) : Date = {
+    val dateFormat = new SimpleDateFormat(format)
+    dateFormat.parse(dateStr)
+  }
+
+  def convertDateToString(date: Date) : String = {
+    val formatter = new SimpleDateFormat("yyyyMMdd HH:mm:ss")
+    formatter.format(date)
+  }
+
+  def longToDate(timeInLong: Long) : String = {
+    val uuuuMmDdHhMmSs = DateTimeFormatter.ofPattern("uuuuMMddHHmmss")
+    //val longDate = 20120720162145L
+    val dateTime = LocalDateTime.parse(String.valueOf(timeInLong), uuuuMmDdHhMmSs)
+
+    val humanReadableFormatter = DateTimeFormatter.ofPattern("uuuu-MM-dd h:mm a", Locale.ENGLISH);
+    val formattedDateTime = dateTime.format(humanReadableFormatter)
+    printf("formattedDateTime: " + formattedDateTime)
+    formattedDateTime
+  }
+
+  def longToDateEasy(timeInLong: Long) : String = {
+
+    val inputDF = new SimpleDateFormat("yyyyMMddHHmmss")
+    val outputDF = new SimpleDateFormat("yyyy-MM-dd K:mm a")
+    val date = inputDF.parse(""+timeInLong)
+    println("dateinstring : " + outputDF.format(date))
+   // println("date is : " + date)
+    ""
+
+  }
+
+  def convertEpochLongDateIntoString(date: Date): String = {
+   // val date = new Date(timeInLong)
+    //DateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    val format = new SimpleDateFormat("yyyyMMdd")
+    format.setTimeZone(TimeZone.getTimeZone("Etc/UTC"))
+    format.format(date)
+  }
+
+}
+package com.hsbc.trds.scala.util
+
+import java.io.{ByteArrayInputStream, File, IOException, InputStream}
+
+import com.amazonaws.auth.{AWSCredentials, AWSStaticCredentialsProvider, BasicAWSCredentials}
+import com.amazonaws.client.builder.AwsClientBuilder
+import com.amazonaws.regions.Regions
+import com.amazonaws.services.s3.model._
+import com.amazonaws.services.s3.{AmazonS3, AmazonS3ClientBuilder}
+import com.amazonaws.util.IOUtils
+import com.amazonaws.{ClientConfiguration, Protocol}
+import com.hsbc.trds.scala.util.ConfigObject.ecsS3Config
+
+import scala.collection.JavaConversions._
+
+object ECSS3API {
+  val uid1 = "uk-dsl-ss-1-s3-nonprod-u"
+  val host1 = "http://ecs-storage.it.global.hsbc:9020"
+  val secret1 = "2pHXEwQu2bE09xP0WbGdFgDjhCp85SNMBuQJrdv0"
+  val bucketName1 = "uk-dsl-ss-1-s3-nonprod"
+  val s3bucketName1: String = "s3a://" + bucketName1 + "/"
+  class ECSS3Config(var is_ecs_storage: Boolean, var ecs_disable_get_object_md5_validation: Boolean,
+                    var bucket_name: String, var root: String, var persistance_bucket_name: String)
+
+  def getIdList(prefix: String, extension: String, checkPersisted: Boolean = false): List[String] = {
+    System.setProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation", if (ecsS3Config.is_ecs_storage) "true" else "false")
+    val bucketName = if (!checkPersisted) ecsS3Config.bucket_name else ecsS3Config.persistance_bucket_name
+
+    val s3Client: AmazonS3 = getAmazonS3Client()
+
+    val request = new ListObjectsRequest().withBucketName(bucketName).withPrefix(prefix)
+    var allResultRetrieved = false
+
+    var keyList = List[String]()
+
+    do {
+      val response = s3Client.listObjects(request)
+      val summaries = response.getObjectSummaries
+
+      keyList ::: {
+        val newSummaries = summaries.map(summary => summary.getKey)
+        if (!extension.isEmpty)
+          newSummaries.filter(key => {key.endsWith(extension)}).toList
+        else
+          newSummaries.toList
+      }
+
+      if (response.isTruncated) {
+        request.setMarker(response.getNextMarker)
+      } else {
+        allResultRetrieved = true
+      }
+
+    } while(!allResultRetrieved)
+    keyList
+  }
+
+  def isExistingS3Location(S3String: String, hostName: String= ""): Boolean = {
+    val amazonS3Client = getAmazonS3Client()
+    try{
+      val result = checkObjectExists(ecsS3Config, S3String+ ( if (hostName.isEmpty) "" else "/" + hostName), amazonS3Client, true)
+      result
+    }catch {
+      case _: Throwable => false
+    }
+  }
+
+  def getS3ObjectAsString(config: ECSS3Config, id: String, amazonS3Client: AmazonS3, checkPersisted: Boolean) = {
+    val is = getS3ObjectAsInputStream(config, id, amazonS3Client, checkPersisted)
+    val resultString = convertStreamToString(is)
+    try {
+      is.close
+    }catch {
+      case ex: IOException => throw new RuntimeException("Cannot close the input stream for id: " + id, ex)
+    }
+    resultString
+  }
+
+  def putS3ObjectAsOutputStream(config: ECSS3Config, id: String, is: InputStream, amazonS3Client: AmazonS3, checkPersisted: Boolean) = {
+    val bytes:Array[Byte] = IOUtils.toByteArray(is)
+    val metadata = new ObjectMetadata()
+    metadata.setContentType("application/xml")
+    metadata.setContentLength(bytes.length)
+
+    val byteArrayInputStream = new ByteArrayInputStream(bytes)
+    val request = new PutObjectRequest(if (checkPersisted) config.persistance_bucket_name else config.bucket_name, id, byteArrayInputStream,new ObjectMetadata)
+    try {
+      amazonS3Client.putObject(request)
+    }catch {
+      case ex: Exception => { println(ex.getMessage); false}
+    }
+    true
+  }
+
+  def putS3ObjectAsOutputStream(config: ECSS3Config, id: String, is: InputStream, amazonS3Client: AmazonS3, checkPersisted: Boolean, metadata: ObjectMetadata) = {
+    val bytes:Array[Byte] = IOUtils.toByteArray(is)
+    metadata.setContentType("application/xml")
+    metadata.setContentLength(bytes.length)
+    val byteArrayInputStream = new ByteArrayInputStream(bytes)
+    val request = new PutObjectRequest(if (checkPersisted) config.persistance_bucket_name else config.bucket_name, id, byteArrayInputStream,metadata)
+    try {
+      amazonS3Client.putObject(request)
+    }catch {
+      case ex: Exception => { println(ex.getMessage); false}
+    }
+    true
+  }
+
+  def putS3ObjectAsFile(config: ECSS3Config, id: String, file: File, amazonS3Client: AmazonS3, checkPersisted: Boolean) : Boolean = {
+    val request = new PutObjectRequest(if (checkPersisted) config.persistance_bucket_name else config.bucket_name, id, file)
+    try {
+      amazonS3Client.putObject(request)
+    }catch {
+      case ex: Exception => { println(ex.getMessage); false}
+    }
+    true
+  }
+
+
+  def getS3ObjectAsInputStream(config: ECSS3Config, id: String, amazonS3Client: AmazonS3, checkPersisted: Boolean) =
+    getS3ObjectInputStream(config, id, amazonS3Client, checkPersisted)
+
+
+  def getS3ObjectInputStream(config: ECSS3Config, id: String, amazonS3Client: AmazonS3, checkPersisted: Boolean) = {
+    val rangeObjectRequest = new GetObjectRequest(if (checkPersisted) config.persistance_bucket_name else config.bucket_name, id)
+    val objectPortion = amazonS3Client.getObject(rangeObjectRequest)
+    val metaMap = objectPortion.getObjectMetadata.getUserMetadata
+    println("metaMap Size is: " + metaMap.size())
+    for ((k,v) <- metaMap)
+      println(s"key: $k, value: $v")
+    objectPortion.getObjectContent
+  }
+
+  def getAmazonS3Client():AmazonS3 = {
+    val credentials:AWSCredentials = new BasicAWSCredentials(uid1,secret1)
+    val clientConfig = new ClientConfiguration()
+    clientConfig.setProtocol(Protocol.HTTP)
+    AmazonS3ClientBuilder.standard().withClientConfiguration(clientConfig)
+      .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(host1,Regions.DEFAULT_REGION.getName))
+      .withCredentials(new AWSStaticCredentialsProvider(credentials)).withPathStyleAccessEnabled(true)
+      .build()
+  }
+
+  def getAmazonS3Client(uid: String, secret: String, host: String ):AmazonS3 = {
+    val credentials:AWSCredentials = new BasicAWSCredentials(uid,secret)
+    val clientConfig = new ClientConfiguration()
+    clientConfig.setProtocol(Protocol.HTTP)
+    val result = AmazonS3ClientBuilder.standard().withClientConfiguration(clientConfig)
+      .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(host,Regions.DEFAULT_REGION.getName))
+      .withCredentials(new AWSStaticCredentialsProvider(credentials)).withPathStyleAccessEnabled(true)
+      .build()
+
+    result
+  }
+
+  def checkObjectExists(config: ECSS3Config, id: String, s3Client: AmazonS3, checkPersisted: Boolean): Boolean = {
+    var obj: S3Object = null
+    try {
+      obj = s3Client.getObject(if (checkPersisted) {config.persistance_bucket_name} else {config.bucket_name}, id)
+    } catch {
+      case ex: Exception => false
+    }
+    val result = (obj != null)
+    if (obj != null) {
+      try {
+        obj.getObjectContent.close()
+      } catch {
+        case ex: IOException => throw new RuntimeException(ex)
+      }
+    }
+    result
+  }
+
+  def convertStreamToString(inputStream: InputStream) = {
+    val s = new java.util.Scanner(inputStream).useDelimiter("\\A")
+    if (s.hasNext) s.next else ""
+  }
+
+}
+cat: ./src/test: Is a directory
+cat: ./src/test/java: Is a directory
+cat: ./src/test/java/com: Is a directory
+cat: ./src/test/java/com/hsbc: Is a directory
+cat: ./src/test/java/com/hsbc/trds: Is a directory
+cat: ./src/test/java/com/hsbc/trds/stream: Is a directory
+package com.hsbc.trds.stream;
+
+import com.hsbc.fsa.config.ConfigLoader;
+import com.hsbc.trds.model.MQDocument;
+import com.solacesystems.jcsmp.BytesXMLMessage;
+import com.solacesystems.jcsmp.DeliveryMode;
+import com.solacesystems.jcsmp.SDTException;
+import com.solacesystems.jcsmp.SDTMap;
+import org.apache.log4j.Level;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.jms.TextMessage;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+
+import static com.hsbc.trds.stream.ReportingConstants.APPLICATION_TIMESTAMP;
+import static com.hsbc.trds.stream.ReportingConstants.DATE_TIME_NANO;
+import static com.hsbc.trds.stream.ReportingConstants.ECS_LOCATION;
+import static java.time.format.DateTimeFormatter.ofPattern;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+@RunWith(MockitoJUnitRunner.class)
+public class L0MQSolaceHelperTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(L0MQSolaceHelperTest.class);
+    private L0MQSolaceHelper solaceHelper;
+    private JavaSparkContext sparkContext;
+    @Mock
+    private TextMessage msg;
+
+    @Before
+    public void setUp() {
+        solaceHelper = L0MQSolaceHelper.getInstance();
+        sparkContext = getSparkContext();
+        org.apache.log4j.Logger.getLogger("org").setLevel(Level.WARN);
+    }
+
+    @Test
+    public void generatesMessageUniqueIdIfMissing() {
+        String messageUniqueId = solaceHelper.autoGenerateMessageUniqueId();
+        final String[] split = messageUniqueId.split("-");
+        String messageUniqueIdDateString = split[1];
+        DateTimeFormatter formatter = ofPattern("yyyyMMdd");
+        LocalDate messageUniqueIdDate = LocalDate.parse(messageUniqueIdDateString.substring(0, 8), formatter);
+        LocalDate dateNow = LocalDate.now();
+        assertEquals(dateNow, messageUniqueIdDate);
+    }
+
+    @Test
+    public void verifyInternalIdIsRemovedFromSolaceMessage() {
+
+        Dataset<Row> mqDataSet = getMqDataset(sparkContext);
+        List<Row> rowList = mqDataSet.takeAsList(1);
+        BytesXMLMessage payloadMessage = null;
+        String ecsParquetPath = "HSBC, 8, Canada Square";
+        try {
+            payloadMessage = solaceHelper.generateSolaceMessage(DeliveryMode.PERSISTENT, rowList.get(0), ecsParquetPath);
+        } catch (SDTException e) {
+            LOGGER.info("Exception on creating SDTMap for solace message - {} ", e.toString());
+        }
+        final SDTMap sdtMap = payloadMessage.getProperties();
+        assertThat(sdtMap.containsKey("internalRecordId")).isFalse();
+    }
+
+    @Test
+    public void verifiesHeadersInSolaceMessageToBeSent() throws Exception {
+        Dataset<Row> mqDataSet = getMqDataset(sparkContext);
+        List<Row> rowList = mqDataSet.takeAsList(1);
+        String ecsParquetPath = "HSBC, 8, Canada Square";
+        BytesXMLMessage payloadMessage = solaceHelper.generateSolaceMessage(DeliveryMode.PERSISTENT, rowList.get(0), ecsParquetPath);
+        final SDTMap sdtMap = payloadMessage.getProperties();
+        assertThat(sdtMap.containsKey("internalRecordId")).isFalse();
+        assertThat(sdtMap.containsKey(ECS_LOCATION)).isTrue();
+        assertThat(sdtMap.getString(ECS_LOCATION)).isEqualTo("HSBC, 8, Canada Square/assetClass=CREDIT/putDate=20210921/");
+        assertThat(sdtMap.getString(APPLICATION_TIMESTAMP)).isNotNull();
+        assertThat(sdtMap.getString(APPLICATION_TIMESTAMP)).startsWith(ofPattern(DATE_TIME_NANO).format(LocalDateTime.now()).substring(0, 8));
+    }
+
+    @Test
+    public void verifyInternalRecordIdIsNotWrittenToECS() {
+        Dataset<Row> mqDataset = getMqDataset(sparkContext);
+        String[] cols = mqDataset.columns();
+        List<String> columnNames = Arrays.asList(cols);
+        assertFalse(columnNames.contains("internalrecordId"));
+    }
+
+    private Dataset<Row> getMqDataset(JavaSparkContext sparkContext) {
+        ConfigLoader config = new ConfigLoader();
+        String environment = "t05";
+        String typeOfMessage = "BULK";
+        String FILE_NAME = "dsl-trds-L0.conf";
+        Properties ecsProperties = config.getProperties(FILE_NAME, environment.concat(".ecs"));
+        String encKey = "cadstrds";
+        JavaRDD<MQDocument> mqDocumentJavaRDD = sparkContext.parallelize(getMqDocumentList());
+        solaceHelper.setHowManyCharsOfXmlInLogs(500);
+        solaceHelper.setShouldDisplayFullXmlIn(false);
+        return solaceHelper.processStreamBatchDataset(config, environment, typeOfMessage, ecsProperties, mqDocumentJavaRDD, "test-batch", encKey);
+    }
+
+    @Test
+    public void autoGenerateMessageUniqueId() {
+        final String id = solaceHelper.autoGenerateMessageUniqueId();
+        assertThat(id).isNotNull();
+        assertThat(id).contains("-");
+    }
+
+    private JavaSparkContext getSparkContext() {
+        return new JavaSparkContext("local[1]", "test");
+    }
+
+    private List<MQDocument> getMqDocumentList() {
+        MQDocument mq1 = new MQDocument("CFTC", "RT", "CREDIT", "20210921", "1632471632", "test-content", "TRDS_1632471632",
+                DateTimeFormatter.ofPattern(DATE_TIME_NANO).format(LocalDateTime.now()));
+        MQDocument mq2 = new MQDocument("CFTC", "RT", "CREDIT", "20210921", "1632471634", "test-content", "TRDS_1632471634", DateTimeFormatter.ofPattern(DATE_TIME_NANO).format(LocalDateTime.now()));
+        return Arrays.asList(mq1, mq2);
+    }
+
+    @After
+    public void tearDown() {
+        sparkContext.close();
+    }
+}cat: ./src/test/java/resources: Is a directory
+appName = Trds-MQ-L0-extractor
+mode = yarn
+appName_parque_counter = TRDS-ECS-PARQUE-COUNTER
+
+t05{
+  ecs {
+    uid1 = "uk-dsl-ss-1-s3-nonprod-u"
+    host1 = "http://ecs-storage.it.global.hsbc:9020"
+    secret1 = "DIvJYnG0WtBMCR8899jRCBDefIu7A63fB1F9U7QJgHmbea51tFwDrVI5esKT+TJw/MlccLwDGZ4="
+    bucketName1 = "uk-dsl-ss-1-s3-nonprod"
+    s3bucketName1 = "s3a://uk-dsl-ss-1-s3-nonprod/"
+    ecsLocation = "TRDS_LAKE/T05/L0_MQ_PARQUET"
+    checkPointDir = "s3a://uk-dsl-ss-1-s3-nonprod/TRDS_LAKE/L0_CHECKPOINT/T05"
+    batchIntervalInMillis = "300000"
+    batchInterval = "300"
+    repartition-count = "12"
+  }
+  checkpoint {
+    enabled = true
+  }
+  l1checkpoint{
+    enabled = true
+  }
+  partitions {
+    columns = "dslObjectType,businessDate"
+  }
+  mq {
+    ssl-encryption = "on"
+    keystore = "./TRDL.jks"
+    keystorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    encryptionType = "SSL"
+    keystoreType = "JKS"
+    provider = "SunX509"
+
+    truststore = "./TRDL.jks"
+    truststorePW = "JDnI0+O2JS2DOAA0x+tB6ROMmOVavLxI"
+    truststore-type = "JKS"
+    truststore-provider = "SunX509"
+
+    host = "gbtstssag4.systems.uk.hsbc"
+    queuemgr = "DGBLHSSAG4"
+    port = "15395"
+    channel-name = "TRDL.GB"
+    REALTIME-QUEUE = "GB_SSAG.GB_GDSL.GB_TRDL.TRD.T05"
+    BULK-QUEUE = "GB_SSAG.GB_NDSL.GB_TRDL.BULK.T05"
+    ssl-cipher-suite = "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+  }
+ solace {
+    host = "gbwgdcsolacetest.systems.uk.hsbc:55555"
+    vpn = "FIN_SM_NP_SSGU"
+    username = "GB-SVC-TRDS"
+    password = "N8FdQGbfxGnqRlidwzoBVekPyK6O+rKf"
+    basePublishTopic = "TRDS_DATA_LAKE_SOL_DEV"
+    queue = "Q_TRDS_DATA_LAKE_SOL_DEV"
+  }
+
+  # showFullXml takes precedence over 'howManyCharsOfXmlInLogs' 
+  showXmlInLogs {
+    howManyCharsOfXmlInLogs=500
+    showFullXml=true
+  }
+}
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<publicExecutionReport xmlns="http://www.fpml.org/FpML-5/transparency" fpmlVersion="5-5">
+    <header>
+        <sentBy messageAddressScheme="http://www.fpml.org/coding-scheme/external/iso17442">213800WHLYWTQLHFSH24</sentBy>
+        <sendTo>DTCCUS</sendTo>
+        <creationTimestamp>2021-05-05T19:51:25Z</creationTimestamp>
+    </header>
+    <isCorrection>false</isCorrection>
+    <onBehalfOf>
+        <partyReference href="party1"/>
+    </onBehalfOf>
+    <originatingEvent>Trade</originatingEvent>
+    <trade>
+        <tradeHeader>
+            <partyTradeIdentifier>
+                <issuer issuerIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">1030443649</issuer>
+                <tradeId tradeIdScheme="http://www.fpml.org/coding-scheme/external/unique-transaction-identifier">MARKITWIRE0000000000000140076985</tradeId>
+            </partyTradeIdentifier>
+            <partyTradeIdentifier>
+                <partyReference href="party1"/>
+                <tradeId tradeIdScheme="http://www.dtcc.com/internal_Referenceid">THd91580e2</tradeId>
+            </partyTradeIdentifier>
+            <tradeInformation>
+                <relatedParty>
+                    <partyReference href="party1"/>
+                    <role>ReportingParty</role>
+                </relatedParty>
+                <relatedParty>
+                    <partyReference href="party2"/>
+                    <role>Counterparty</role>
+                </relatedParty>
+                <relatedParty>
+                    <partyReference href="party1"/>
+                    <role>AffiliateExemption</role>
+                </relatedParty>
+                <relatedParty>
+                    <partyReference href="party2"/>
+                    <role>AffiliateExemption</role>
+                </relatedParty>
+                <executionDateTime>2020-05-18T13:44:44Z</executionDateTime>
+                <intentToClear>false</intentToClear>
+                <clearingStatus>N</clearingStatus>
+                <collateralizationType collateralTypeScheme="http://www.fpml.org/coding-scheme/collateral-type">Fully</collateralizationType>
+                <reportingRegime>
+                    <name>CFTC</name>
+                    <supervisorRegistration>
+                        <supervisoryBody>CFTC</supervisoryBody>
+                    </supervisorRegistration>
+                    <reportingRole>ReportingParty</reportingRole>
+                    <reportingPurpose>RT</reportingPurpose>
+                    <mandatorilyClearable>true</mandatorilyClearable>
+                </reportingRegime>
+                <nonStandardTerms>false</nonStandardTerms>
+                <offMarketPrice>false</offMarketPrice>
+                <executionVenueType>OffFacility</executionVenueType>
+            </tradeInformation>
+            <partyTradeInformation>
+                <relatedParty>
+                    <partyReference href="party2"/>
+                    <role>AffiliateExemption</role>
+                </relatedParty>
+            </partyTradeInformation>
+            <partyTradeInformation>
+                <partyReference href="party2"/>
+            </partyTradeInformation>
+            <tradeDate>2020-05-18</tradeDate>
+        </tradeHeader>
+        <swap>
+            <primaryAssetClass>InterestRate</primaryAssetClass>
+            <productId productIdScheme="http://www.fpml.org/coding-scheme/product-taxonomy">InterestRate:IRSwap:FixedFloat</productId>
+            <swapStream>
+                <calculationPeriodDates>
+                    <effectiveDate>
+                        <unadjustedDate>2020-05-19</unadjustedDate>
+                    </effectiveDate>
+                    <terminationDate>
+                        <unadjustedDate>2025-05-13</unadjustedDate>
+                    </terminationDate>
+                </calculationPeriodDates>
+                <paymentDates>
+                    <paymentFrequency>
+                        <periodMultiplier>28</periodMultiplier>
+                        <period>D</period>
+                    </paymentFrequency>
+                </paymentDates>
+                <calculationPeriodAmount>
+                    <calculation>
+                        <notionalSchedule>
+                            <notionalStepSchedule>
+                                <initialValue>260000000.00000</initialValue>
+                                <currency>MXN</currency>
+                            </notionalStepSchedule>
+                        </notionalSchedule>
+                        <fixedRateSchedule>
+                            <initialValue>0.0509</initialValue>
+                        </fixedRateSchedule>
+                        <dayCountFraction>ACT/360</dayCountFraction>
+                    </calculation>
+                </calculationPeriodAmount>
+                <settlementProvision>
+                    <settlementCurrency>MXN</settlementCurrency>
+                </settlementProvision>
+            </swapStream>
+            <swapStream>
+                <calculationPeriodDates>
+                    <effectiveDate>
+                        <unadjustedDate>2020-05-19</unadjustedDate>
+                    </effectiveDate>
+                    <terminationDate>
+                        <unadjustedDate>2025-05-13</unadjustedDate>
+                    </terminationDate>
+                </calculationPeriodDates>
+                <paymentDates>
+                    <paymentFrequency>
+                        <periodMultiplier>28</periodMultiplier>
+                        <period>D</period>
+                    </paymentFrequency>
+                </paymentDates>
+                <resetDates>
+                    <resetFrequency>
+                        <periodMultiplier>28</periodMultiplier>
+                        <period>D</period>
+                    </resetFrequency>
+                </resetDates>
+                <calculationPeriodAmount>
+                    <calculation>
+                        <notionalSchedule>
+                            <notionalStepSchedule>
+                                <initialValue>260000000.00000</initialValue>
+                                <currency>MXN</currency>
+                            </notionalStepSchedule>
+                        </notionalSchedule>
+                        <floatingRateCalculation>
+                            <floatingRateIndex>MXN-TIIE-Banxico</floatingRateIndex>
+                            <indexTenor>
+                                <periodMultiplier>4</periodMultiplier>
+                                <period>W</period>
+                            </indexTenor>
+                            <spreadSchedule>
+                                <initialValue>0.0</initialValue>
+                            </spreadSchedule>
+                        </floatingRateCalculation>
+                        <dayCountFraction>ACT/360</dayCountFraction>
+                    </calculation>
+                </calculationPeriodAmount>
+                <settlementProvision>
+                    <settlementCurrency>MXN1</settlementCurrency>
+                </settlementProvision>
+            </swapStream>
+        </swap>
+    </trade>
+    <party id="party1">
+        <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">213800WHLYWTQLHFSH24</partyId>
+        <classification industryClassificationScheme="http://www.dtcc.org/coding-scheme/external/cftc-industrial-classification">FinancialEntity</classification>
+        <country countryScheme="http://www.fpml.org/ext/iso3166">USA</country>
+        <organizationType>SD</organizationType>
+    </party>
+    <party id="party2">
+        <partyId partyIdScheme="http://www.fpml.org/coding-scheme/external/iso17442">MP6I5ZYZBEU3UXPYFY54</partyId>
+        <classification industryClassificationScheme="http://www.dtcc.org/coding-scheme/external/cftc-industrial-classification">FinancialEntity</classification>
+        <organizationType>non-SD/MSP</organizationType>
+    </party>
+</publicExecutionReport><?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
