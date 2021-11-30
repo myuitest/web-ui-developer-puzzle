@@ -1,0 +1,1258 @@
+cat: .: Is a directory
+# Eclipse
+.classpath
+.project
+.settings/
+# generated/ 	protobuf need to be added
+.cache-tests
+
+# dont checkin which tests failed
+failedTests.txt
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+logs/
+target/
+
+.cache-main
+
+#Vagrant files
+*.box
+.vagrant
+
+# spark shell history 
+.history
+
+# scala build cache
+lib_managed
+
+#spark metadata
+metastore_db
+
+# temp dirs and files
+.tmp/
+*.tmp
+
+# do not add derby 
+derby.log
+
+# build logs
+build.log
+
+# Backup files, particularly from editplus
+*.bak
+
+# dont include spark dump crc files accidentaly
+*.crc
+cat: ./allcode.txt: input file is output file
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hsbc.fda.com.api</groupId>
+    <artifactId>fin-data-process</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spark.version>2.3.0</spark.version>
+        <hadoop.version>2.8.2</hadoop.version>
+        <scala.version>2.11</scala.version>
+        <json.version>2.4.4</json.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-scala_${scala.version}</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+
+    </dependencies>
+</project>cat: ./src: Is a directory
+cat: ./src/main: Is a directory
+cat: ./src/main/java: Is a directory
+cat: ./src/main/java/com: Is a directory
+cat: ./src/main/java/com/hsbc: Is a directory
+cat: ./src/main/java/com/hsbc/fda: Is a directory
+cat: ./src/main/java/com/hsbc/fda/com: Is a directory
+cat: ./src/main/java/com/hsbc/fda/com/api: Is a directory
+package com.hsbc.fda.com.api;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.spark.sql.*;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+
+
+/**
+ * Created by 43530958 on 11/07/2019.
+ */
+public class ApiSparkContext {
+
+    private SparkSession spark;
+    public String AWS_KEY = "uk-gbm-fit-s3-nonprod-u";
+    public String AWS_SECRET_KEY = "c8jMHx07RubVWMosecBn9GVMVaglp8aKtbHgwHgg";
+    public String END_POINT = "http://wdctestlab-ecs1-node1.systems.uk.hsbc:9020";
+    public String BUCKET = "uk-gbm-fit-s3-nonprod";
+
+    public ApiSparkContext(){
+        System.setProperty("hadoop.home.dir", "C:/SWDTOOLS/hadoop/winutils/hadoop-2.7.1/");
+
+        spark = SparkSession
+                .builder()
+                .master("local[*]")
+                .appName("Spark SQL Poddy")
+                .getOrCreate();
+
+        Configuration hc = spark.sparkContext().hadoopConfiguration();
+
+        hc.set("fs.AbstractFileSystem.s3a.imp", "org.apache.hadoop.fs.s3a.S3A");
+        hc.set("fs.s3a.access.key", AWS_KEY);
+        hc.set("fs.s3a.secret.key", AWS_SECRET_KEY);
+        hc.set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem");
+        hc.set("fs.s3a.endpoint", END_POINT);
+        hc.set("mapreduce.fileoutputcommitter.algorithm.version", "2");
+        hc.set("fs.s3a.path.style.access", "true");
+        hc.set("fs.s3a.connection.ssl.enabled", "false");
+        hc.set("fs.defaultFS", "s3a://" + BUCKET);
+    }
+
+
+    public void createTempView(String name, String path) {
+        try
+        {
+            Dataset<Row> dataset = spark.read().format("csv")
+                    .option("sep", ",")
+                    .option("inferSchema", "true")
+                    .option("header", "true")
+                    .load(path);
+
+            if (Arrays.asList(spark.sqlContext().tableNames()).contains(name))
+            {
+                spark.table(name).unionAll(dataset).createOrReplaceTempView(name);
+                System.out.println("Union data in lazy temp view " + name + " from path " + path);
+            }
+            else
+            {
+                dataset.createTempView(name);
+                System.out.println("Created lazy temp view " + name + " from path " + path);
+            }
+        }
+        catch (Exception e){e.printStackTrace();}
+    }
+
+    public void runSql(String name, String path){
+        try
+        {
+            spark.sql(new String(Files.readAllBytes(Paths.get(path)))).createTempView(name);
+            System.out.println("Created lazy temp view as a result of SQL " + name);
+        }
+        catch (Exception e){e.printStackTrace();}
+    }
+
+    public void writeFile(String name, String path) {
+        try
+        {
+            spark.table(name).write().mode(SaveMode.Overwrite).format("csv").option("header", "true").csv(path);
+            spark.table(name).show();
+            spark.table(name).printSchema();
+            System.out.println("Written view " + name + " to path " + path);
+        }
+        catch (Exception e){e.printStackTrace();}
+    }
+}cat: ./src/main/java/com/hsbc/fda/com/main: Is a directory
+package com.hsbc.fda.com.main;
+
+import com.hsbc.fda.com.api.ApiSparkContext;
+
+import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Properties;
+import java.util.stream.IntStream;
+
+/**
+ * Created by 43530958 on 13/08/2019.
+ */
+public class ProcessData {
+
+    public void processViews(ApiSparkContext apiSparkContext, String propsPath) throws Exception {
+        Files.lines(Paths.get(propsPath)).forEach(x -> apiSparkContext.createTempView(x.split("\\s+")[0], x.split("\\s+")[1]));
+    }
+
+    public void processSql(ApiSparkContext apiSparkContext, String propsPath) throws Exception {
+        Files.lines(Paths.get(propsPath)).forEach(x -> apiSparkContext.runSql(x.split("\\s+")[0], x.split("\\s+")[1]));
+    }
+
+    public void processFileWrites(ApiSparkContext apiSparkContext, String propsPath) throws Exception {
+        Files.lines(Paths.get(propsPath)).forEach(x -> apiSparkContext.writeFile(x.split("\\s+")[0], x.split("\\s+")[1]));
+    }
+}
+package com.hsbc.fda.com.main;
+
+import com.hsbc.fda.com.api.ApiSparkContext;
+
+/**
+ * Created by 43530958 on 13/08/2019.
+ */
+public class ProcessMain {
+
+
+
+    public static void main(String args[]) throws Exception {
+        //new ProcessMain().run(tempTablePropsPath, sqlOrderPropsPath);
+    }
+
+    public void run(String viewProps, String sqlProps, String fileWriteProps) throws Exception {
+        ApiSparkContext apiSparkContext = new ApiSparkContext();
+        ProcessData processSql = new ProcessData();
+        processSql.processViews(apiSparkContext, viewProps);
+        processSql.processSql(apiSparkContext, sqlProps);
+        processSql.processFileWrites(apiSparkContext, fileWriteProps);
+    }
+
+}
+cat: ./src/main/resources: Is a directory
+cat: ./src/main/resources/props: Is a directory
+central_book=./src/main/resources/sql/spark/central_book.sql
+internal_book=./src/main/resources/sql/spark/internal_book.sql
+raw_jrnl_data=./src/main/resources/sql/spark/raw_jrnl_data.sql
+x=./src/main/resources/sql/spark/x.sql
+main=./src/main/resources/sql/spark/main.sqlare_acnt=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acnt_HBTR_FLARE_02072019.csv
+are_acntng_evnt=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_evnt_HBTR_MRX_NTLCSHF_02072019.csv
+are_acntng_evnt=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_evnt_HBTR_MRX_VALN_02072019.csv
+are_acntng_evnt_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_evnt_typ_HBTR_FLARE_02072019.csv
+are_acntng_prd=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_prd_HBTR_FLARE_02072019.csv
+are_acntng_rule=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_rule_HBTR_FLARE_02072019.csv
+are_acntng_strgy=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_strgy_HBTR_FLARE_02072019.csv
+are_acnt_realisation_stat=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acnt_realisation_stat_HBTR_FLARE_02072019.csv
+are_acnt_sbjct=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acnt_sbjct_HBTR_FLARE_02072019.csv
+are_acnt_sub_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acnt_sub_typ_HBTR_FLARE_02072019.csv
+are_acnt_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acnt_typ_HBTR_FLARE_02072019.csv
+are_bal_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_bal_typ_HBTR_FLARE_02072019.csv
+are_book=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_book_HBTR_FLARE_02072019.csv
+are_ccy=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_ccy_HBTR_FLARE_02072019.csv
+are_clndr_date=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_clndr_date_HBTR_FLARE_02072019.csv
+are_cntry=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_cntry_HBTR_FLARE_02072019.csv
+are_data_src_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_data_src_typ_HBTR_FLARE_02072019.csv
+are_date_basis_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_date_basis_typ_HBTR_FLARE_02072019.csv
+are_extnl_ref_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_extnl_ref_typ_HBTR_FLARE_02072019.csv
+are_fx_rate=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_fx_rate_HBTR_FLARE_02072019.csv
+are_fx_rate_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_fx_rate_typ_HBTR_FLARE_02072019.csv
+are_gaap_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_gaap_typ_HBTR_FLARE_02072019.csv
+are_instr=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_instr_HBTR_FLARE_02072019.csv
+are_ldgr=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_ldgr_HBTR_FLARE_02072019.csv
+are_lgl_entity_gaap_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_lgl_entity_gaap_typ_HBTR_FLARE_02072019.csv
+are_lgl_entity=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_lgl_entity_HBTR_FLARE_02072019.csv
+are_lgl_entity_lctn=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_lgl_entity_lctn_HBTR_FLARE_02072019.csv
+are_map_acnt=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_map_acnt_HBTR_FLARE_02072019.csv
+are_party=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_party_HBTR_FLARE_02072019.csv
+are_party_role=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_party_role_HBTR_FLARE_02072019.csv
+are_prod=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_prod_HBTR_FLARE_02072019.csv
+are_sys=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_sys_HBTR_FLARE_02072019.csv
+are_sys_instnc=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_sys_instnc_HBTR_FLARE_02072019.csv
+are_sys_lctn=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_sys_lctn_HBTR_FLARE_02072019.csv
+are_trdg_lctn=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_trdg_lctn_HBTR_FLARE_02072019.csv
+are_trd=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_trd_HBTR_MRX_NTLCSHF_02072019.csv
+are_trd=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_trd_HBTR_MRX_VALN_02072019.csv
+are_trd_leg=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_trd_leg_HBTR_MRX_NTLCSHF_02072019.csv
+are_trd_leg=s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_trd_leg_HBTR_MRX_VALN_02072019.csv
+cat: ./src/main/resources/sql: Is a directory
+cat: ./src/main/resources/sql/oracle: Is a directory
+WITH raw_jrnl_data
+   AS
+   (
+      SELECT   /*+ $$parallel-hint$$  */
+               are.are_acntng_rule_key
+              ,are.acntng_rule_id
+              ,are.acntng_entry_no
+              ,are.multiplier
+              ,are.is_rev_flag
+              ,are.book_typ_code
+              ,are.nrrtv
+              ,are.drctn_code
+              ,are.src_acnt_id
+              ,are.acntng_revsng_date_typ_code
+              ,aa.acnt_id
+              ,aae.cob_date
+              ,aae.bus_date
+              ,aae.acntng_evnt_amt
+              ,aae.are_acntng_evnt_key
+              ,are.are_acnt_key
+              ,aae.are_ccy_key
+              ,aae.are_cntrprty_key
+              ,aae.are_lgl_entity_key
+              ,aae.are_prod_key
+              ,aae.are_book_key
+              ,aae.are_instr_key
+              ,aae.are_sys_instnc_key_pts
+              ,aae.are_trd_key
+              ,aae.are_trd_leg_key
+              ,are.are_gaap_typ_key
+              ,aae.are_prod_key_overridden
+              ,aae.are_acntng_evnt_typ_key
+              ,aae.are_date_basis_typ_key
+              ,aae.extnd_attrs
+              ,aae.src_lgl_entity_id
+              ,aae.src_ccy_code
+              ,aae.src_sys_instnc_id
+              ,aae.src_cntrprty_id
+              ,aae.src_book_code
+              ,aae.src_prod_id
+              ,aae.src_instr_id
+              ,aae.src_trd_id
+              ,aae.src_trd_leg_id
+              ,aae.src_prod_code_overridden
+              ,alegt.src_gaap_typ_code
+              ,aae.src_acntng_evnt_typ_code
+              ,aae.src_date_basis_typ_code
+              ,aae.proc_grp_code
+              ,aae.data_set_instnc_key
+              ,aae.etl_natural_key
+              ,aae.acntng_evnt_sub_typ_code
+              ,aae.data_set_code_trd
+              ,CASE
+                WHEN aae.are_ccy_key = ale.are_ccy_key_lcl THEN
+                  aae.acntng_evnt_amt * 1
+                ELSE
+                  aae.acntng_evnt_amt * NVL(afr.fx_rate_amt,0)
+               END                                                                        jrnl_amt_lcl
+              ,CASE
+                WHEN aae.are_ccy_key = ale.are_ccy_key_base THEN
+                   ROUND(aae.acntng_evnt_amt * 1,ac.decimal_places)
+                ELSE
+                   ROUND(aae.acntng_evnt_amt * NVL(afr1.fx_rate_amt,0),ac.decimal_places)
+                END                                                                       jrnl_amt_base
+      FROM     are_acntng_evnt aae
+      LEFT OUTER JOIN
+               are_book  ab
+         ON    ab.cob_date = aae.cob_date
+         AND   ab.data_set_code = aae.data_set_code_ref
+         AND   ab.are_book_key = aae.are_book_key
+      LEFT OUTER JOIN
+               are_party_role  apr_c
+         ON    apr_c.cob_date = aae.cob_date
+         AND   apr_c.data_set_code = aae.data_set_code_ref
+         AND   apr_c.are_party_role_key = aae.are_cntrprty_key
+      LEFT OUTER JOIN
+               are_instr  ai
+         ON    ai.cob_date = aae.cob_date
+         AND   ai.data_set_code = aae.data_set_code_ref
+         AND   ai.are_instr_key = aae.are_instr_key
+      LEFT OUTER JOIN
+               are_party_role  apr_i
+         ON    apr_i.cob_date = ai.cob_date
+         AND   apr_i.data_set_code = ai.data_set_code
+         AND   apr_i.are_party_role_key = ai.are_party_role_key_issr
+      LEFT OUTER JOIN
+               are_lgl_entity_gaap_typ  alegt
+         ON    alegt.are_lgl_entity_key = aae.are_lgl_entity_key
+      LEFT OUTER JOIN
+               are_lgl_entity  ale
+         ON    ale.are_lgl_entity_key  =  aae.are_lgl_entity_key
+      LEFT OUTER JOIN
+               are_ccy ac
+         ON    ac.are_ccy_key          =  aae.are_ccy_key
+      LEFT OUTER JOIN
+               are_fx_rate afr
+         ON    afr.cob_date            =  aae.cob_date
+         AND   afr.are_lgl_entity_key  =  ale.are_lgl_entity_key
+         AND   afr.are_ccy_key_from    =  aae.are_ccy_key
+         AND   afr.are_ccy_key_to      =  ale.are_ccy_key_lcl
+         AND   afr.are_fx_rate_typ_key =  1
+      LEFT OUTER JOIN
+               are_fx_rate afr1
+         ON    afr1.cob_date            =  aae.cob_date
+         AND   afr1.are_lgl_entity_key  =  ale.are_lgl_entity_key
+         AND   afr1.are_ccy_key_from    =  aae.are_ccy_key
+         AND   afr1.are_ccy_key_to      =  ale.are_ccy_key_base
+         AND   afr1.are_fx_rate_typ_key =  1
+      LEFT OUTER JOIN
+               are_acntng_rule  are
+         ON    are.cob_date = aae.cob_date
+         AND   are.data_set_code = aae.data_set_code_ref
+         AND   are.stat_code = 'A'
+         AND   are.are_acntng_evnt_typ_key = aae.are_acntng_evnt_typ_key
+         AND   are.drctn_code = aae.drctn_code
+         AND   NVL(are.are_gaap_typ_key,NVL(alegt.are_gaap_typ_key,-1)) = NVL(alegt.are_gaap_typ_key,-1)
+         AND   NVL(are.are_acntng_strgy_key,NVL(ab.are_acntng_strgy_key,-1)) = NVL(ab.are_acntng_strgy_key,-1)
+         AND   NVL(are.cntrprty_intrnl_extnl_code,NVL(apr_c.cntrprty_intrnl_extnl_code,'NVS')) = NVL(apr_c.cntrprty_intrnl_extnl_code,'NVS')
+         AND   NVL(are.are_date_basis_typ_key,NVL(aae.are_date_basis_typ_key,-1)) = NVL(aae.are_date_basis_typ_key,-1)
+         AND   NVL(are.instr_intrnl_extnl_code,NVL(apr_i.cntrprty_intrnl_extnl_code,'NVS')) = NVL(apr_i.cntrprty_intrnl_extnl_code,'NVS')
+      LEFT OUTER JOIN
+               are_acnt  aa
+         ON    aa.cob_date = are.cob_date
+         AND   aa.data_set_code = are.data_set_code
+         AND   aa.are_acnt_key = are.are_acnt_key
+      WHERE    aae.cob_date = '29-MAR-2019'
+      AND      aae.data_set_code = 'HBTR_MRX_NTLCSHF'
+   )
+  ,internal_book
+   AS
+   (
+      SELECT  /*+ MATERIALIZE */
+              ab_sub.are_book_key || '~#~' || ab_sub.book_code  book_key_code
+      FROM    are_book  ab_sub
+      WHERE   ab_sub.cob_date = '29-MAR-2019' -- $$business-date$$
+      AND     ab_sub.data_set_code = 'HBTR_FLARE'
+      AND     ab_sub.book_typ_code = 'INTERNAL'
+      AND     ab_sub.book_sub_typ_code = 'BOOK'
+   )
+  ,central_book
+   AS
+   (
+      SELECT  /*+ MATERIALIZE */
+              ab_sub.are_lgl_entity_key
+             ,ab_sub.are_book_key || '~#~' || ab_sub.book_code   book_key_code
+      FROM    are_book  ab_sub
+      WHERE   ab_sub.cob_date = '29-MAR-2019' -- $$business-date$$
+      AND     ab_sub.data_set_code = 'HBTR_FLARE'
+      AND     ab_sub.book_typ_code = 'CENTRAL'
+      AND     ab_sub.book_sub_typ_code = 'BOOK'
+   )
+SELECT   NULL                                    AS are_jrnl_key
+        ,'29-MAR-2019'                       AS cob_date
+        ,'HBTR_MRX_NTLCSHF'                       AS data_set_code
+        ,'HBTR_FLARE'                   AS data_set_code_ref
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'NO_MAPPING'
+            ELSE
+               '999' -- TO_CHAR($$journal-no$$)
+         END                                     AS jrnl_no
+        ,ROWNUM                                  AS jrnl_line_no
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'No Mapping'
+            ELSE
+               x.nrrtv
+         END                                     AS jrnl_dscr
+        ,x.bus_date                              AS effctv_date
+        ,x.jrnl_amt                              AS jrnl_amt
+        ,x.is_rev_flag                           AS rev_flag
+        ,x.are_acntng_evnt_key                   AS are_acntng_evnt_key
+        ,x.are_acnt_key                          AS are_acnt_key
+        ,x.are_ccy_key                           AS are_ccy_key
+        ,x.are_cntrprty_key                      AS are_cntrprty_key
+        ,x.are_lgl_entity_key                    AS are_lgl_entity_key
+        ,SUBSTR
+         (
+            x.book_key_code
+           ,1
+           ,INSTR(x.book_key_code,'~#~') - 1
+         )                                       AS are_book_key
+        ,x.are_prod_key                          AS are_prod_key
+        ,x.are_instr_key                         AS are_instr_key
+        ,x.are_sys_instnc_key_pts                AS are_sys_instnc_key
+        ,x.are_trd_key                           AS are_trd_key
+        ,x.are_trd_leg_key                       AS are_trd_leg_key
+        ,x.are_gaap_typ_key                      AS are_gaap_typ_key
+        ,x.are_prod_key_overridden               AS are_prod_key_overridden
+        ,x.are_acntng_evnt_typ_key               AS are_acntng_evnt_typ_key
+        ,x.are_date_basis_typ_key                AS are_date_basis_typ_key
+        ,x.are_acntng_rule_key                   AS are_acntng_rule_key
+        ,x.drctn_code                            AS drctn_code
+        ,x.extnd_attrs                           AS extnd_attrs
+        ,x.src_acnt_id                           AS src_acnt_code
+        ,x.src_lgl_entity_id                     AS src_lgl_entity_id
+        ,x.src_ccy_code                          AS src_ccy_code
+        ,x.src_sys_instnc_id                     AS src_sys_instnc_code
+        ,x.src_cntrprty_id                       AS src_cntrprty_id
+        ,SUBSTR
+         (
+            x.book_key_code
+           ,INSTR(x.book_key_code,'~#~') + 3
+         )                                       AS src_book_code
+        ,x.src_prod_id                           AS src_prod_code
+        ,x.src_instr_id                          AS src_instr_id
+        ,x.src_trd_id                            AS src_trd_id
+        ,x.src_trd_leg_id                        AS src_trd_leg_id
+        ,x.src_prod_code_overridden              AS src_prod_code_overridden
+        ,x.src_gaap_typ_code                     AS src_gaap_typ_code
+        ,x.src_acntng_evnt_typ_code              AS src_acntng_evnt_typ_code
+        ,x.src_date_basis_typ_code               AS src_date_basis_typ_code
+        ,x.acntng_rule_id                        AS src_acntng_rule_id
+        ,x.proc_grp_code                         AS proc_grp_code
+        ,'ARE'                                   AS data_src_typ_code
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'N'
+            ELSE
+               'Y'
+         END                                     AS publish_flag
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'ERROR'
+            ELSE
+               'OK'
+         END                                     AS excptn_stat
+        ,x.data_set_instnc_key                   AS data_set_instnc_key
+        ,x.etl_natural_key || '~' ||
+            CASE
+               WHEN (x.acntng_rule_id IS NOT NULL)
+               THEN
+                  x.acntng_rule_id
+               ELSE
+                  'NO_MAPPING'
+            END ||
+            CASE
+               WHEN (x.acntng_rule_id IS NOT NULL)
+               THEN
+                  '~' || x.acntng_entry_no
+               ELSE
+                  TO_CHAR(ROWNUM)
+            END || '~'||
+            x.src_gaap_typ_code || '~'||
+            x.is_rev_flag                        AS etl_natural_key
+        ,SYSDATE                                 AS etl_insert_date
+        ,SYSDATE                                 AS etl_update_date
+        ,99                                      AS etl_instance_id
+        ,99                                      AS etl_task_id
+        ,x.acntng_evnt_sub_typ_code              AS acntng_evnt_sub_typ_code
+        ,x.data_set_code_trd                     AS data_set_code_trd
+        ,x.jrnl_amt_lcl                          AS jrnl_amt_lcl
+        ,x.jrnl_amt_base                         AS jrnl_amt_base
+FROM     (
+            SELECT   rjd.are_acntng_rule_key
+                    ,rjd.acntng_rule_id
+                    ,rjd.acntng_entry_no
+                    ,rjd.acnt_id
+                    ,rjd.nrrtv
+                    ,rjd.bus_date
+                    ,rjd.acntng_evnt_amt * rjd.multiplier         AS jrnl_amt
+                    ,'N'                                          AS is_rev_flag
+                    ,rjd.are_acntng_evnt_key
+                    ,rjd.are_acnt_key
+                    ,rjd.are_ccy_key
+                    ,rjd.are_cntrprty_key
+                    ,rjd.are_lgl_entity_key
+                    ,rjd.are_prod_key
+                    ,rjd.are_instr_key
+                    ,rjd.are_sys_instnc_key_pts
+                    ,rjd.are_trd_key
+                    ,rjd.are_trd_leg_key
+                    ,rjd.are_gaap_typ_key
+                    ,rjd.are_prod_key_overridden
+                    ,rjd.are_acntng_evnt_typ_key
+                    ,rjd.are_date_basis_typ_key
+                    ,CASE rjd.book_typ_code
+                        WHEN 'INTERNAL'
+                        THEN
+                           (
+                              SELECT   ib.book_key_code
+                              FROM     internal_book  ib
+                           )
+                        WHEN 'CENTRAL'
+                        THEN
+                           (
+                              SELECT   cb.book_key_code
+                              FROM     central_book  cb
+                              WHERE    cb.are_lgl_entity_key = rjd.are_lgl_entity_key
+                           )
+                        ELSE
+                           rjd.are_book_key || '~#~' || rjd.src_book_code
+                     END   book_key_code
+                    ,rjd.drctn_code
+                    ,rjd.extnd_attrs
+                    ,rjd.src_acnt_id
+                    ,rjd.src_lgl_entity_id
+                    ,rjd.src_ccy_code
+                    ,rjd.src_sys_instnc_id
+                    ,rjd.src_cntrprty_id
+                    ,rjd.src_prod_id
+                    ,rjd.src_instr_id
+                    ,rjd.src_trd_id
+                    ,rjd.src_trd_leg_id
+                    ,rjd.src_prod_code_overridden
+                    ,rjd.src_gaap_typ_code
+                    ,rjd.src_acntng_evnt_typ_code
+                    ,rjd.src_date_basis_typ_code
+                    ,rjd.proc_grp_code
+                    ,rjd.data_set_instnc_key
+                    ,rjd.etl_natural_key
+                    ,rjd.acntng_evnt_sub_typ_code
+                    ,rjd.data_set_code_trd
+                    ,rjd.jrnl_amt_lcl * rjd.multiplier   AS jrnl_amt_lcl
+                    ,rjd.jrnl_amt_base * rjd.multiplier  AS jrnl_amt_base
+            FROM     raw_jrnl_data rjd
+            UNION ALL
+            SELECT   rjd.are_acntng_rule_key
+                    ,rjd.acntng_rule_id
+                    ,rjd.acntng_entry_no
+                    ,rjd.acnt_id
+                    ,rjd.nrrtv
+                    ,CASE rjd.acntng_revsng_date_typ_code
+                        WHEN 'NEXT_BUS_DATE'
+                        THEN
+                           acd.next_bal_date
+                        WHEN 'NEXT_BUS_DATE_PLUS1'
+                        THEN
+                           (
+                              SELECT  acd_sub.next_bal_date
+                              FROM    are_clndr_date  acd_sub
+                              WHERE   acd_sub.bal_date = acd.next_bal_date
+                              AND     acd_sub.are_lgl_entity_key = acd.are_lgl_entity_key
+                           )
+                        ELSE
+                           rjd.bus_date
+                     END                                          AS bus_date
+                    ,(rjd.acntng_evnt_amt * rjd.multiplier) * -1  AS jrnl_amt
+                    ,rjd.is_rev_flag
+                    ,rjd.are_acntng_evnt_key
+                    ,rjd.are_acnt_key
+                    ,rjd.are_ccy_key
+                    ,rjd.are_cntrprty_key
+                    ,rjd.are_lgl_entity_key
+                    ,rjd.are_prod_key
+                    ,rjd.are_instr_key
+                    ,rjd.are_sys_instnc_key_pts
+                    ,rjd.are_trd_key
+                    ,rjd.are_trd_leg_key
+                    ,rjd.are_gaap_typ_key
+                    ,rjd.are_prod_key_overridden
+                    ,rjd.are_acntng_evnt_typ_key
+                    ,rjd.are_date_basis_typ_key
+                    ,CASE rjd.book_typ_code
+                        WHEN 'INTERNAL'
+                        THEN
+                           (
+                              SELECT   ib.book_key_code
+                              FROM     internal_book  ib
+                           )
+                        WHEN 'CENTRAL'
+                        THEN
+                           (
+                              SELECT   cb.book_key_code
+                              FROM     central_book  cb
+                              WHERE    cb.are_lgl_entity_key = rjd.are_lgl_entity_key
+                           )
+                        ELSE
+                           rjd.are_book_key || '~#~' || rjd.src_book_code
+                     END   book_key_code
+                    ,rjd.drctn_code
+                    ,rjd.extnd_attrs
+                    ,rjd.src_acnt_id
+                    ,rjd.src_lgl_entity_id
+                    ,rjd.src_ccy_code
+                    ,rjd.src_sys_instnc_id
+                    ,rjd.src_cntrprty_id
+                    ,rjd.src_prod_id
+                    ,rjd.src_instr_id
+                    ,rjd.src_trd_id
+                    ,rjd.src_trd_leg_id
+                    ,rjd.src_prod_code_overridden
+                    ,rjd.src_gaap_typ_code
+                    ,rjd.src_acntng_evnt_typ_code
+                    ,rjd.src_date_basis_typ_code
+                    ,rjd.proc_grp_code
+                    ,rjd.data_set_instnc_key
+                    ,rjd.etl_natural_key
+                    ,rjd.acntng_evnt_sub_typ_code
+                    ,rjd.data_set_code_trd
+                    ,(rjd.jrnl_amt_lcl * rjd.multiplier) * -1  AS jrnl_amt_lcl
+                    ,(rjd.jrnl_amt_base * rjd.multiplier) * -1 AS jrnl_amt_base
+            FROM     raw_jrnl_data rjd
+            LEFT OUTER JOIN
+                     are_clndr_date  acd
+               ON    acd.bal_date = rjd.cob_date
+               AND   acd.are_lgl_entity_key = rjd.are_lgl_entity_key
+            WHERE    rjd.is_rev_flag = 'Y'
+         ) xcat: ./src/main/resources/sql/spark: Is a directory
+ SELECT
+        ab_sub.are_lgl_entity_key
+       ,ab_sub.are_book_key || '~#~' || ab_sub.book_code   book_key_code
+FROM    are_book  ab_sub
+WHERE   ab_sub.cob_date = '29-MAR-2019' -- $$business-date$$
+AND     ab_sub.data_set_code = 'HBTR_FLARE'
+AND     ab_sub.book_typ_code = 'CENTRAL'
+AND     ab_sub.book_sub_typ_code = 'BOOK'SELECT  /*+ MATERIALIZE */
+              ab_sub.are_book_key || '~#~' || ab_sub.book_code  book_key_code
+      FROM    are_book  ab_sub
+      WHERE   ab_sub.cob_date = '29-MAR-2019' -- $$business-date$$
+      AND     ab_sub.data_set_code = 'HBTR_FLARE'
+      AND     ab_sub.book_typ_code = 'INTERNAL'
+      AND     ab_sub.book_sub_typ_code = 'BOOK'SELECT   NULL                                    AS are_jrnl_key
+        ,'29-MAR-2019'                       AS cob_date
+        ,'HBTR_MRX_NTLCSHF'                       AS data_set_code
+        ,'HBTR_FLARE'                   AS data_set_code_ref
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'NO_MAPPING'
+            ELSE
+               '999' -- TO_CHAR($$journal-no$$)
+         END                                     AS jrnl_no
+        ,ROWNUM                                  AS jrnl_line_no
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'No Mapping'
+            ELSE
+               x.nrrtv
+         END                                     AS jrnl_dscr
+        ,x.bus_date                              AS effctv_date
+        ,x.jrnl_amt                              AS jrnl_amt
+        ,x.is_rev_flag                           AS rev_flag
+        ,x.are_acntng_evnt_key                   AS are_acntng_evnt_key
+        ,x.are_acnt_key                          AS are_acnt_key
+        ,x.are_ccy_key                           AS are_ccy_key
+        ,x.are_cntrprty_key                      AS are_cntrprty_key
+        ,x.are_lgl_entity_key                    AS are_lgl_entity_key
+        ,SUBSTR
+         (
+            x.book_key_code
+           ,1
+           ,INSTR(x.book_key_code,'~#~') - 1
+         )                                       AS are_book_key
+        ,x.are_prod_key                          AS are_prod_key
+        ,x.are_instr_key                         AS are_instr_key
+        ,x.are_sys_instnc_key_pts                AS are_sys_instnc_key
+        ,x.are_trd_key                           AS are_trd_key
+        ,x.are_trd_leg_key                       AS are_trd_leg_key
+        ,x.are_gaap_typ_key                      AS are_gaap_typ_key
+        ,x.are_prod_key_overridden               AS are_prod_key_overridden
+        ,x.are_acntng_evnt_typ_key               AS are_acntng_evnt_typ_key
+        ,x.are_date_basis_typ_key                AS are_date_basis_typ_key
+        ,x.are_acntng_rule_key                   AS are_acntng_rule_key
+        ,x.drctn_code                            AS drctn_code
+        ,x.extnd_attrs                           AS extnd_attrs
+        ,x.src_acnt_id                           AS src_acnt_code
+        ,x.src_lgl_entity_id                     AS src_lgl_entity_id
+        ,x.src_ccy_code                          AS src_ccy_code
+        ,x.src_sys_instnc_id                     AS src_sys_instnc_code
+        ,x.src_cntrprty_id                       AS src_cntrprty_id
+        ,SUBSTR
+         (
+            x.book_key_code
+           ,INSTR(x.book_key_code,'~#~') + 3
+         )                                       AS src_book_code
+        ,x.src_prod_id                           AS src_prod_code
+        ,x.src_instr_id                          AS src_instr_id
+        ,x.src_trd_id                            AS src_trd_id
+        ,x.src_trd_leg_id                        AS src_trd_leg_id
+        ,x.src_prod_code_overridden              AS src_prod_code_overridden
+        ,x.src_gaap_typ_code                     AS src_gaap_typ_code
+        ,x.src_acntng_evnt_typ_code              AS src_acntng_evnt_typ_code
+        ,x.src_date_basis_typ_code               AS src_date_basis_typ_code
+        ,x.acntng_rule_id                        AS src_acntng_rule_id
+        ,x.proc_grp_code                         AS proc_grp_code
+        ,'ARE'                                   AS data_src_typ_code
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'N'
+            ELSE
+               'Y'
+         END                                     AS publish_flag
+        ,CASE
+            WHEN (x.acntng_rule_id IS NULL)
+            THEN
+               'ERROR'
+            ELSE
+               'OK'
+         END                                     AS excptn_stat
+        ,x.data_set_instnc_key                   AS data_set_instnc_key
+        ,x.etl_natural_key || '~' ||
+            CASE
+               WHEN (x.acntng_rule_id IS NOT NULL)
+               THEN
+                  x.acntng_rule_id
+               ELSE
+                  'NO_MAPPING'
+            END ||
+            CASE
+               WHEN (x.acntng_rule_id IS NOT NULL)
+               THEN
+                  '~' || x.acntng_entry_no
+               ELSE
+                  TO_CHAR(ROWNUM)
+            END || '~'||
+            x.src_gaap_typ_code || '~'||
+            x.is_rev_flag                        AS etl_natural_key
+        ,SYSDATE                                 AS etl_insert_date
+        ,SYSDATE                                 AS etl_update_date
+        ,99                                      AS etl_instance_id
+        ,99                                      AS etl_task_id
+        ,x.acntng_evnt_sub_typ_code              AS acntng_evnt_sub_typ_code
+        ,x.data_set_code_trd                     AS data_set_code_trd
+        ,x.jrnl_amt_lcl                          AS jrnl_amt_lcl
+        ,x.jrnl_amt_base                         AS jrnl_amt_baseSELECT   /*+ $$parallel-hint$$  */
+               are.are_acntng_rule_key
+              ,are.acntng_rule_id
+              ,are.acntng_entry_no
+              ,are.multiplier
+              ,are.is_rev_flag
+              ,are.book_typ_code
+              ,are.nrrtv
+              ,are.drctn_code
+              ,are.src_acnt_id
+              ,are.acntng_revsng_date_typ_code
+              ,aa.acnt_id
+              ,aae.cob_date
+              ,aae.bus_date
+              ,aae.acntng_evnt_amt
+              ,aae.are_acntng_evnt_key
+              ,are.are_acnt_key
+              ,aae.are_ccy_key
+              ,aae.are_cntrprty_key
+              ,aae.are_lgl_entity_key
+              ,aae.are_prod_key
+              ,aae.are_book_key
+              ,aae.are_instr_key
+              ,aae.are_sys_instnc_key_pts
+              ,aae.are_trd_key
+              ,aae.are_trd_leg_key
+              ,are.are_gaap_typ_key
+              ,aae.are_prod_key_overridden
+              ,aae.are_acntng_evnt_typ_key
+              ,aae.are_date_basis_typ_key
+              ,aae.extnd_attrs
+              ,aae.src_lgl_entity_id
+              ,aae.src_ccy_code
+              ,aae.src_sys_instnc_id
+              ,aae.src_cntrprty_id
+              ,aae.src_book_code
+              ,aae.src_prod_id
+              ,aae.src_instr_id
+              ,aae.src_trd_id
+              ,aae.src_trd_leg_id
+              ,aae.src_prod_code_overridden
+              ,alegt.src_gaap_typ_code
+              ,aae.src_acntng_evnt_typ_code
+              ,aae.src_date_basis_typ_code
+              ,aae.proc_grp_code
+              ,aae.data_set_instnc_key
+              ,aae.etl_natural_key
+              ,aae.acntng_evnt_sub_typ_code
+              ,aae.data_set_code_trd
+              ,CASE
+                WHEN aae.are_ccy_key = ale.are_ccy_key_lcl THEN
+                  aae.acntng_evnt_amt * 1
+                ELSE
+                  aae.acntng_evnt_amt * NVL(afr.fx_rate_amt,0)
+               END                                                                        jrnl_amt_lcl
+              ,CASE
+                WHEN aae.are_ccy_key = ale.are_ccy_key_base THEN
+                   ROUND(aae.acntng_evnt_amt * 1,ac.decimal_places)
+                ELSE
+                   ROUND(aae.acntng_evnt_amt * NVL(afr1.fx_rate_amt,0),ac.decimal_places)
+                END                                                                       jrnl_amt_base
+      FROM     are_acntng_evnt aae
+      LEFT OUTER JOIN
+               are_book  ab
+         ON    ab.cob_date = aae.cob_date
+         AND   ab.data_set_code = aae.data_set_code_ref
+         AND   ab.are_book_key = aae.are_book_key
+      LEFT OUTER JOIN
+               are_party_role  apr_c
+         ON    apr_c.cob_date = aae.cob_date
+         AND   apr_c.data_set_code = aae.data_set_code_ref
+         AND   apr_c.are_party_role_key = aae.are_cntrprty_key
+      LEFT OUTER JOIN
+               are_instr  ai
+         ON    ai.cob_date = aae.cob_date
+         AND   ai.data_set_code = aae.data_set_code_ref
+         AND   ai.are_instr_key = aae.are_instr_key
+      LEFT OUTER JOIN
+               are_party_role  apr_i
+         ON    apr_i.cob_date = ai.cob_date
+         AND   apr_i.data_set_code = ai.data_set_code
+         AND   apr_i.are_party_role_key = ai.are_party_role_key_issr
+      LEFT OUTER JOIN
+               are_lgl_entity_gaap_typ  alegt
+         ON    alegt.are_lgl_entity_key = aae.are_lgl_entity_key
+      LEFT OUTER JOIN
+               are_lgl_entity  ale
+         ON    ale.are_lgl_entity_key  =  aae.are_lgl_entity_key
+      LEFT OUTER JOIN
+               are_ccy ac
+         ON    ac.are_ccy_key          =  aae.are_ccy_key
+      LEFT OUTER JOIN
+               are_fx_rate afr
+         ON    afr.cob_date            =  aae.cob_date
+         AND   afr.are_lgl_entity_key  =  ale.are_lgl_entity_key
+         AND   afr.are_ccy_key_from    =  aae.are_ccy_key
+         AND   afr.are_ccy_key_to      =  ale.are_ccy_key_lcl
+         AND   afr.are_fx_rate_typ_key =  1
+      LEFT OUTER JOIN
+               are_fx_rate afr1
+         ON    afr1.cob_date            =  aae.cob_date
+         AND   afr1.are_lgl_entity_key  =  ale.are_lgl_entity_key
+         AND   afr1.are_ccy_key_from    =  aae.are_ccy_key
+         AND   afr1.are_ccy_key_to      =  ale.are_ccy_key_base
+         AND   afr1.are_fx_rate_typ_key =  1
+      LEFT OUTER JOIN
+               are_acntng_rule  are
+         ON    are.cob_date = aae.cob_date
+         AND   are.data_set_code = aae.data_set_code_ref
+         AND   are.stat_code = 'A'
+         AND   are.are_acntng_evnt_typ_key = aae.are_acntng_evnt_typ_key
+         AND   are.drctn_code = aae.drctn_code
+         AND   NVL(are.are_gaap_typ_key,NVL(alegt.are_gaap_typ_key,-1)) = NVL(alegt.are_gaap_typ_key,-1)
+         AND   NVL(are.are_acntng_strgy_key,NVL(ab.are_acntng_strgy_key,-1)) = NVL(ab.are_acntng_strgy_key,-1)
+         AND   NVL(are.cntrprty_intrnl_extnl_code,NVL(apr_c.cntrprty_intrnl_extnl_code,'NVS')) = NVL(apr_c.cntrprty_intrnl_extnl_code,'NVS')
+         AND   NVL(are.are_date_basis_typ_key,NVL(aae.are_date_basis_typ_key,-1)) = NVL(aae.are_date_basis_typ_key,-1)
+         AND   NVL(are.instr_intrnl_extnl_code,NVL(apr_i.cntrprty_intrnl_extnl_code,'NVS')) = NVL(apr_i.cntrprty_intrnl_extnl_code,'NVS')
+      LEFT OUTER JOIN
+               are_acnt  aa
+         ON    aa.cob_date = are.cob_date
+         AND   aa.data_set_code = are.data_set_code
+         AND   aa.are_acnt_key = are.are_acnt_key
+      WHERE    aae.cob_date = '29-MAR-2019'
+      AND      aae.data_set_code = 'HBTR_MRX_NTLCSHF'SELECT   rjd.are_acntng_rule_key
+                    ,rjd.acntng_rule_id
+                    ,rjd.acntng_entry_no
+                    ,rjd.acnt_id
+                    ,rjd.nrrtv
+                    ,rjd.bus_date
+                    ,rjd.acntng_evnt_amt * rjd.multiplier         AS jrnl_amt
+                    ,'N'                                          AS is_rev_flag
+                    ,rjd.are_acntng_evnt_key
+                    ,rjd.are_acnt_key
+                    ,rjd.are_ccy_key
+                    ,rjd.are_cntrprty_key
+                    ,rjd.are_lgl_entity_key
+                    ,rjd.are_prod_key
+                    ,rjd.are_instr_key
+                    ,rjd.are_sys_instnc_key_pts
+                    ,rjd.are_trd_key
+                    ,rjd.are_trd_leg_key
+                    ,rjd.are_gaap_typ_key
+                    ,rjd.are_prod_key_overridden
+                    ,rjd.are_acntng_evnt_typ_key
+                    ,rjd.are_date_basis_typ_key
+                    ,CASE rjd.book_typ_code
+                        WHEN 'INTERNAL'
+                        THEN
+                           (
+                              SELECT   ib.book_key_code
+                              FROM     internal_book  ib
+                           )
+                        WHEN 'CENTRAL'
+                        THEN
+                           (
+                              SELECT   cb.book_key_code
+                              FROM     central_book  cb
+                              WHERE    cb.are_lgl_entity_key = rjd.are_lgl_entity_key
+                           )
+                        ELSE
+                           rjd.are_book_key || '~#~' || rjd.src_book_code
+                     END   book_key_code
+                    ,rjd.drctn_code
+                    ,rjd.extnd_attrs
+                    ,rjd.src_acnt_id
+                    ,rjd.src_lgl_entity_id
+                    ,rjd.src_ccy_code
+                    ,rjd.src_sys_instnc_id
+                    ,rjd.src_cntrprty_id
+                    ,rjd.src_prod_id
+                    ,rjd.src_instr_id
+                    ,rjd.src_trd_id
+                    ,rjd.src_trd_leg_id
+                    ,rjd.src_prod_code_overridden
+                    ,rjd.src_gaap_typ_code
+                    ,rjd.src_acntng_evnt_typ_code
+                    ,rjd.src_date_basis_typ_code
+                    ,rjd.proc_grp_code
+                    ,rjd.data_set_instnc_key
+                    ,rjd.etl_natural_key
+                    ,rjd.acntng_evnt_sub_typ_code
+                    ,rjd.data_set_code_trd
+                    ,rjd.jrnl_amt_lcl * rjd.multiplier   AS jrnl_amt_lcl
+                    ,rjd.jrnl_amt_base * rjd.multiplier  AS jrnl_amt_base
+            FROM     raw_jrnl_data rjd
+            UNION ALL
+            SELECT   rjd.are_acntng_rule_key
+                    ,rjd.acntng_rule_id
+                    ,rjd.acntng_entry_no
+                    ,rjd.acnt_id
+                    ,rjd.nrrtv
+                    ,CASE rjd.acntng_revsng_date_typ_code
+                        WHEN 'NEXT_BUS_DATE'
+                        THEN
+                           acd.next_bal_date
+                        WHEN 'NEXT_BUS_DATE_PLUS1'
+                        THEN
+                           (
+                              SELECT  acd_sub.next_bal_date
+                              FROM    are_clndr_date  acd_sub
+                              WHERE   acd_sub.bal_date = acd.next_bal_date
+                              AND     acd_sub.are_lgl_entity_key = acd.are_lgl_entity_key
+                           )
+                        ELSE
+                           rjd.bus_date
+                     END                                          AS bus_date
+                    ,(rjd.acntng_evnt_amt * rjd.multiplier) * -1  AS jrnl_amt
+                    ,rjd.is_rev_flag
+                    ,rjd.are_acntng_evnt_key
+                    ,rjd.are_acnt_key
+                    ,rjd.are_ccy_key
+                    ,rjd.are_cntrprty_key
+                    ,rjd.are_lgl_entity_key
+                    ,rjd.are_prod_key
+                    ,rjd.are_instr_key
+                    ,rjd.are_sys_instnc_key_pts
+                    ,rjd.are_trd_key
+                    ,rjd.are_trd_leg_key
+                    ,rjd.are_gaap_typ_key
+                    ,rjd.are_prod_key_overridden
+                    ,rjd.are_acntng_evnt_typ_key
+                    ,rjd.are_date_basis_typ_key
+                    ,CASE rjd.book_typ_code
+                        WHEN 'INTERNAL'
+                        THEN
+                           (
+                              SELECT   ib.book_key_code
+                              FROM     internal_book  ib
+                           )
+                        WHEN 'CENTRAL'
+                        THEN
+                           (
+                              SELECT   cb.book_key_code
+                              FROM     central_book  cb
+                              WHERE    cb.are_lgl_entity_key = rjd.are_lgl_entity_key
+                           )
+                        ELSE
+                           rjd.are_book_key || '~#~' || rjd.src_book_code
+                     END   book_key_code
+                    ,rjd.drctn_code
+                    ,rjd.extnd_attrs
+                    ,rjd.src_acnt_id
+                    ,rjd.src_lgl_entity_id
+                    ,rjd.src_ccy_code
+                    ,rjd.src_sys_instnc_id
+                    ,rjd.src_cntrprty_id
+                    ,rjd.src_prod_id
+                    ,rjd.src_instr_id
+                    ,rjd.src_trd_id
+                    ,rjd.src_trd_leg_id
+                    ,rjd.src_prod_code_overridden
+                    ,rjd.src_gaap_typ_code
+                    ,rjd.src_acntng_evnt_typ_code
+                    ,rjd.src_date_basis_typ_code
+                    ,rjd.proc_grp_code
+                    ,rjd.data_set_instnc_key
+                    ,rjd.etl_natural_key
+                    ,rjd.acntng_evnt_sub_typ_code
+                    ,rjd.data_set_code_trd
+                    ,(rjd.jrnl_amt_lcl * rjd.multiplier) * -1  AS jrnl_amt_lcl
+                    ,(rjd.jrnl_amt_base * rjd.multiplier) * -1 AS jrnl_amt_base
+            FROM     raw_jrnl_data rjd
+            LEFT OUTER JOIN
+                     are_clndr_date  acd
+               ON    acd.bal_date = rjd.cob_date
+               AND   acd.are_lgl_entity_key = rjd.are_lgl_entity_key
+            WHERE    rjd.is_rev_flag = 'Y'cat: ./src/test: Is a directory
+cat: ./src/test/java: Is a directory
+cat: ./src/test/java/com: Is a directory
+cat: ./src/test/java/com/hsbc: Is a directory
+cat: ./src/test/java/com/hsbc/fda: Is a directory
+cat: ./src/test/java/com/hsbc/fda/com: Is a directory
+cat: ./src/test/java/com/hsbc/fda/com/api: Is a directory
+package com.hsbc.fda.com.api;
+
+
+import com.hsbc.fda.com.api.ApiSparkContext;
+import org.junit.Test;
+
+import java.util.Date;
+
+/**
+ * Created by 43530958 on 13/08/2019.
+ */
+public class ApiSparkContextTest {
+
+    public String dataPath = "s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acnt_HBTR_FLARE_02072019.csv";
+
+    @Test
+    public void testCreateTempTable() throws Exception {
+        Date startDate = new Date();
+        ApiSparkContext apiSparkContext = new ApiSparkContext();
+        Date contextDate = new Date();
+        apiSparkContext.createTempView("", dataPath);
+        Date endDate = new Date();
+
+        System.out.println("START        :" + startDate);
+        System.out.println("CONTEXT DONE :" + contextDate);
+        System.out.println("END          :" + endDate);
+    }
+
+
+
+
+}cat: ./src/test/java/com/hsbc/fda/com/main: Is a directory
+package com.hsbc.fda.com.main;
+
+import org.junit.Test;
+
+import java.util.Date;
+
+import static org.junit.Assert.*;
+
+/**
+ * Created by 43530958 on 13/08/2019.
+ */
+public class ProcessMainTest {
+
+    private String csvViewProps = "./src/test/resources/props/csv/files-to-views.properties";
+    private String csvSqlProps = "./src/test/resources/props/csv/sql-execution-order.properties";
+    private String csvWriteProps = "./src/test/resources/props/csv/views-to-files.properties";
+
+    @Test
+    public void testRunCsv() throws Exception {
+        Date startDate = new Date();
+        ProcessMain processMain = new ProcessMain();
+        Date contextDate = new Date();
+        processMain.run(csvViewProps, csvSqlProps, csvWriteProps);
+        Date endDate = new Date();
+
+        System.out.println("START        :" + startDate);
+        System.out.println("CONTEXT DONE :" + contextDate);
+        System.out.println("END          :" + endDate);
+    }
+
+}package com.hsbc.fda.com.main;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * Created by 43530958 on 13/08/2019.
+ */
+public class ProcessSqlTest {
+
+    @Test
+    public void testPocessTempTables()
+    {
+
+    }
+
+}cat: ./src/test/resources: Is a directory
+cat: ./src/test/resources/props: Is a directory
+cat: ./src/test/resources/props/csv: Is a directory
+ods_acntng_evnt           s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_evnt_HBTR_MRX_NTLCSHF_02072019.csv
+ods_acntng_evnt           s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_acntng_evnt_HBTR_MRX_VALN_02072019.csv
+ods_book                  s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_book_HBTR_FLARE_02072019.csv
+ods_ccy                   s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_ccy_HBTR_FLARE_02072019.csv
+ods_fx_rate               s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_fx_rate_HBTR_FLARE_02072019.csv
+ods_instr                 s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_instr_HBTR_FLARE_02072019.csv
+ods_lgl_entity_gaap_typ   s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_lgl_entity_gaap_typ_HBTR_FLARE_02072019.csv
+ods_lgl_entity            s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_lgl_entity_HBTR_FLARE_02072019.csv
+ods_party_role            s3a://uk-gbm-fit-s3-nonprod/FLARE/ods_party_role_HBTR_FLARE_02072019.csvevent_enrichment    ./src/test/resources/sql/spark/event_enrichment.sqlevent_enrichment           s3a://uk-gbm-fit-s3-nonprod/FLARE/output/event_enrichment.csvcat: ./src/test/resources/props/parquet: Is a directory
+event_enrichment=./src/test/resources/sql/spark/event_enrichment.sqlods_acntng_evnt=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_acntng_evnt_HBTR_MRX_NTLCSHF_02072019.parquet
+ods_acntng_evnt=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_acntng_evnt_HBTR_MRX_VALN_02072019.parquet
+ods_book=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_book_HBTR_FLARE_02072019.parquet
+ods_ccy=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_ccy_HBTR_FLARE_02072019.parquet
+ods_fx_rate=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_fx_rate_HBTR_FLARE_02072019.parquet
+ods_instr=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_instr_HBTR_FLARE_02072019.parquet
+ods_lgl_entity_gaap_typ=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_lgl_entity_gaap_typ_HBTR_FLARE_02072019.parquet
+ods_lgl_entity=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_lgl_entity_HBTR_FLARE_02072019.parquet
+ods_party_role=s3a://uk-gbm-fit-s3-nonprod/FLARE/Parquet/ods_party_role_HBTR_FLARE_02072019.parquet
+cat: ./src/test/resources/sql: Is a directory
+cat: ./src/test/resources/sql/spark: Is a directory
+SELECT aae.*
+FROM ods_acntng_evnt aae
+LEFT OUTER JOIN
+ods_book ab
+ON ab.cob_date = aae.cob_date
+AND ab.data_set_code = aae.data_set_code_ref
+AND ab.ods_book_key = aae.ods_book_key
+LEFT OUTER JOIN
+ods_party_role apr_c
+ON apr_c.cob_date = aae.cob_date
+AND apr_c.data_set_code = aae.data_set_code_ref
+AND apr_c.ods_party_role_key = aae.ods_cntrprty_key
+LEFT OUTER JOIN
+ods_instr ai
+ON ai.cob_date = aae.cob_date
+AND ai.data_set_code = aae.data_set_code_ref
+AND ai.ods_instr_key = aae.ods_instr_key
+LEFT OUTER JOIN
+ods_party_role apr_i
+ON apr_i.cob_date = ai.cob_date
+AND apr_i.data_set_code = ai.data_set_code
+AND apr_i.ods_party_role_key = ai.ods_party_role_key_issr
+LEFT OUTER JOIN
+ods_lgl_entity_gaap_typ alegt
+ON alegt.ods_lgl_entity_key = aae.ods_lgl_entity_key
+LEFT OUTER JOIN
+ods_lgl_entity ale
+ON ale.ods_lgl_entity_key = aae.ods_lgl_entity_key
+LEFT OUTER JOIN
+ods_ccy ac
+ON ac.ods_ccy_key = aae.ods_ccy_key
+LEFT OUTER JOIN
+ods_fx_rate afr
+ON afr.cob_date = aae.cob_date
+AND afr.ods_lgl_entity_key = ale.ods_lgl_entity_key
+AND afr.ods_ccy_key_from = aae.ods_ccy_key
+AND afr.ods_ccy_key_to = ale.ods_ccy_key_lcl
+AND afr.ods_fx_rate_typ_key = 1
+LEFT OUTER JOIN
+ods_fx_rate afr1
+ON afr1.cob_date = aae.cob_date
+AND afr1.ods_lgl_entity_key = ale.ods_lgl_entity_key
+AND afr1.ods_ccy_key_from = aae.ods_ccy_key
+AND afr1.ods_ccy_key_to = ale.ods_ccy_key_base
+AND afr1.ods_fx_rate_typ_key = 1
