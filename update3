@@ -1,0 +1,428 @@
+cat: .: Is a directory
+# Eclipse
+.classpath
+.project
+.settings/
+# generated/ 	protobuf need to be added
+.cache-tests
+
+# dont checkin which tests failed
+failedTests.txt
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+logs/
+target/
+
+.cache-main
+
+#Vagrant files
+*.box
+.vagrant
+
+# spark shell history
+.history
+
+# scala build cache
+lib_managed
+
+#spark metadata
+metastore_db
+
+# temp dirs and files
+.tmp/
+*.tmp
+
+# do not add derby
+derby.log
+
+# build logs
+build.log
+
+# Backup files, particularly from editplus
+*.bak
+
+# dont include spark dump crc files accidentaly
+*.crc
+
+# All target folders
+*.target/
+dependency-reduced-pom.xmlcat: ./allcode.txt: input file is output file
+set YARN_CONF_DIR=c:\JohnTam\spark-2.4.0-bin-hadoop2.7\yarn
+c:\JohnTam\spark-2.4.0-bin-hadoop2.7\bin\spark-submit --driver-cores 2 --driver-memory 5G --num-executors 2 --executor-memory 25G --executor-cores 6 --deploy-mode cluster --master yarn --conf spark.executor.userClassPathFirst=true --conf spark.rdd.compress=false –-conf spark.sql.crossJoin.enabled=true –-conf spark.sql.shuffle.partitions=16 –-conf spark.default.parallelism=16 --class com.hsbc.gbm.finance.sspit.poc.findods.spark.DirectAccessToECS target\finods-spark-example-1.0-SNAPSHOT-spark.jar
+c:\JohnTam\spark-2.4.0-bin-hadoop2.7\bin\spark-submit --driver-cores 2 --driver-memory 5G --num-executors 2 --executor-memory 25G --executor-cores 6 --deploy-mode cluster --master yarn --conf spark.executor.userClassPathFirst=true --conf spark.rdd.compress=false –-conf spark.sql.crossJoin.enabled=true –-conf spark.sql.shuffle.partitions=16 –-conf spark.default.parallelism=16 --class com.hsbc.gbm.finance.sspit.poc.findods.spark.DirectAccessToOdsApi target\finods-spark-example-1.0-SNAPSHOT-spark.jar<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hsbc.gbm.finance.sspit.poc.are</groupId>
+    <artifactId>finods-spark-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spark.version>2.3.0</spark.version>
+        <hadoop.version>2.8.2</hadoop.version>
+        <scala.version>2.11</scala.version>
+        <json.version>2.4.4</json.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client</artifactId>
+            <version>1.24.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-scala_${scala.version}</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>spark</shadedClassifierName>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <!--
+                                                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                                                            <manifestEntries>
+                                                                                <Main-Class>com.hsbc.gbm.finance.sspit.poc.findods.beam.POCPipeline</Main-Class>
+                                                                            </manifestEntries>
+                                                                        </transformer>
+                                -->
+                            </transformers>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.apache.parquet</pattern>
+                                    <shadedPattern>shaded.org.apache.parquet</shadedPattern>
+                                </relocation>
+                                <!-- Some packages findods shaded already, and on the original spark classpath. Shade them more. -->
+                                <relocation>
+                                    <pattern>shaded.parquet</pattern>
+                                    <shadedPattern>reshaded.parquet</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.avro</pattern>
+                                    <shadedPattern>shaded.org.apache.avro</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>jdbc:calcite</pattern>
+                                    <shadedPattern>jdbc:beam</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>cat: ./src: Is a directory
+cat: ./src/main: Is a directory
+cat: ./src/main/java: Is a directory
+cat: ./src/main/java/com: Is a directory
+cat: ./src/main/java/com/hsbc: Is a directory
+cat: ./src/main/java/com/hsbc/gbm: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/finance: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/finance/sspit: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/finance/sspit/poc: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/finance/sspit/poc/findods: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/finance/sspit/poc/findods/spark: Is a directory
+package com.hsbc.gbm.finance.sspit.poc.findods.spark;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.spark.SparkConf;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SQLContext;
+import org.apache.spark.sql.SparkSession;
+
+/**
+ * Created by 43725323 on 11/4/2019.
+ */
+public class DirectAccessToECS {
+
+    public static void main(String[] args) {
+        String valuationPath = "apps/posix/fdaapp01/fdaapp01e29/fdaapp01e29.34.191029073001/201908/20190821-fs2020dev-1.1.2500-0001/data/level3/vault/valuation/dataset_id=1572336398674244252/context_date=20190821";
+        String tradePath = "apps/posix/fdaapp01/fdaapp01e29/fdaapp01e29.34.191029073001/201908/20190821-fs2020dev-1.1.2500-0001/data/level3/vault/trade/dataset_id=1572336331646223850/context_date=20190821";
+
+
+        SparkConf conf = new SparkConf().setAppName("test-finods-beam").setMaster("local[*]");
+        conf.set("spark.local.dir", "./target/spark");
+        conf.set("spark.rdd.compress", "true");
+        conf.set("spark.default.parallelism", "16");
+        conf.set("spark.sql.crossJoin.enabled", "true");
+        conf.set("spark.sql.shuffle.partitions", "16");
+
+        SparkSession sparkSession = SparkSession.builder().config(conf).getOrCreate();
+
+//        SparkSession sparkSession = SparkSession.builder().getOrCreate();
+
+        Configuration hc = sparkSession.sparkContext().hadoopConfiguration();
+        hc.set("mapreduce.fileoutputcommitter.algorithm.version", "2");
+        hc.set("fs.AbstractFileSystem.s3a.impl", "org.apache.hadoop.fs.s3a.S3A");
+        hc.set("fs.s3a.path.style.access", "true");
+        hc.set("fs.s3a.connection.ssl.enabled", "false");
+        hc.set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem");
+
+        hc.set("fs.s3a.access.key", "uk-fda-s3-nonprod-u");
+        hc.set("fs.s3a.secret.key", "X8nijm7uLOLsNvXIRam7oMrxisj8/ausld/gaxmi");
+        hc.set("fs.s3a.endpoint", "http://GBECSLIVE102.systems.uk.hsbc:9020");
+
+
+        SQLContext sqlContext = sparkSession.sqlContext();
+
+        String ecsSourceBucket = "uk-fda-s3-nonprod";
+        Dataset<Row> valuation = sqlContext.parquetFile("s3a://" + ecsSourceBucket + "/" + valuationPath);
+        valuation.createOrReplaceTempView("valuation");
+        Dataset<Row> trade = sqlContext.parquetFile("s3a://" + ecsSourceBucket + "/" + tradePath);
+        trade.createOrReplaceTempView("trade");
+
+        Dataset<Row> result = sqlContext.sql(
+                "select t.TRD_ID,t.VRSN_ID,t.BOOK,t.CPTY_ID,v.MEASURE_CLASS,v.MEASURE_GRP " +
+                        "from trade t, valuation v " +
+                        "where t.TRD_ID = v.TRD_ID and t.VRSN_ID = v.VRSN_ID");
+
+        String ecsTargetBucket = "uk-gbm-fit-s3-dev";
+        hc.set("fs.s3a.access.key", "uk-gbm-fit-s3-nonprod-u");
+        hc.set("fs.s3a.secret.key", "c8jMHx07RubVWMosecBn9GVMVaglp8aKtbHgwHgg");
+        hc.set("fs.s3a.endpoint", "http://wdctestlab-ecs1-node1.systems.uk.hsbc:9020");
+        result.write().parquet("s3a://" + ecsTargetBucket + "/john/output/spark/result");
+
+        sparkSession.close();
+    }
+}
+package com.hsbc.gbm.finance.sspit.poc.findods.spark;
+
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequestFactory;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.spark.SparkConf;
+import org.apache.spark.sql.*;
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * Created by 43725323 on 11/4/2019.
+ */
+public class DirectAccessToOdsApi {
+
+    public static void main(String[] args) throws Exception {
+
+        SparkConf conf = new SparkConf().setAppName("test-finods-beam").setMaster("local[*]");
+        SparkSession sparkSession = SparkSession.builder().config(conf).getOrCreate();
+        SQLContext sqlContext = sparkSession.sqlContext();
+
+        String jwt = Oauth2Util.generateToken(
+                "GBMFinance", "clientAccessSecretKey", "process",
+                "HBAPLDS-HKSSPIT", "QxgzkcCC93m9g4Az" ,
+                "https://excalibur-authserver-dev.cf.wgdc-drn-01.cloud.uk.hsbc/oauth/token");
+
+        String tradeApiPath = "https://finance-data-service-dev.cf.wgdc-drn-01.cloud.uk.hsbc/api/gbm-fit/fin-ods/1/trade/1/2019-11-29/treats/repo/am/hbeu/3";
+        String tradeLegApiPath = "https://finance-data-service-dev.cf.wgdc-drn-01.cloud.uk.hsbc/api/gbm-fit/fin-ods/1/trade-leg/1/2019-11-29/treats/repo/am/hbeu/19";
+
+        Dataset<Row> trade = getApiData(tradeApiPath, jwt, sqlContext);
+        trade.createOrReplaceTempView("trades");
+
+        Dataset<Row> tradeLegs = getApiData(tradeLegApiPath, jwt, sqlContext);
+        tradeLegs.createOrReplaceTempView("tradeLegs");
+
+        Dataset<Row> result = sqlContext.sql(
+                "select t.book, t.business_date, t.business_event, t.trade_id, t.version_id, " +
+                        "tg.base_amount, tg.underlying_quantity_direction_code, tg.principal_exchange_type, tg.fee_amount, " +
+                        "tg.interest_accrual_amount, tg.premium_amount " +
+                        "from trades t " +
+                        "inner join tradeLegs tg on t.trade_id = tg.trade_id");
+
+        Configuration hc = sparkSession.sparkContext().hadoopConfiguration();
+        hc.set("mapreduce.fileoutputcommitter.algorithm.version", "2");
+        hc.set("fs.AbstractFileSystem.s3a.impl", "org.apache.hadoop.fs.s3a.S3A");
+        hc.set("fs.s3a.path.style.access", "true");
+        hc.set("fs.s3a.connection.ssl.enabled", "false");
+        hc.set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem");
+        hc.set("fs.s3a.access.key", "hk-reform2-data-s3-nonprod-u");
+        hc.set("fs.s3a.secret.key", "vgfHE6CgUtm8eGDBZjZQSeoZ703Xa+pHgTqCZViG");
+        hc.set("fs.s3a.endpoint", "http://HKECSLIVE002S.hk.hsbc:9020");
+        String ecsTargetBucket = "hk-excalibur-dev";
+        result.write().mode(SaveMode.Overwrite).
+                option("compression", "snappy").
+                parquet("s3a://" + ecsTargetBucket + "/john/output/spark/result");
+
+        sparkSession.close();
+    }
+
+
+    private static Dataset<Row> getApiData(String url, String jwt, SQLContext sqlContext) throws Exception {
+        HttpRequestFactory requestFactory = new NetHttpTransport.Builder().doNotValidateCertificate().build().createRequestFactory(
+                request -> {
+                    request.setReadTimeout(30 * 60 * 1000);
+                }
+        );
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAuthorization("bearer " + jwt);
+        headers.setAccept("text/csv");
+        headers.setAcceptEncoding("");
+
+        HttpResponse response = requestFactory.buildGetRequest(new GenericUrl(url)).setHeaders(headers).execute();
+        if (response.isSuccessStatusCode()) {
+            String localPath = "c:\\temp\\" + UUID.randomUUID().toString() + ".csv";
+            response.download(new FileOutputStream(localPath));
+            return sqlContext.read().option("header","true").csv(localPath);
+        }
+        else {
+            System.out.println(response.parseAsString());
+            throw new Exception(response.parseAsString());
+        }
+    }
+
+}
+package com.hsbc.gbm.finance.sspit.poc.findods.spark;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.api.client.http.*;
+import com.google.api.client.http.javanet.NetHttpTransport;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Map;
+
+/**
+ * Created by 43725323 on 10/31/2019.
+ */
+public class Oauth2Util {
+
+    public static String generateToken(String clientId, String clientSecret, String scope, String username, String password, String url) throws Exception {
+        final String content = "response_type=token&" +
+                "client_id=" + clientId + "&" +
+                "username=" + username + "&" +
+                "password=" + password + "&" +
+                "scope=" + scope + "&" +
+                "grant_type=password";
+        HttpContent httpContent = new HttpContent() {
+            @Override
+            public long getLength() throws IOException {
+                return content.length();
+            }
+
+            @Override
+            public String getType() {
+                return null;
+            }
+
+            @Override
+            public boolean retrySupported() {
+                return false;
+            }
+
+            @Override
+            public void writeTo(OutputStream outputStream) throws IOException {
+                outputStream.write(content.getBytes());
+                outputStream.flush();
+                outputStream.close();
+            }
+        };
+        HttpRequestFactory requestFactory = new NetHttpTransport.Builder().doNotValidateCertificate().build().createRequestFactory();
+        HttpResponse response = requestFactory.
+                buildPostRequest(new GenericUrl(url), httpContent).
+                setInterceptor(new BasicAuthentication(clientId, clientSecret)).
+                execute();
+        String body = response.parseAsString();
+        int statusCode = response.getStatusCode();
+        String statusMessage = response.getStatusMessage();
+        response.disconnect();
+
+        if (statusCode != 200) {
+            throw new Exception(statusMessage);
+        }
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map token = objectMapper.readValue(body, Map.class);
+        return (String)token.get("access_token");
+    }
+
+}
