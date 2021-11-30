@@ -1,0 +1,2942 @@
+cat: .: Is a directory
+cat: ./allcode.txt: input file is output file
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>indexer-service</artifactId>
+        <groupId>com.hsbc.gbm.bd.provisioning</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>indexer-service-api</artifactId>
+
+    <dependencies>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.hsbc.gbm.bd.provisioning</groupId>
+            <artifactId>indexer-service-framework</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-rules</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sksamuel.elastic4s</groupId>
+            <artifactId>elastic4s-client-esjava_2.12</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sksamuel.elastic4s</groupId>
+            <artifactId>elastic4s-testkit_2.12</artifactId>
+        </dependency>
+
+        <!--below are the dependencies required by data-indexing, I didn't set the norm.-->
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>3.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.6.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>2.6.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jetty</artifactId>
+                    <groupId>org.mortbay.jetty</groupId>
+                </exclusion>
+
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <version>2.6.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jersey</groupId>
+                    <artifactId>jersey-client</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>2.6.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jetty</artifactId>
+                    <groupId>org.mortbay.jetty</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.12</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.12</artifactId>
+            <version>${spark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.elasticsearch</groupId>
+                    <artifactId>elasticsearch-spark-30_2.12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch-spark-30_2.12</artifactId>
+            <version>7.12.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-core_2.12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-sql_2.12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-catalyst_2.12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-streaming_2.12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-yarn_2.12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_2.12</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.12</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>3.9.9.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.17.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-catalyst_2.12</artifactId>
+            <version>${spark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.janino</groupId>
+                    <artifactId>janino</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.janino</groupId>
+                    <artifactId>commons-compiler</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>11.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.saxon</groupId>
+            <artifactId>saxon</artifactId>
+            <version>9.1.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>saxon-dom</artifactId>
+            <version>9.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.databricks</groupId>
+            <artifactId>spark-xml_2.10</artifactId>
+            <version>0.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.saxon</groupId>
+            <artifactId>saxon</artifactId>
+            <version>9.1.0.8</version>
+            <classifier>s9api</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.12.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>2.12.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.12</artifactId>
+            <version>3.0.8</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.holdenkarau</groupId>
+            <artifactId>spark-testing-base_2.12</artifactId>
+            <version>3.1.1_1.1.0</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jersey.contribs</groupId>
+                    <artifactId>jersey-guice</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jersey</groupId>
+                    <artifactId>jersey-json</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jersey.contribs</groupId>
+                    <artifactId>jersey-server</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jersey</groupId>
+                    <artifactId>jersey-client</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>com.squareup.okhttp3</artifactId>
+                    <groupId>okhttp</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.squareup.okhttp</groupId>
+                    <artifactId>okhttp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.squareup.okio</groupId>
+                    <artifactId>okio</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-network-common_2.12</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.parquet</groupId>
+            <artifactId>parquet-tools</artifactId>
+            <version>1.11.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>com.github.danielflower.mavenplugins</groupId>
+                <artifactId>multi-module-maven-release-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.txt</include>
+                    <include>**/*.sh</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>cat: ./src: Is a directory
+cat: ./src/assembly: Is a directory
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>install-hdp45</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/jar</outputDirectory>
+            <includes>
+                <include>${project.artifactId}*.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/jar</outputDirectory>
+            <includes>
+                <include>${project.artifactId}*.jar.original</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/scripts</directory>
+            <outputDirectory>./scripts</outputDirectory>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+            <filtered>true</filtered>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/conf</directory>
+            <outputDirectory>./conf</outputDirectory>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/encrypted</directory>
+            <outputDirectory>./encrypted</outputDirectory>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/data</directory>
+            <outputDirectory>./data</outputDirectory>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/workflows</directory>
+            <outputDirectory>./workflows</outputDirectory>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+            <includes>
+                <include>*:jar:*</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+</assembly>cat: ./src/main: Is a directory
+cat: ./src/main/java: Is a directory
+cat: ./src/main/java/com: Is a directory
+cat: ./src/main/java/com/hsbc: Is a directory
+cat: ./src/main/java/com/hsbc/gbm: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/api: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/api/config: Is a directory
+package com.hsbc.gbm.api.config;
+
+import com.hsbc.gbm.api.util.AesUtils;
+import com.hsbc.gbm.common.config.properties.ElasticsearchProperties;
+import com.hsbc.gbm.common.config.properties.EncryptProperties;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.http.Header;
+import org.apache.http.HeaderElement;
+import org.apache.http.HttpHost;
+import org.apache.http.ParseException;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.TrustStrategy;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.ssl.SSLContextBuilder;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestClientBuilder;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+import javax.net.ssl.SSLContext;
+import java.security.GeneralSecurityException;
+import java.util.function.Function;
+
+import static java.lang.String.format;
+import static java.util.Arrays.stream;
+import static org.springframework.http.HttpHeaders.PROXY_AUTHORIZATION;
+import static org.springframework.util.Base64Utils.encodeToString;
+
+@Configuration
+@EnableConfigurationProperties(ElasticsearchProperties.class)
+@RequiredArgsConstructor
+@Slf4j
+public class ElasticsearchConfiguration implements FactoryBean<RestHighLevelClient>, InitializingBean, DisposableBean {
+
+    private RestHighLevelClient restHighLevelClient;
+
+    private final ElasticsearchProperties properties;
+
+    private final EncryptProperties encryptProperties;
+
+    private static final String HTTP = "http://";
+    private static final String HTTPS = "https://";
+
+
+    @Override
+    public void destroy() {
+        try {
+            log.info("Closing elasticSearch client");
+            if (restHighLevelClient != null) {
+                restHighLevelClient.close();
+            }
+        } catch (final Exception e) {
+            log.error("Error closing ElasticSearch client: ", e);
+        }
+    }
+
+    @Override
+    public RestHighLevelClient getObject() {
+        return restHighLevelClient;
+    }
+
+    @Override
+    public Class<RestHighLevelClient> getObjectType() {
+        return RestHighLevelClient.class;
+    }
+
+    @Override
+    public boolean isSingleton() {
+        return true;
+    }
+
+    @Override
+    public void afterPropertiesSet() {
+        buildClient();
+    }
+
+    protected void buildClient() {
+        String encryptPath = encryptProperties.getPath();
+        final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+        log.info(AesUtils.encryptOrDecrypt(encryptPath, true, properties.getPassword()).get(0));
+        credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(properties.getUsername(),
+                AesUtils.encryptOrDecrypt(encryptPath, true, properties.getPassword()).get(0)));
+        RestClientBuilder builder = RestClient.builder(toHttpHosts(properties.getIsSsl(), properties.getNodes()))
+                .setRequestConfigCallback(this::requestConfigCallback)
+                .setHttpClientConfigCallback(makeHttpClientConfigCallback(properties.getIsSsl(), properties.getUsername(), AesUtils.encryptOrDecrypt(encryptPath, true, properties.getPassword()).get(0)));
+
+        addProxyIfEnabled(builder, properties.getIsEnableDas(), properties.getCluster(), properties.getDasUsername(), properties.getDasPassword());
+        restHighLevelClient = new RestHighLevelClient(builder);
+    }
+
+    private RestClientBuilder.HttpClientConfigCallback makeHttpClientConfigCallback(boolean useSsl, String username, String authPass) {
+        try {
+            final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+            final SSLContext sslContext = SSLContextBuilder.create()
+                    .loadTrustMaterial(null, (TrustStrategy) (arg0, arg1) -> true).build();
+            try {
+                credentialsProvider.setCredentials(AuthScope.ANY,
+                        new UsernamePasswordCredentials(username, authPass));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return httpClientBuilder -> {
+                httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+                if (useSsl) {
+                    httpClientBuilder.setSSLContext(sslContext)
+                            .setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE);
+                }
+                return httpClientBuilder;
+            };
+        } catch (GeneralSecurityException ex) {
+            String errorMessage = "Error Creating Elastic search Rest High Level client for host ";
+            log.error(errorMessage);
+            throw new RuntimeException(errorMessage, ex);
+        }
+    }
+
+    private void addProxyIfEnabled(RestClientBuilder builder, boolean proxyEnable, String dasCluster, String dasUsername, String dasPassword) {
+        if (!proxyEnable) {
+            return;
+        }
+        builder.setPathPrefix("/data-access-service/" + dasCluster)
+                .setDefaultHeaders(new Header[]{
+                        new Header() {
+                            @Override
+                            public HeaderElement[] getElements() throws ParseException {
+                                return new HeaderElement[0];
+                            }
+
+                            @Override
+                            public String getName() {
+                                return PROXY_AUTHORIZATION;
+                            }
+
+                            @Override
+                            public String getValue() {
+                                String encryptPath = encryptProperties.getPath();
+                                try {
+                                    return "Basic " + encodeToString(String.format("%s:%s", dasUsername, AesUtils.encryptOrDecrypt(encryptPath, true, dasPassword).get(0)).getBytes());
+                                } catch (Exception e) {
+                                    throw new RuntimeException();
+                                }
+                            }
+                        }
+                });
+    }
+
+
+    private RequestConfig.Builder requestConfigCallback(RequestConfig.Builder requestConfigBuilder) {
+        return requestConfigBuilder
+                .setConnectTimeout(600000)
+                .setSocketTimeout(240000);
+    }
+
+    private HttpHost[] toHttpHosts(boolean useSsl, final String nodes) {
+        return stream(nodes.split("\\s*,\\s*"))
+                .map(makeToHttpHost(useSsl))
+                .toArray(HttpHost[]::new);
+    }
+
+    private Function<String, HttpHost> makeToHttpHost(boolean useSsl) {
+        final String scheme = useSsl ? HTTPS : HTTP;
+        return node -> {
+            final int schemeIdx = node.indexOf("://");
+            if (schemeIdx > 0) {
+                String errorMessage = format(
+                        "'UseSsl' is used to set the scheme. Please remove '%s' from URL:%s",
+                        node.substring(0, schemeIdx + 3),
+                        node);
+                log.error(errorMessage);
+                throw new IllegalArgumentException(errorMessage);
+            }
+            return HttpHost.create(scheme + node);
+        };
+    }
+
+
+}cat: ./src/main/java/com/hsbc/gbm/api/controller: Is a directory
+package com.hsbc.gbm.api.controller;
+
+import com.hsbc.gbm.api.domain.req.IndexCreationReq;
+import com.hsbc.gbm.api.service.IndexerService;
+import com.hsbc.gbm.common.annotation.Log;
+import com.hsbc.gbm.common.domain.rsp.Result;
+import com.hsbc.gbm.common.enums.BusinessEnum;
+import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.constraints.NotBlank;
+
+/**
+ * com.hsbc.gbm.api.controller
+ *
+ * @author Ekko Liu
+ */
+@RequestMapping("/indexer")
+@RequiredArgsConstructor
+@RestController
+@Validated
+public class IndexerController {
+
+    private final IndexerService indexerService;
+
+    @Log(title = "index-creation", businessType = BusinessEnum.CREATE)
+    @PostMapping("/index-creation")
+    public Result<Boolean> indexCreation(@RequestBody @Validated IndexCreationReq req) {
+        return indexerService.indexCreation(req);
+    }
+
+    @Log(title = "query-index-status", businessType = BusinessEnum.READ)
+    @GetMapping("/query-index-status")
+    public Result<Boolean> queryIndexStatus(
+            @NotBlank(message = "The indexName not be Blank") String indexName
+    ) {
+
+        return indexerService.queryIndexStatus(indexName);
+    }
+
+    @Log(title = "abort-index-task", businessType = BusinessEnum.READ)
+    @PostMapping("/abort-index-task")
+    public Result<Boolean> abortIndexTask(@NotBlank(message = "The indexName not be Blank")
+                                          @RequestParam("indexName")
+                                          String indexName) {
+        return indexerService.abortByIndexName(indexName);
+    }
+
+
+
+}
+package com.hsbc.gbm.api.controller;
+
+import com.hsbc.gbm.common.annotation.Log;
+import com.hsbc.gbm.common.domain.rsp.Result;
+import com.hsbc.gbm.common.enums.BusinessEnum;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+
+    @Log(title = "hello", businessType = BusinessEnum.READ)
+    @GetMapping("/hello")
+    public Result<Object> testController(){
+        return Result.ok("Hello, here's indexer service");
+    }
+
+}
+cat: ./src/main/java/com/hsbc/gbm/api/domain: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/api/domain/dto: Is a directory
+package com.hsbc.gbm.api.domain.dto;
+
+import com.hsbc.gbm.common.domain.req.BaseReq;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotBlank;
+import java.util.Map;
+
+/**
+ * com.hsbc.gbm.api.domain.req
+ *
+ * @author Ekko Liu
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class IndexCreationDTO extends BaseReq {
+
+    @NotBlank(message = "The indexName not be Blank")
+    private String indexName;
+
+    @NotBlank(message = "The parquetPath not be Blank")
+    private String parquetPath;
+
+    private String mappingInfo;
+
+    private Map<String, Object> mappingInfoMap;
+
+    @NotBlank(message = "The alias not be Blank")
+    private String alias;
+
+}
+cat: ./src/main/java/com/hsbc/gbm/api/domain/req: Is a directory
+package com.hsbc.gbm.api.domain.req;
+
+import com.hsbc.gbm.api.domain.dto.IndexCreationDTO;
+import com.hsbc.gbm.common.domain.req.BaseReq;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.validation.Valid;
+import java.util.List;
+
+/**
+ * com.hsbc.gbm.api.domain.req
+ *
+ * @author Ekko Liu
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class IndexCreationReq extends BaseReq {
+
+    @Valid
+    List<IndexCreationDTO> indexCreationDTOS;
+
+}
+package com.hsbc.gbm.api;
+
+
+import com.hsbc.gbm.api.service.IndexerService;
+import com.hsbc.gbm.common.config.properties.ElasticsearchDeletePolicy;
+import com.hsbc.gbm.common.config.properties.ElasticsearchProperties;
+import com.hsbc.gbm.common.config.properties.EncryptProperties;
+import com.hsbc.gbm.common.util.spring.SpringUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.Scheduled;
+
+import javax.annotation.Resource;
+
+@EnableConfigurationProperties({ElasticsearchProperties.class, ElasticsearchDeletePolicy.class, EncryptProperties.class})
+@EnableEurekaClient
+@Slf4j
+@SpringBootApplication(scanBasePackages = {"com.hsbc.gbm"})
+public class IndexerServiceApplication {
+
+    @Resource
+    private IndexerService indexerService;
+
+    public static void main(String[] args) {
+        try {
+            ConfigurableApplicationContext run = SpringApplication.run(IndexerServiceApplication.class, args);
+            SpringUtils.setApplicationContext(run);
+
+        } catch (Exception e) {
+            log.error("System error, error message: {}", e.getMessage(), e);
+        }
+    }
+
+    @Scheduled(cron = "0 */5 * * * ?")
+    public void updateStatus() {
+        log.info("updateStatus " + indexerService.monitor());
+    }
+
+}
+cat: ./src/main/java/com/hsbc/gbm/api/schedule: Is a directory
+package com.hsbc.gbm.api.schedule;
+
+import com.hsbc.gbm.api.domain.req.IndexCreationReq;
+import com.hsbc.gbm.api.service.IndexerService;
+import com.hsbc.gbm.common.domain.rsp.Result;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.annotation.Resource;
+
+public class QuartzJob implements Job {
+
+
+    @Override
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+
+        System.out.println("running!");
+
+    }
+}
+package com.hsbc.gbm.api.schedule;
+
+import com.hsbc.gbm.api.service.IndexerService;
+import com.hsbc.gbm.common.config.properties.ElasticsearchDeletePolicy;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.http.util.EntityUtils;
+import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.support.WriteRequest;
+import org.elasticsearch.client.*;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.TermQueryBuilder;
+import org.elasticsearch.script.Script;
+import org.elasticsearch.script.ScriptType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.SchedulingConfigurer;
+import org.springframework.scheduling.config.ScheduledTaskRegistrar;
+import org.springframework.scheduling.support.CronTrigger;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PreDestroy;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.*;
+
+@RequiredArgsConstructor
+@Component
+@EnableScheduling
+@Slf4j
+public class ScheduleRunner implements SchedulingConfigurer {
+
+    private ElasticsearchDeletePolicy deleteProperties;
+
+    private final RestHighLevelClient restHighLevelClient;
+
+    private final IndexerService indexerService;
+
+    private static final String REPLACE_STRING = "@@@&&&,,,,,@@@&&&";
+
+    private static final String ES_SEARCH_STRING = "_cat/indices?h=i,creation.date.string&s=creation.date";
+
+    private static final String ES_STATIC_METHOD = "GET";
+
+    private static final String ES_METADATA_DETAIL = "data-provisioning-admin-metadata-detail";
+
+    private static final String ES_METADATA_INFO = "data-provisioning-admin-metadata-info";
+
+    private static final String ES_METADATA_FIELD = "asset_id";
+
+    private static final String ES_LOG = "data-provisioning-admin-log";
+
+    private static final String MACHINE_STATUS_INFO = "data-provisioning-admin-housekeeping-machine";
+
+    private static final String MACHINE_HOST = "running_host";
+
+    @Autowired
+    private void setDeleteProperties(ElasticsearchDeletePolicy deleteProperties) {
+        this.deleteProperties = deleteProperties;
+    }
+
+    @Override
+    public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
+        String timer = deleteProperties.getPeriod();
+        scheduledTaskRegistrar.addTriggerTask(
+                () -> {
+                    try {
+                        if (judgeRunStatus()) {
+                            indexHouseKeeping();
+                        }
+                    } catch (Exception e) {
+                        log.error("IndexingStep houseKeeping action error: {}", e.getMessage(), e);
+                    }
+                },
+                triggerContext ->
+                        new CronTrigger(timer).nextExecutionTime(triggerContext)
+        );
+    }
+
+    private void indexHouseKeeping() {
+        //Initialization data
+        log.info("Perform static timing tasks, the current time is : " + LocalDateTime.now());
+        Request request = new Request(ES_STATIC_METHOD, ES_SEARCH_STRING);
+        RestClient restLowLevelClient = restHighLevelClient.getLowLevelClient();
+        ArrayList<String> tokenList = new ArrayList<>();
+        LinkedHashMap<String, String> map = new LinkedHashMap<>();
+        HashMap<String, Object> finalMachineMap = new HashMap<>();
+        finalMachineMap.put(MACHINE_HOST, "null");
+        Set<String> set = new HashSet<>();
+        Date currentDate = new Date();
+        try {
+            Response response = restLowLevelClient.performRequest(request);
+            String responseBody = EntityUtils.toString(response.getEntity());
+            String[] tokens = responseBody.split("\n");
+            tokenList = getArrayCollection(tokens);
+        } catch (IOException e) {
+            log.error("The issue has been appeared,when it going to Initialization",e);
+            indexerService.createIndexData(MACHINE_STATUS_INFO, finalMachineMap);
+        }
+        try {
+            log.info("I'm ready to run process");
+            for (String token : tokenList) {
+                String changeToken = token.replaceAll("\\s+", REPLACE_STRING);
+                String[] changeValue = changeToken.split(REPLACE_STRING);
+                String realIndexName = changeValue[0];
+                if (indexerService.indexExistAlias(realIndexName)) {
+                    String[] changeValueString = realIndexName.split("-");
+                    int length = changeValueString.length;
+                    if (length >= 5) {
+                        String realStrategyName = changeValueString[3];
+                        set.add(realStrategyName);
+                        map.put(realIndexName, changeValue[1]);
+                    }
+                }
+            }
+            int minStorageCount;
+            String period;
+            log.info("map's count is " + map.size());
+            //Analyze the data whether need to be deleted
+            for (String indexKey : map.keySet()) {
+                if (indexKey.startsWith(deleteProperties.getHeader()) && !indexKey.startsWith(deleteProperties.getHeadedShouldRemoved())) {
+                    Map<String, Integer> currentCountMap = calculatorCount(set);
+                    String strategyName = dynamicString(indexKey);
+                    Map<String, String> indexESMap = getESMetadataPolicy(indexKey);
+                    minStorageCount = Integer.parseInt(indexESMap.get(deleteProperties.getPolicyMinCount()) != null ? indexESMap.get(deleteProperties.getPolicyMinCount()) : "4");
+                    period = indexESMap.get(deleteProperties.getPolicySaveDate()) != null ? indexESMap.get(deleteProperties.getPolicySaveDate()) : "21";
+                    int strategyCount = currentCountMap.get(strategyName);
+                    if (minStorageCount < strategyCount) { // Quantity Judgment
+                        if (compareDate(map.get(indexKey), period, currentDate)) {
+                            createLogData(indexESMap.get("elastic_alias_name"), indexKey, map.get(indexKey), currentDate);
+                            indexerService.indexDelete(indexKey);
+                        }
+                    }
+                }
+            }
+            log.info("Today's timely delete has finished,please know.");
+        } catch (Exception e) {
+            log.error("some issues disappear,when gonging to analyze the data need to be timely deleted",e);
+        } finally {
+            log.info("set the machine status");
+            indexerService.createIndexData(MACHINE_STATUS_INFO, finalMachineMap);
+        }
+    }
+
+
+    private Map<String, Integer> calculatorCount(Set<String> set) {
+        Request request = new Request(ES_STATIC_METHOD, ES_SEARCH_STRING);
+        RestClient restLowLevelClient = restHighLevelClient.getLowLevelClient();
+        ArrayList<String> tokenList = new ArrayList<>();
+        try {
+            Response response = restLowLevelClient.performRequest(request);
+            String responseBody = EntityUtils.toString(response.getEntity());
+            String[] tokens = responseBody.split("\n");
+            tokenList = getArrayCollection(tokens);
+        } catch (IOException e) {
+            log.error("The issue count calculator has been appeared",e);
+        }
+        Map<String, Integer> shouldReturnMap = new HashMap<>();
+        for (String s : set) {
+            int count = 0;
+            for (String token : tokenList) {
+                String strategyName = dynamicString(token);
+                if (strategyName != null && (strategyName.equals(s))) {
+                    count++;
+                    shouldReturnMap.put(s, count);
+                }
+            }
+        }
+        return shouldReturnMap;
+    }
+
+    private ArrayList<String> getArrayCollection(String[] tokens) {
+        ArrayList<String> tokenList = new ArrayList<>();
+        for (String changedToken : tokens) {
+            if (changedToken.startsWith(deleteProperties.getHeader()) && !changedToken.startsWith(deleteProperties.getHeadedShouldRemoved())) {
+                tokenList.add(changedToken);
+            }
+        }
+        return tokenList;
+    }
+
+    private String dynamicString(String actualToken) {
+        String changedStrategyName = null;
+        String changedToken = actualToken.replaceAll("\\s+", REPLACE_STRING);
+        String[] changeValue = changedToken.split(REPLACE_STRING);
+        String realIndexName = changeValue[0];
+        if (indexerService.indexExistAlias(realIndexName)) {
+            String[] changeValueString = realIndexName.split("-");
+            int length = changeValueString.length;
+            if (length >= 5) {
+                changedStrategyName = changeValueString[3];
+            }
+        }
+        return changedStrategyName;
+    }
+
+
+    private boolean compareDate(String esTime, String retentionDays, Date realDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        SimpleDateFormat currentDf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        int k = Integer.parseInt(retentionDays);
+        sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+        boolean result = false;
+        try {
+            Calendar calendar = Calendar.getInstance();
+            Date esDate = sdf.parse(esTime);
+            calendar.setTime(esDate);
+            calendar.add(Calendar.DATE, k);
+            String changedESTime = currentDf.format(calendar.getTime());
+            Date currentESTime = currentDf.parse(changedESTime);
+            if (currentESTime.before(realDate)) {
+                result = true;
+            }
+        } catch (Exception e) {
+            log.error("when compare the date some problem disappear",e);
+        }
+        return result;
+    }
+
+
+    private Map<String, String> getESMetadataPolicy(String indexName) {
+        Map<String, String> esMetadataDetailMap;
+        Map<String, String> esMetadataInfoMap = new HashMap<>();
+        BoolQueryBuilder queryBuilders = QueryBuilders.boolQuery()
+                .must(QueryBuilders.matchQuery("_id", indexName));
+        try {
+            esMetadataDetailMap = indexerService.indexBoolQuery(ES_METADATA_DETAIL, queryBuilders);
+            String assetID = esMetadataDetailMap.get(ES_METADATA_FIELD);
+            if (assetID != null) {
+                BoolQueryBuilder policyQueryBuilders = QueryBuilders.boolQuery()
+                        .must(QueryBuilders.matchQuery(ES_METADATA_FIELD.concat(".keyword"), assetID));
+                esMetadataInfoMap = indexerService.indexBoolQuery(ES_METADATA_INFO, policyQueryBuilders);
+            }
+        } catch (Exception e) {
+            log.error("The issue has been appeared,when get the metadata policy",e);
+        }
+        return esMetadataInfoMap;
+    }
+
+    private void createLogData(String aliasName, String indexName, String indexCreateDate, Date currentDate) {
+        String operationTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(currentDate);
+        HashMap<String, Object> logMap = new HashMap<>();
+        try {
+            String actionDetail = "Because this kind of index have beyond the policy set,so this index " + indexName + " deleted and this index created time is " + indexCreateDate;
+            logMap.put("user_name", "system");
+            logMap.put("action_type", 3);
+            logMap.put("operation_time", operationTime);
+            logMap.put("action_detail", actionDetail);
+            logMap.put("operation_index_name", indexName);
+            logMap.put("operation_index_aliases", aliasName);
+            IndexRequest indexRequest = new IndexRequest(ES_LOG).id(indexName
+            ).source(logMap).setRefreshPolicy(WriteRequest.RefreshPolicy.IMMEDIATE);
+            IndexResponse response = restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
+            log.info("the log have success insert into the table,pleas know.");
+        } catch (Exception e) {
+            log.error("insert the index log error when it going to insert log data",e);
+        }
+    }
+
+    private boolean judgeRunStatus() {
+        Map<String, String> runningMachineMap;
+        HashMap<String, Object> changeMachineMap = new HashMap<>();
+        boolean status = false;
+        try {
+            BoolQueryBuilder queryBuilders = QueryBuilders.boolQuery()
+                    .must(QueryBuilders.matchQuery("_id", MACHINE_STATUS_INFO));
+            TermQueryBuilder termQueryBuilder = new TermQueryBuilder(MACHINE_HOST, "null");
+            String currentHostName = InetAddress.getLocalHost().getHostName();
+            changeMachineMap.put(MACHINE_HOST, currentHostName);
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put(MACHINE_HOST, currentHostName);
+            if (!indexerService.indexExist(MACHINE_STATUS_INFO)) {
+                createDefaultMapping(MACHINE_STATUS_INFO);
+                indexerService.createIndexData(MACHINE_STATUS_INFO, changeMachineMap);
+                status = true;
+            } else {
+                log.info("prepare to judge the machine location");
+                runningMachineMap = indexerService.indexBoolQuery(MACHINE_STATUS_INFO, queryBuilders);
+                String runningHost = runningMachineMap.get(MACHINE_HOST);
+                if ("null".equals(runningHost)) {
+                    Script inline = new Script(ScriptType.INLINE, "painless",
+                            "ctx._source.running_host = params.running_host", parameters);
+                    if (indexerService.updateIndexData(MACHINE_STATUS_INFO, inline, termQueryBuilder)) {
+                        status = true;
+                    }
+                } else {
+                    if (currentHostName.equals(runningHost)) {
+                        status = true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            log.error("some error exist when going to get the machine running status",e);
+        }
+        log.info("final get the machine running in this machine result is " + status);
+        return status;
+    }
+
+    private void createDefaultMapping(String indexName) {
+        Map<String, Object> message = new HashMap<>();
+        message.put("type", "text");
+        Map<String, Object> properties = new HashMap<>();
+        properties.put(MACHINE_HOST, message);
+        indexerService.createIndexMapping(indexName, properties);
+    }
+
+
+    @PreDestroy
+    public void cleanup() {
+        try {
+            log.info("Closing the ES REST client");
+            this.restHighLevelClient.close();
+        } catch (IOException ioe) {
+            log.error("Problem occurred when closing the ES REST client", ioe);
+        }
+    }
+
+
+}
+
+
+
+cat: ./src/main/java/com/hsbc/gbm/api/service: Is a directory
+cat: ./src/main/java/com/hsbc/gbm/api/service/impl: Is a directory
+package com.hsbc.gbm.api.service.impl;
+
+import com.alibaba.fastjson.JSON;
+import com.hsbc.gbm.api.domain.dto.IndexCreationDTO;
+import com.hsbc.gbm.api.domain.req.IndexCreationReq;
+import com.hsbc.gbm.api.indexing.IndexingStep;
+import com.hsbc.gbm.api.service.IndexerService;
+import com.hsbc.gbm.api.util.AesUtils;
+import com.hsbc.gbm.common.config.properties.ElasticsearchProperties;
+import com.hsbc.gbm.common.config.properties.EncryptProperties;
+import com.hsbc.gbm.common.constant.Constants;
+import com.hsbc.gbm.common.constant.RegexConstant;
+import com.hsbc.gbm.common.constant.SuffixTypes;
+import com.hsbc.gbm.common.domain.rsp.Result;
+import com.hsbc.gbm.common.enums.IndexStatusEnum;
+import com.hsbc.gbm.framework.manager.AsyncManager;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.action.admin.indices.alias.IndicesAliasesRequest;
+import org.elasticsearch.action.admin.indices.alias.get.GetAliasesRequest;
+import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
+import org.elasticsearch.action.admin.indices.refresh.RefreshRequest;
+import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.support.WriteRequest;
+import org.elasticsearch.action.support.master.AcknowledgedResponse;
+import org.elasticsearch.client.GetAliasesResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.client.indices.CreateIndexRequest;
+import org.elasticsearch.client.indices.CreateIndexResponse;
+import org.elasticsearch.client.indices.DeleteAliasRequest;
+import org.elasticsearch.client.indices.GetIndexRequest;
+import org.elasticsearch.cluster.metadata.AliasMetadata;
+import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.TermQueryBuilder;
+import org.elasticsearch.index.reindex.BulkByScrollResponse;
+import org.elasticsearch.index.reindex.UpdateByQueryRequest;
+import org.elasticsearch.script.Script;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.sparkproject.guava.reflect.TypeToken;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * com.hsbc.gbm.api.service.impl
+ *
+ * @author Ekko Liu
+ */
+@RequiredArgsConstructor
+@Service
+@Slf4j
+public class IndexerServiceImpl implements IndexerService {
+
+    private final RestHighLevelClient restHighLevelClient;
+    private final ElasticsearchProperties properties;
+    private final EncryptProperties encryptProperties;
+
+    private static final String STATUS = "status";
+    private static final String RESULT = "result";
+    private static final String ERROR_MSG = "errorMsg";
+    private static final String MAPPING_INFO = "mappingInfo";
+    private static final String MAPPING_INFO_MAP = "mappingInfoMap";
+    private static final String IP_ADDRESS = "ipAddress";
+
+    private static Map<String, Thread> threadMap = new HashMap<>();
+
+    private String hostName;
+    private static final String APPLICATION_NAME = "indexer-service";
+
+    private static final Pattern BATCH_DATE_PATTERN = Pattern.compile(RegexConstant.BATCH_DATE_REGEX);
+
+    @Value("${server.port}")
+    private String port;
+
+    /**
+     * Index creation
+     *
+     * @param req request
+     * @return {@link Result<Boolean>}
+     */
+    @Override
+    public Result<Boolean> indexCreation(IndexCreationReq req) {
+        for (IndexCreationDTO dto : req.getIndexCreationDTOS()) {
+            // Save index status
+            savaOrUpdateIndexStatus(dto.getIndexName() + SuffixTypes.INDEX_STATUS, IndexStatusEnum.INDEXING);
+            // Asynchronous
+            AsyncManager.me().execute(new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        // Remove first and then create
+                        if (existIndex(dto.getIndexName())) {
+                            DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest(dto.getIndexName());
+                            restHighLevelClient.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
+                        }
+
+                        // Creat mapping index
+                        IndexRequest indexMappingRequest = new IndexRequest(dto.getIndexName() + SuffixTypes.INDEX_MAPPING);
+                        Map<String, Object> indexMappingMap = new HashMap<>();
+                        indexMappingMap.put(MAPPING_INFO, dto.getMappingInfo());
+                        indexMappingMap.put(MAPPING_INFO_MAP, dto.getMappingInfoMap());
+                        indexMappingRequest.source(indexMappingMap, XContentType.JSON);
+                        restHighLevelClient.index(indexMappingRequest, RequestOptions.DEFAULT);
+
+                        // Call dataProcessing method, this is general method
+                        if ("Windows_NT".equals(System.getenv("OS"))) {
+                            IndexingStep.dataProcessing(
+                                    dto.getParquetPath(),
+                                    dto.getIndexName(),
+                                    String.format(Constants.ADDRESS_FORMAT, Boolean.TRUE.equals(properties.getIsSsl()) ?
+                                            Constants.HTTPS : Constants.HTTP, properties.getHost(), properties.getPort()),
+                                    properties.getIsSsl(),
+                                    properties.getUsername(),
+                                    AesUtils.encryptOrDecrypt(encryptProperties.getPath(), true, properties.getPassword()).get(0));
+                        } else {
+                            callIndexing(new String[]{dto.getParquetPath(),
+                                    dto.getIndexName(),
+                                    String.format(Constants.ADDRESS_FORMAT, Boolean.TRUE.equals(properties.getIsSsl()) ?
+                                            Constants.HTTPS : Constants.HTTP, properties.getHost(), properties.getPort()),
+                                    properties.getIsSsl().toString(),
+                                    properties.getUsername(),
+                                    AesUtils.encryptOrDecrypt(encryptProperties.getPath(), true, properties.getPassword()).get(0)});
+                        }
+
+                        // Set alias
+                        GetAliasesRequest getAliasesRequest = new GetAliasesRequest(dto.getAlias());
+                        if (restHighLevelClient.indices().existsAlias(getAliasesRequest, RequestOptions.DEFAULT)) {
+                            Matcher matcher = BATCH_DATE_PATTERN.matcher(dto.getIndexName());
+                            String replace = Constants.EMPTY_STRING;
+                            if (matcher.find()) {
+                                replace = dto.getIndexName().replace(matcher.group(2), Constants.EMPTY_STRING);
+                            }
+                            DeleteAliasRequest deleteAliasRequest = new DeleteAliasRequest(replace + Constants.REGULAR_ALL, dto.getAlias());
+                            restHighLevelClient.indices().deleteAlias(deleteAliasRequest, RequestOptions.DEFAULT);
+                        }
+                        IndicesAliasesRequest.AliasActions addAliasAction = IndicesAliasesRequest.AliasActions.add()
+                                .index(dto.getIndexName()).alias(dto.getAlias());
+                        IndicesAliasesRequest aliasesRequest = new IndicesAliasesRequest().addAliasAction(addAliasAction);
+                        restHighLevelClient.indices().updateAliases(aliasesRequest, RequestOptions.DEFAULT);
+
+                        // Refresh index
+                        RefreshRequest refreshRequest = new RefreshRequest(dto.getIndexName());
+                        restHighLevelClient.indices().refresh(refreshRequest, RequestOptions.DEFAULT);
+
+                        savaOrUpdateIndexStatus(dto.getIndexName() + SuffixTypes.INDEX_STATUS, IndexStatusEnum.SUCCEED);
+                    } catch (IOException e) {
+                        log.error("Elasticsearch action error: {}", e.getMessage(), e);
+                        savaOrUpdateIndexStatus(dto.getIndexName() + SuffixTypes.INDEX_STATUS,
+                                IndexStatusEnum.FAILED, e.getMessage());
+                    } catch (Exception e) {
+                        log.error("IndexingStep dataProcessing action error: {}", e.getMessage(), e);
+                        savaOrUpdateIndexStatus(dto.getIndexName() + SuffixTypes.INDEX_STATUS,
+                                IndexStatusEnum.FAILED, e.getMessage());
+                    } finally {
+                        Thread thread = Thread.currentThread();
+                        threadMap.put(dto.getIndexName(), thread);
+                        //Thread.currentThread().setName(dto.getIndexName());
+
+                    }
+                }
+            });
+        }
+        return Result.ok(true);
+    }
+
+    @Override
+    public Result<Boolean> indexDelete(String indexName) {
+        log.info("The name of the deleted index is " + indexName);
+        try {
+            DeleteIndexRequest deleteRequest = new DeleteIndexRequest(indexName); // Time judgment
+            AcknowledgedResponse deleteIndexResponse = restHighLevelClient.indices().delete(deleteRequest, RequestOptions.DEFAULT);
+            boolean acknowledged = deleteIndexResponse.isAcknowledged();
+            if (acknowledged) {
+                log.info("Delete success " + indexName);
+            }
+        } catch (Exception e) {
+            log.error("IndexingStep dataProcessing action error: {}", e.getMessage(), e);
+            return Result.error(e.getMessage(), false);
+        }
+        return Result.ok(true);
+    }
+
+    /**
+     * Query index status
+     *
+     * @param indexName Index name
+     * @return {@link Result<Boolean>}
+     */
+    @Override
+    public Result<Boolean> queryIndexStatus(String indexName) {
+        SearchRequest searchRequest = new SearchRequest(indexName + SuffixTypes.INDEX_STATUS);
+        try {
+            SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+            Map<String, Object> sourceAsMap = searchResponse.getHits()
+                    .getHits()[searchResponse.getHits().getHits().length - 1].getSourceAsMap();
+            String status = sourceAsMap.containsKey(STATUS) ? String.valueOf(sourceAsMap.get(STATUS)) : Constants.EMPTY_STRING;
+            String url = sourceAsMap.containsKey(IP_ADDRESS) ? String.valueOf(sourceAsMap.get(IP_ADDRESS)) : Constants.EMPTY_STRING;
+            boolean result = sourceAsMap.containsKey(RESULT) && (boolean) sourceAsMap.get(RESULT);
+            String errorMsg = sourceAsMap.containsKey(ERROR_MSG) && Objects.nonNull(sourceAsMap.get(ERROR_MSG))
+                    ? String.valueOf(sourceAsMap.get(ERROR_MSG)) : Constants.EMPTY_STRING;
+            return Result.ok(url + "_" + status, result);
+        } catch (IOException e) {
+            log.error("Query index status action error: {}", e.getMessage(), e);
+            return Result.error(e.getMessage(), false);
+        }
+    }
+
+
+    @Override
+    public boolean indexExist(String indexName) {
+        boolean result = false;
+        GetIndexRequest getIndexRequest = new GetIndexRequest(indexName);
+        try {
+            if (restHighLevelClient.indices().exists(getIndexRequest, RequestOptions.DEFAULT)) {
+                result = true;
+            }
+        } catch (Exception e) {
+            log.error("Judge Index Exist action error: {}", e.getMessage(), e);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean monitor() {
+
+        try {
+            hostName = InetAddress.getLocalHost().getHostName();
+
+        } catch (UnknownHostException e) {
+            log.error("Fail to get host name {}", e.getMessage());
+            e.printStackTrace();
+        }
+
+        String fullName = hostName + "/" + APPLICATION_NAME;
+
+        IndexRequest indexRequest = new IndexRequest(Constants.MONITOR_INDEX_NAME);
+
+        indexRequest.id(fullName);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("serviceName", fullName);
+        map.put("available", true);
+        map.put("lastUpdate", System.currentTimeMillis());
+        indexRequest.source(map);
+
+        log.info("running! ES!");
+        try {
+            restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
+            return true;
+        } catch (IOException e) {
+            log.error("update status fail {}", e.getMessage());
+            return false;
+        }
+
+    }
+
+    @Override
+    public Result<Boolean> abortByIndexName(String indexName) {
+        Thread thread = threadMap.get(indexName);
+        abortIndexTask(indexName);
+        if (thread == null) {
+            return Result.ok("index:" + indexName + " is not exist !" + "\t", false);
+        } else {
+
+            thread.interrupt();
+            return Result.ok("status: " + "index:" + indexName + " abort success !" + "\t", true);
+        }
+
+
+    }
+
+    @Override
+    public boolean indexExistAlias(String indexName) {
+        int countSize = 0;
+        boolean result = true;
+        GetAliasesRequest requestWithAlias = new GetAliasesRequest();
+        try {
+            requestWithAlias.indices(indexName);
+            GetAliasesResponse response = restHighLevelClient.indices().getAlias(requestWithAlias, RequestOptions.DEFAULT);
+            Map<String, Set<AliasMetadata>> aliases = response.getAliases();
+            for (String key : aliases.keySet()) {
+                countSize = aliases.get(key).size();
+            }
+            if (countSize > 0) {
+                result = false;
+            }
+        } catch (Exception e) {
+            log.error("Judge Index Exist Alias action error: {}", e.getMessage(), e);
+        }
+        return result;
+    }
+
+    @Override
+    public Map<String, String> indexBoolQuery(String indexName, BoolQueryBuilder queryBuilders) {
+        Map<String, String> esMap = new HashMap<>();
+        SearchRequest searchRequest = new SearchRequest(indexName);
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.from(0);
+        sourceBuilder.size(5);
+        sourceBuilder.query(queryBuilders);
+        searchRequest.source(sourceBuilder);
+        try {
+            SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+            SearchHits hits = searchResponse.getHits();
+            SearchHit[] searchHits = hits.getHits();
+            Type mapType = new TypeToken<Map<String, String>>() {
+            }.getType();
+            for (SearchHit hit : searchHits) {
+                String sourceAsString = hit.getSourceAsString();
+                esMap = JSON.parseObject(sourceAsString, mapType);
+            }
+        } catch (IOException e) {
+            log.error("The issue has been appeared",e);
+
+        }
+        return esMap;
+    }
+
+    @Override
+    public void createIndexMapping(String indexName, Map<String, Object> map) {
+        CreateIndexRequest createIndexRequest = new CreateIndexRequest(indexName);
+        Map<String, Object> mapping = new HashMap<>();
+        mapping.put("properties", map);
+        createIndexRequest.mapping(mapping);
+        try {
+            CreateIndexResponse response = restHighLevelClient.indices().create(createIndexRequest, RequestOptions.DEFAULT);
+            boolean acknowledged = response.isAcknowledged();
+            if (!acknowledged) {
+                log.error("insert index fail:{}", indexName);
+            }
+            log.info("index default strategy table create successful");
+        } catch (IOException e) {
+            log.error("insert index fail:{}", indexName);
+        }
+    }
+
+    @Override
+    public void createIndexData(String indexName, Map<String, Object> logMap) {
+
+        try {
+            IndexRequest indexRequest = new IndexRequest(indexName).id(indexName
+            ).source(logMap).setRefreshPolicy(WriteRequest.RefreshPolicy.IMMEDIATE);
+            IndexResponse response = restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
+        } catch (Exception e) {
+            log.error("when is going to set index data,It have some problem",e);
+        }
+    }
+
+    @Override
+    public boolean updateIndexData(String indexName, Script inline, TermQueryBuilder termQueryBuilder) {
+        boolean result = false;
+        UpdateByQueryRequest request = new UpdateByQueryRequest(indexName);
+        request.setQuery(termQueryBuilder);
+        request.setScript(inline);
+        try {
+            BulkByScrollResponse response = restHighLevelClient.updateByQuery(request, RequestOptions.DEFAULT);
+            long updatedCount = response.getStatus().getUpdated();
+            if (updatedCount != 0) {
+                log.info("update the status true");
+                result = true;
+            }
+        } catch (IOException e) {
+            log.error("insert index fail:{}", indexName);
+        }
+        return result;
+    }
+
+    /**
+     * Sava or update index status
+     *
+     * @param indexName       Index name
+     * @param indexStatusEnum IndexStatusEnum
+     * @param errorMsg        Error message
+     */
+    private void savaOrUpdateIndexStatus(String indexName, IndexStatusEnum indexStatusEnum, String errorMsg) {
+        IndexRequest indexStatus = new IndexRequest(indexName);
+        Map<String, Object> indexStatusMap = new HashMap<>();
+        indexStatusMap.put(STATUS, indexStatusEnum.getStatus());
+        indexStatusMap.put(RESULT, indexStatusEnum.isResult());
+        indexStatusMap.put(ERROR_MSG, errorMsg);
+
+        try {
+            String ip_address = "http://" + InetAddress.getLocalHost().getHostAddress() + ":" + port;
+            indexStatusMap.put(IP_ADDRESS, ip_address); //saved ip address
+
+            log.info("ip address1" + Arrays.toString(InetAddress.getLocalHost().getAddress()));
+            log.info("ip host address" + InetAddress.getLocalHost().getHostAddress());
+
+        } catch (UnknownHostException e) {
+            log.error("Sava or update index status error: {}", e.getMessage(), e);
+        }
+        indexStatus.source(indexStatusMap);
+        try {
+            restHighLevelClient.index(indexStatus, RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            log.error("Sava or update index status error: {}", e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Sava or update index status
+     *
+     * @param indexName Index name
+     */
+    private void savaOrUpdateIndexStatus(String indexName, IndexStatusEnum indexStatusEnum) {
+        savaOrUpdateIndexStatus(indexName, indexStatusEnum, null);
+    }
+
+    /**
+     * Judge index exist
+     *
+     * @param indexName Index name
+     * @return true or false
+     * @throws IOException IOException
+     */
+    private boolean existIndex(String indexName) throws IOException {
+        GetIndexRequest getIndexRequest = new GetIndexRequest(indexName);
+        return restHighLevelClient.indices().exists(getIndexRequest, RequestOptions.DEFAULT);
+    }
+
+    /**
+     * Call indexing.sh
+     *
+     * @param args args
+     */
+    private void callIndexing(String[] args) {
+        String shPath = System.getProperty("user.dir") + "/../scripts/indexing.sh ";
+        log.info("shPath: " + shPath);
+        String logFile = " > " + System.getProperty("user.dir") + "/indexing_log.log 2>&1 &";
+        String argsJoint = Arrays.toString(args).replaceAll(RegexConstant.ARRAYS_REPLACE_REGEX, Constants.EMPTY_STRING);
+        String command = "nohup bash " + shPath + argsJoint + logFile;
+
+        Process ps;
+        int result = 0;
+        long startTime = System.currentTimeMillis();
+        try {
+            log.info("-----spark start-----");
+            ps = Runtime.getRuntime().exec(command);
+            log.info("-----spark running-----");
+            AsyncManager.me().execute(new TimerTask() {
+                @Override
+                public void run() {
+                    String s;
+                    try (BufferedReader stdInput = new BufferedReader(new InputStreamReader(ps.getInputStream()))) {
+                        while ((s = stdInput.readLine()) != null) {
+                            log.info(s);
+                        }
+                    } catch (IOException e) {
+                        log.error("Read spark log error: {}", e.getMessage(), e);
+                    }
+                }
+            });
+            AsyncManager.me().execute(new TimerTask() {
+                @Override
+                public void run() {
+                    String s;
+                    try (BufferedReader stdError = new BufferedReader(new InputStreamReader(ps.getErrorStream()))) {
+                        while ((s = stdError.readLine()) != null) {
+                            log.error(s);
+                        }
+                    } catch (IOException e) {
+                        log.error("Read spark log error: {}", e.getMessage(), e);
+                    }
+                }
+            });
+            result = ps.waitFor();
+            log.info("-----spark stop-----");
+        } catch (IOException e) {
+            log.error("Spark process in script failed, msg: {}", e.getMessage(), e);
+        } catch (InterruptedException e) {
+            log.error("Spark process in script failed, msg: {}", e.getMessage(), e);
+            Thread.currentThread().interrupt();
+        } finally {
+            long endTime = System.currentTimeMillis();
+            log.info("Spark process finished, it takes {} minutes", (endTime - startTime) / 1000 / 60);
+            if (result != 0) {
+                log.error("Spark process in script failed");
+            }
+        }
+    }
+
+    void abortIndexTask(String indexName){
+        String shPath = System.getProperty("user.dir") + "/../scripts/abort.sh "+ indexName;
+        log.info("abort shPath: " + shPath);
+        String logFile = " > " + System.getProperty("user.dir") + "/abort_log.log 2>&1 &";
+        String command = "nohup bash " + shPath + logFile;
+
+            log.info("-----abort spark task start-----");
+        try {
+             Runtime.getRuntime().exec(command);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.error(indexName+" abort failed", e.getMessage(), e);
+        }
+
+    }
+
+}
+package com.hsbc.gbm.api.service.impl;
+
+import com.hsbc.gbm.api.schedule.QuartzJob;
+import com.hsbc.gbm.api.service.TimerService;
+import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+@Deprecated
+@Service
+public class TimerServiceImpl implements TimerService {
+
+    @Override
+    public void monitorTimer() throws SchedulerException {
+        JobDetail jobDetail= JobBuilder.newJob(QuartzJob.class)
+                .withIdentity("monitor job","update service status")
+                .build();
+
+        Trigger trigger= TriggerBuilder.newTrigger()
+                .withIdentity("monitor trigger","monitor trigger")
+                .startNow()
+                .withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(15).repeatForever())
+                .build();
+
+        Scheduler scheduler= StdSchedulerFactory.getDefaultScheduler();
+        scheduler.scheduleJob(jobDetail,trigger);
+        scheduler.start();
+    }
+}
+package com.hsbc.gbm.api.service;
+
+import com.hsbc.gbm.api.domain.req.IndexCreationReq;
+import com.hsbc.gbm.common.domain.rsp.Result;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.TermQueryBuilder;
+import org.elasticsearch.script.Script;
+
+import java.util.Map;
+
+/**
+ * com.hsbc.gbm.api.service
+ *
+ * @author Ekko Liu
+ */
+public interface IndexerService {
+
+    /**
+     * Index creation
+     *
+     * @param req request
+     * @return {@link Result<Boolean>}
+     */
+    Result<Boolean> indexCreation(IndexCreationReq req);
+
+    Result<Boolean> indexDelete(String indexName);
+
+    /**
+     * Query index status
+     *
+     * @param indexName Index name
+     * @return {@link Result<Boolean>}
+     */
+    Result<Boolean> queryIndexStatus(String indexName);
+
+    boolean indexExist(String indexName);
+
+    boolean monitor();
+
+    Result<Boolean> abortByIndexName(String indexName);
+
+
+    boolean indexExistAlias(String indexName);
+
+    Map<String,String> indexBoolQuery(String indexName, BoolQueryBuilder queryBuilders);
+
+    void createIndexMapping(String indexName,Map<String, Object> map);
+
+    void createIndexData(String indexName,Map<String, Object> map);
+
+    boolean updateIndexData(String indexName, Script inline, TermQueryBuilder termQueryBuilder);
+
+}
+package com.hsbc.gbm.api.service;
+
+import org.quartz.SchedulerException;
+import org.springframework.stereotype.Service;
+
+public interface TimerService {
+
+    void monitorTimer() throws SchedulerException;
+
+}
+cat: ./src/main/java/com/hsbc/gbm/api/util: Is a directory
+package com.hsbc.gbm.api.util;
+
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
+import java.security.MessageDigest;
+import java.util.*;
+
+
+@Slf4j
+public class AesUtils {
+
+    private AesUtils() {
+    }
+
+    @SneakyThrows
+    public static List<String> encryptOrDecrypt(String path, boolean isDecrypt, String... args) {
+        // Original sources:
+        List<String> messages = Arrays.asList(args);
+//        log.info("Messages: " + messages);
+        List<String> keys = new ArrayList<>();
+        // 128-bit key = 16 bytes Key:
+        try {
+            String str = getPassword(path);
+            keys.add(str);
+            byte[] key = keys.get(0).getBytes(StandardCharsets.UTF_8);
+            List<String> outputs = new ArrayList<>();
+            for (int i = 0; i < messages.size(); i++) {
+                if (isDecrypt) {
+                    // Decrypt:
+                    byte[] decrypted = decrypt(key, messages.get(i).getBytes(StandardCharsets.UTF_8));
+                    String decrypt = new String(decrypted, StandardCharsets.UTF_8);
+                    outputs.add(decrypt);
+//                    log.info("Decrypted" + i + ": " + decrypt
+//                            + "\tOriginal: " + messages.get(i));
+                } else {
+                    // Encrypt:
+                    byte[] encrypted = encrypt(key, messages.get(i).getBytes(StandardCharsets.UTF_8));
+                    String encrypt = new String(encrypted, StandardCharsets.UTF_8);
+                    outputs.add(encrypt);
+//                    log.info("Encrypted" + i + ": " + encrypt
+//                            + "\tOriginal: " + messages.get(i));
+                }
+            }
+            return outputs;
+        } catch (GeneralSecurityException e) {
+            log.error("AesUtils encrypt or decrypt error, error message: {}", e.getMessage(), e);
+        } catch (Exception e) {
+            log.error("AesUtils error, error message: {}", e.getMessage(), e);
+        }
+        return Collections.emptyList();
+    }
+
+    private static byte[] encrypt(byte[] key, byte[] input) throws GeneralSecurityException {
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        SecretKey keySpec = new SecretKeySpec(key, "AES");
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec);
+        return Base64.getEncoder().encode(cipher.doFinal(input));
+    }
+
+    private static byte[] decrypt(byte[] key, byte[] input) throws GeneralSecurityException {
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        SecretKey keySpec = new SecretKeySpec(key, "AES");
+        cipher.init(Cipher.DECRYPT_MODE, keySpec);
+        return cipher.doFinal(Base64.getDecoder().decode(input));
+    }
+
+    private static String getPassword(String path) {
+        String finalResult = null;
+        String password;
+        try {
+            log.info("the path is "+path);
+            BufferedReader in = new BufferedReader(new FileReader(path));
+            password = in.readLine();
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(password.getBytes(StandardCharsets.UTF_8));
+            byte[] result = md.digest();
+            finalResult = new BigInteger(1, result).toString(16);
+        } catch (Exception e) {
+            log.error("Error create MD5 password: ", e);
+            e.printStackTrace();
+        }
+        return finalResult;
+    }
+}
+package com.hsbc.gbm.api.util;
+
+import scala.collection.JavaConverters;
+import scala.collection.Map$;
+
+import java.util.Map;
+
+/**
+ * com.hsbc.gbm.api.util
+ *
+ * @author Ekko Liu
+ */
+public class JavaConverterUtils {
+
+    private JavaConverterUtils() {
+    }
+
+    /**
+     * The map of java is converted to the immutable.map of scala.
+     *
+     * @param javaMap javaMap
+     * @param <K>     key
+     * @param <V>     value
+     * @return {@link scala.collection.immutable.Map}
+     */
+    @SuppressWarnings("all")
+    public static <K, V> scala.collection.immutable.Map<K, V> javaMapToScala(Map<K, V> javaMap) {
+        scala.collection.mutable.Map<K, V> scalaMap = JavaConverters.mapAsScalaMap(javaMap);
+        Object obj = Map$.MODULE$.<K, V>newBuilder().$plus$plus$eq(scalaMap.toSeq());
+        Object result = ((scala.collection.mutable.Builder) obj).result();
+        return (scala.collection.immutable.Map<K, V>) result;
+    }
+
+}
+cat: ./src/main/resources: Is a directory
+spark:
+  - spark.master: "local"
+  - spark.local.dir : "/tmp/spark-temp"
+  - spark.sql.catalogImplementation: "hive"
+  - spark.sql.warehouse.dir: "/user/hive/warehouse"
+  - hive.metastore.warehouse.dir: "/user/hive/warehouse"
+  - derby.system.home: "/user/hive/"
+  #- javax.jdo.option.ConnectionURL: "jdbc:derby:;databaseName=C:\\user\\hive\\metastore_db;create=false"
+  - kryoserializer: org.apache.spark.sql.execution.columnar.CachedBatch,[[B,org.apache.spark.sql.catalyst.expressions.GenericInternalRow
+
+elasticsearch:
+  host: localhost
+  port: 9200
+  username: elastic
+  password: Nmeu3KAELpygYZI6MKXzXg==
+  isSsl: false
+  isEnableDas: false
+  cluster: dev-2
+  dasUsername: indexer-service
+  dasPassword:
+  nodes: localhost:9200
+
+#elasticsearch:
+#  host: bd-tooling.uat.digital.gbm.cloud.uk.hsbc
+#  port: 15601
+#  username: data-provisioning-it-team
+#  #notice the password needs to be encrypted by EncryptionUtil with key in property encrypt.key
+#  password: uMY8lbJt9iqeknqF+yVu1w==
+#  isSsl: true
+#  isEnableDas: true
+#  cluster: uat-3
+#  dasUsername: data-provisioning-it-team
+#  #notice the password needs to be encrypted by EncryptionUtil with key in property encrypt.key
+#  #this password is only for UAT
+#  dasPassword: WnjxS0+PNW66QsxOnyjJFZh0tE+QRdbiexK5laJ5X+BtuGk56PkfyfwsE3PgS0lM
+#  nodes: bd-tooling.uat.digital.gbm.cloud.uk.hsbc:15601
+
+eureka:
+  #  instance:
+  #    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8090/eureka-server/eureka/
+
+encrypt:
+  #This test key you need to overwrite it in official environment
+  path: c:/sandbox/encrypt_key.txt
+elasticsearch:
+  username: data-provisioning-it-team-all
+  #notice the password needs to be encrypted by EncryptionUtil with key in property encrypt.key
+  password: PY21V1G8OINVzjkHfxtunQ==
+  isSsl: true
+  isEnableDas: true
+  cluster: uat-3
+  dasUsername: data-provisioning-it-team
+  #notice the password needs to be encrypted by EncryptionUtil with key in property encrypt.key
+  #this password is only for UAT
+  dasPassword: WnjxS0+PNW66QsxOnyjJFZh0tE+QRdbiexK5laJ5X+BtuGk56PkfyfwsE3PgS0lM
+  nodes: bd-tooling.uat.digital.gbm.cloud.uk.hsbc:15601
+
+spark:
+  - spark.master: yarn-cluster
+  - spark.kryoserializer.buffer.max.mb: 2000
+  - spark.kryoserializer.buffer.max: 1g
+  - spark.network.timeout: 2000
+  - spark.driver.userClassPathFirst: true
+  - spark.sql.orc.filterPushdown: true
+  - spark.sql.catalogImplementation: hive
+  - kryoserializer: org.apache.spark.sql.execution.columnar.CachedBatch,[[B,org.apache.spark.sql.catalyst.expressions.GenericInternalRow
+
+keepie:
+  enabled: false
+
+elasticsearch:
+  host: gbl20138038.systems.uk.hsbc
+  port: 9200
+  username: data-provisioning-it-team-all
+  #notice the password needs to be encrypted by EncryptionUtil with key in property encrypt.key
+  password: zBwg93daY1yBCPS2Z4qn3g==
+  isSsl: true
+  isEnableDas: false
+  cluster: uat-3
+  dasUsername: data-exchange-seed-project
+  #notice the password needs to be encrypted by EncryptionUtil with key in property encrypt.key
+  #this password is only for UAT
+  dasPassword: WnjxS0+PNW66QsxOnyjJFZh0tE+QRdbiexK5laJ5X+BtuGk56PkfyfwsE3PgS0lM
+  nodes: gbl20138038.systems.uk.hsbc:9200,gbl20138039.systems.uk.hsbc:9200,gbl20138040.systems.uk.hsbc:9200,gbl20138041.systems.uk.hsbc:9200,gbl20138042.systems.uk.hsbc:9200,gbl20138043.systems.uk.hsbc:9200
+
+encrypt:
+  path: /upload/0/hsbc/ws/data-provisioning/uat/security/encrypt_key.txt
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceURL:
+      defaultZone: http://gbl20174697.systems.uk.hsbc:8090/eureka-server/eureka,http://gbl20174698.systems.uk.hsbc:8090/eureka-server/eureka,http://gbl20174699.systems.uk.hsbc:8090/eureka-server/eureka
+
+spark:
+  - spark.master: yarn
+  - spark.submit.deployMode: cluster
+  - spark.kryoserializer.buffer.max.mb: 2000
+  - spark.kryoserializer.buffer.max: 1g
+  - spark.network.timeout: 2000
+  - spark.driver.userClassPathFirst: true
+  - spark.sql.orc.filterPushdown: true
+  - spark.sql.catalogImplementation: hive
+  - kryoserializer: org.apache.spark.sql.execution.columnar.CachedBatch,[[B,org.apache.spark.sql.catalyst.expressions.GenericInternalRow
+
+spring:
+  application:
+    name: indexer-service
+  profiles:
+    active: uat
+
+server:
+  port: 3000
+
+elasticsearchdeletepolicy:
+  header: data-provisioning
+  headedShouldRemoved : data-provisioning-admin
+  policyName: policy_name
+  policyMinCount: max_index_count
+  policySaveDate: max_index_age_days
+  period: 00 40 02 * * ?
+
+
+
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Set everything to be logged to the console
+log4j.rootCategory=WARN, console, file
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.target=System.err
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%d{yy/MM/dd HH:mm:ss} %p %c{1}: %m%n
+log4j.logger.org.apache.orc=DEBUG
+# Settings to quiet third party logs that are too verbose
+log4j.logger.org.spark-project.jetty=WARN
+log4j.logger.org.spark-project.jetty.util.component.AbstractLifeCycle=ERROR
+log4j.logger.org.apache.spark.repl.SparkIMain$exprTyper=INFO
+log4j.logger.org.apache.spark.repl.SparkILoop$SparkILoopInterpreter=INFO
+log4j.logger.org.apache.parquet=ERROR
+log4j.logger.parquet=ERROR
+
+# SPARK-9183: Settings to avoid annoying messages when looking up nonexistent UDFs in SparkSQL with Hive support
+log4j.logger.org.apache.hadoop.hive.metastore.RetryingHMSHandler=FATAL
+log4j.logger.org.apache.hadoop.hive.ql.exec.FunctionRegistry=ERROR
+
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=logging.log
+log4j.appender.file.MaxFileSize=100MB
+log4j.appender.file.MaxBackupIndex=1
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d {dd MMM yyyy HH:mm:ss,SSS}, %-4r [%t] %-5p %c %x - %m%ncat: ./src/main/resources/scripts: Is a directory
+
+index_name=$1
+yarn_application_name="Data Provisioning indexer-service: ${index_name} Asset Indexing"
+
+
+for app in $(yarn application -list | grep -w "${yarn_application_name}" | awk '{print $1}' | grep application_)
+
+do yarn application -kill "$app"
+
+done
+
+
+
+
+curl localhost:3002/indexer/index-creation -X POST -d '{
+  "indexCreationDTOS": [
+    {
+      "indexName":  "data-provisioning-uat-party-2021-11-17_eg",
+      "parquetPath": "/user/hdp46-ss-df-prod/data-factory/gda/party/2021-11-17_EG/cards/cards.parq",
+      "mappingInfo": null,
+      "mappingInfoMap": null,
+      "alias": "data-provisioning-uat-party"
+    }
+  ]
+}' --header "Content-Type: application/json;charset=UTF-8"#!/bin/bash
+#------------------------------------------------------------------
+# Script: indexing.sh
+#
+# Usage: indexing.sh system instance e.g. indexing.sh
+#
+# Exit Codes: 0-success 1- failed
+#
+#------------------------------------------------------------------
+if [[ ! -n $1 ]] || [[ ! -n $2 ]] || [[ ! -n $3 ]] || [[ ! -n $4 ]] || [[ ! -n $5 ]] || [[ ! -n $6 ]] ; then
+     echo Error: indexing.sh Parameter is missing, please provide six parameters: \
+                 parq path, index name, elastic node, elastic netssl, elastic user, elastic pass
+     exit 1
+fi
+kinit -kt ~/.hdp46-ss-dprov-prod.headless.keytab hdp46-ss-dprov-prod
+
+app_dir=$(dirname $(dirname $(readlink -f $BASH_SOURCE)))
+lib_dir=$app_dir/lib
+jar_dir=$app_dir/jar
+env_dir=$(dirname $app_dir)/env
+
+echo app_dir: $app_dir
+echo lib_dir: $lib_dir
+echo jar_dir: $jar_dir
+echo env_dir: $env_dir
+
+parq_path=$1
+index_name=$2
+elastic_node=$3
+elastic_netssl=$4
+elastic_user=$5
+elastic_pass=$6
+
+script_name=`basename $0`
+main_class=com.hsbc.gbm.api.Main
+app_jar=$jar_dir/${project.artifactId}-${project.version}.jar.original
+lib_jars=`echo $lib_dir/*.jar | tr ' ' ','`
+
+application_name="Data Provisioning indexer-service: ${index_name} Asset Indexing"
+
+spark_cmd="/opt/cloudera/parcels/SPARK3/bin/spark3-submit --jars ${lib_jars} --name \"${application_name}\" \
+ --master yarn --deploy-mode cluster \
+ --queue use-case \
+ --files /opt/cloudera/parcels/CDH/etc/hive/conf.dist/hive-site.xml \
+ --conf \"spark.executor.extraJavaOptions=-Dconfig.resource=${conf_file} -Dlog4j.configuration=log4j\" \
+ --conf \"spark.driver.extraJavaOptions=-Dconfig.file=${conf_file} -Dlog4j.configuration=log4j\" \
+ --num-executors 6 --executor-cores 4 --executor-memory 8G --driver-memory 4G \
+ --class ${main_class} ${app_jar} ${parq_path} ${index_name} ${elastic_node} ${elastic_netssl} ${elastic_user} ${elastic_pass}"
+
+export SPARK_MAJOR_VERSION=3
+#echo "Executing Spark Cmd: $spark_cmd"
+
+eval $spark_cmd
+
+if [[ "$?" -eq "0" ]]; then
+    echo "Spark process in script $script_name $conf_file Completed Successfully"
+	exit 0
+else
+    echo "Spark process in script $script_name $conf_file failed"
+	exit 1
+fi
+  chmod a+r $jar_dir/indexing_log.log
+curl localhost:3002/indexer/query-index-status?indexName=data-provisioning-uat-party-2021-11-17_eg#!/bin/env bash
+APP_NAME=$2
+JAR_FOLDER=$3
+
+is_exist(){
+  pid=$(ps -ef|grep $APP_NAME|grep -v $0 |grep -v grep|awk '{print $2}')
+  if [ -z "${pid}" ]; then
+   return 1
+  else
+    return 0
+  fi
+}
+
+start(){
+  is_exist
+  if [ $? -eq "0" ]; then
+    echo "${APP_NAME} project is Running。 pid=${pid} ."
+  else
+    cd $JAR_FOLDER/jar
+    nohup java -server -Xms2G -Xmx4G -XX:MetaspaceSize=2G -XX:MaxMetaspaceSize=2G -jar ${APP_NAME}.jar --server.port=3002 --spring.profiles.active=uat > $JAR_FOLDER/jar/output.log 2>&1 &
+    echo "${APP_NAME} Start successfully, please check the log to ensure proper operation。"
+  fi
+    chmod a+r $JAR_FOLDER/jar/output.log
+}
+
+stop(){
+  is_exist
+  if [ $? -eq "0" ]; then
+    kill -9 $pid
+    echo "${pid} The process was killed and the program stopped running"
+  else
+    echo "${APP_NAME} project have not Running。"
+  fi
+}
+
+status(){
+  is_exist
+  if [ $? -eq "0" ]; then
+    echo "${APP_NAME} project is Running。Pid is ${pid}"
+  else
+    echo "${APP_NAME} project has Running failed。"
+  fi
+}
+restart(){
+  stop
+  start
+}
+
+case "$1" in
+  "start")
+    start
+    ;;
+  "stop")
+    stop
+    ;;
+  "status")
+    status
+    ;;
+  "restart")
+    restart
+    ;;
+  *)
+esaccat: ./src/main/scala: Is a directory
+cat: ./src/main/scala/com: Is a directory
+cat: ./src/main/scala/com/hsbc: Is a directory
+cat: ./src/main/scala/com/hsbc/gbm: Is a directory
+cat: ./src/main/scala/com/hsbc/gbm/api: Is a directory
+cat: ./src/main/scala/com/hsbc/gbm/api/indexing: Is a directory
+package com.hsbc.gbm.api.indexing
+
+import com.hsbc.gbm.api.Main
+import com.hsbc.gbm.api.spark.SparkHelp.createSparkSession
+import com.hsbc.gbm.common.constant.SuffixTypes
+import com.hsbc.gbm.common.enums.ESTypeEnum
+import com.hsbc.gbm.common.util.json.FastJsonUtils
+import com.sksamuel.elastic4s.ElasticApi.{RichFuture, createIndex, emptyMapping, keywordField, properties, search, textField}
+import com.sksamuel.elastic4s.ElasticDsl.{CreateIndexHandler, SearchHandler}
+import com.sksamuel.elastic4s.http.{JavaClient, NoOpRequestConfigCallback}
+import com.sksamuel.elastic4s.requests.mappings.{BasicField, FieldDefinition}
+import com.sksamuel.elastic4s.{ElasticClient, ElasticProperties}
+import org.apache.commons.lang3.{ArrayUtils, StringUtils}
+import org.apache.http.auth.{AuthScope, UsernamePasswordCredentials}
+import org.apache.http.conn.ssl.NoopHostnameVerifier
+import org.apache.http.impl.client.BasicCredentialsProvider
+import org.apache.http.impl.nio.client.HttpAsyncClientBuilder
+import org.apache.http.ssl.SSLContextBuilder
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.monotonically_increasing_id
+import org.apache.spark.sql.types.DataTypes
+import org.elasticsearch.client.RestClientBuilder.HttpClientConfigCallback
+import org.slf4j.LoggerFactory
+
+import java.security.cert.X509Certificate
+import scala.collection.convert.ImplicitConversions.`map AsJavaMap`
+import scala.collection.mutable.ListBuffer
+import scala.collection.{JavaConverters, mutable}
+import scala.language.postfixOps
+
+
+/**
+ * com.hsbc.gbm.api.indexing
+ *
+ * @author Ekko Liu
+ */
+object IndexingStep {
+
+  private val LOGGER = LoggerFactory.getLogger(this.getClass.getName)
+
+  // Spark initialization
+  private val sparkSession: SparkSession = createSparkSession(Main.getClass.getName)
+
+  private val MAPPING_INFO = "mappingInfo"
+  private val MAPPING_INFO_MAP = "mappingInfoMap"
+  private val KEY_WORD = "keyword"
+
+
+  def dataProcessing(parqPath: String, index: String, node: String, netssl: Boolean, user: String, password: String) = {
+
+    // Init elasticClient
+    val callback = new HttpClientConfigCallback {
+      override def customizeHttpClient(httpClientBuilder: HttpAsyncClientBuilder): HttpAsyncClientBuilder = {
+        val provider = new BasicCredentialsProvider()
+        provider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(user, password))
+        if (netssl) {
+          val sslContext = SSLContextBuilder.create.loadTrustMaterial(null, (_: Array[X509Certificate], _: String) => true).build
+          httpClientBuilder.setSSLContext(sslContext).setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE)
+        }
+        httpClientBuilder.setDefaultCredentialsProvider(provider)
+      }
+    }
+    val props = ElasticProperties(node)
+    val elasticClient = ElasticClient(JavaClient(props, requestConfigCallback = NoOpRequestConfigCallback, httpClientConfigCallback = callback))
+    LOGGER.info("Init elasticClient succeed")
+
+    // Create index and set mapping
+    val createIndexRequest = createIndex(index)
+    val searchResponse = elasticClient.execute(search(index + SuffixTypes.INDEX_MAPPING)).await
+    var sourceAsMap: Map[String, AnyRef] = Map.empty
+    if (searchResponse.isSuccess && searchResponse.result.hits.nonEmpty) {
+      sourceAsMap = searchResponse.result.hits.hits.last.sourceAsMap
+    }
+    val mappingInfo = sourceAsMap.getOrElse(MAPPING_INFO, null).asInstanceOf[String]
+    val mappingInfoMap: mutable.Map[String, Any] = JavaConverters.mapAsScalaMap(FastJsonUtils.obj2map(sourceAsMap.getOrElse(MAPPING_INFO_MAP, null)))
+
+    val parquetFrame = sparkSession.read.parquet(parqPath)
+    val idxCreate = elasticClient.execute {
+      if (StringUtils.isNotEmpty(mappingInfo)) {
+        createIndexRequest.mapping(emptyMapping.rawSource(mappingInfo))
+      } else {
+        val mappingList: ListBuffer[FieldDefinition] = ListBuffer()
+        val fields = parquetFrame.schema.fields
+        if (ArrayUtils.isNotEmpty(fields)) {
+          fields.foreach(field => {
+            val typeStr: String = if (mappingInfoMap.containsKey(field.name)) mappingInfoMap.get(field.name).asInstanceOf[String]
+            else ESTypeEnum.getEsType(field.dataType)
+            val fieldDefinition = if (typeStr.equals(ESTypeEnum.STRING.getEsType))
+              textField(field.name).fields(keywordField(KEY_WORD).ignoreAbove(256))
+            else if (DataTypes.DateType == field.dataType || DataTypes.TimestampType == field.dataType)
+              BasicField.apply(field.name, typeStr).ignoreMalformed(true).store(true)
+            else BasicField.apply(field.name, typeStr)
+
+            mappingList.append(fieldDefinition)
+          })
+        }
+        createIndexRequest.mapping(properties(mappingList))
+      }
+    }.await
+    LOGGER.info("idxCreate status: {}", idxCreate.isSuccess)
+
+    if (idxCreate.isSuccess) {
+      parquetFrame
+        .withColumn("id", monotonically_increasing_id)
+        .write
+        .format("org.elasticsearch.spark.sql")
+        .option("es.nodes", node)
+        .option("es.net.http.auth.user", user)
+        .option("es.net.http.auth.pass", password)
+        .option("es.mapping.id", "id")
+        .option("es.net.ssl", netssl)
+        .mode("Overwrite")
+        .save(s"${index}")
+    }
+  }
+
+}
+package com.hsbc.gbm.api
+
+import com.hsbc.gbm.api.indexing.IndexingStep
+import org.slf4j.LoggerFactory
+
+/**
+ * com.hsbc.gbm.api.indexing
+ *
+ * @author Ekko Liu
+ */
+object Main {
+
+  private val LOGGER = LoggerFactory.getLogger(this.getClass.getName)
+
+  def main(args: Array[String]): Unit = {
+
+    LOGGER.info("Initializing the application")
+
+    if (args.length != 6) {
+      LOGGER.error("Wrong Number of arguments: Please provide parq path, index name, elastic node, elastic netssl, elastic user, elastic pass")
+      System.exit(1)
+    }
+
+    val parqPath = args(0)
+    val index = args(1)
+    val elasticNode = args(2)
+    val elasticNetssl = args(3).toBoolean
+    val elasticUser = args(4)
+    val elasticPass = args(5)
+
+    IndexingStep.dataProcessing(parqPath, index, elasticNode, elasticNetssl, elasticUser, elasticPass)
+
+  }
+
+}
+cat: ./src/main/scala/com/hsbc/gbm/api/spark: Is a directory
+package com.hsbc.gbm.api.spark
+
+import org.slf4j.LoggerFactory
+
+import java.io.FileNotFoundException
+import java.util
+import scala.collection.JavaConverters
+import scala.collection.JavaConverters._
+import scala.collection.convert.WrapAsScala
+import scala.collection.immutable.{ListMap, Map}
+import scala.reflect.runtime.universe.TypeTag
+
+object ApplicationConfiguration {
+
+  private val LOG = LoggerFactory.getLogger(this.getClass.getName)
+
+  private final val DefaultYamlPath = "/application.yml"
+
+  def getYamlConfigurationAsScala(configurationPath: String): Map[String, Any] = {
+    val configMap: util.Map[_, _] = Option(configurationPath) match {
+      case Some(path) => readYamlFromFileSystemOrClasspathResource(path)
+      case None => {
+        val value = YamlConfigReader.readYamlFromResources(getClass.getResourceAsStream(DefaultYamlPath))
+        if (value.containsKey("spring")) {
+          val spring = value.get("spring").asInstanceOf[util.Map[_, _]]
+          val profiles = spring.get("profiles").asInstanceOf[util.Map[_, _]]
+          val active = profiles.get("active").asInstanceOf[String]
+          YamlConfigReader.mergeMap(value, readYamlFromFileSystemOrClasspathResource("/application-" + active + ".yml"))
+        }
+        value
+      }
+    }
+    toScalaCollections(configMap)
+  }
+
+  /**
+   * will try to read the yaml config either from file system or from classpath (e.g. file within jar)
+   * If both fail, the exception is propagated.
+   */
+  private def readYamlFromFileSystemOrClasspathResource(path: String) = {
+    try {
+      YamlConfigReader.readYamlFromResources(getClass.getResourceAsStream(path))
+    } catch {
+      case e: FileNotFoundException => {
+        LOG.info(s"failed to load $path from files system $e.getMessage")
+        YamlConfigReader.readYamlFromResources(getClass.getResourceAsStream(path))
+      }
+    }
+
+  }
+
+  // Gets the key's value, assumes it is a list of maps, and converts the list to a single 'flattened' map with all the
+  // tuples added into it.
+  // If the maps have duplicated keys, the later ones in the list will override the others.
+  // Should have similar effect to getYamlConfigurationAsScala(...) .get(key)
+  def getConfigurationByKey(key: String, configMap: Map[String, Any]): Map[String, Any] = {
+    configMap.get(key) match {
+      case Some(value: util.List[util.Map[String, Any]]) => {
+        val scalaList = JavaConverters.asScalaBuffer(value).toList
+        scalaList.flatMap { w: java.util.Map[String, Any] => JavaConverters.mapAsScalaMap(w).map(x => (x._1 -> x._2)) }.toMap
+      }
+      case Some(value: Seq[Map[String, Any]]) => value.flatMap { x: Map[String, Any] => x.toSeq }.toMap
+      case Some(value: Map[String, Any]) => value
+      case None => Map.empty[String, Any]
+      case Some(value: Any) => Map.empty[String, Any] // return empty if we can't handle value type
+    }
+  }
+
+  def getAttributeOrElseException[T: TypeTag](attribute: String, config: Map[String, Any], filePath: String): T =
+    config.getOrElse(attribute, throw new IllegalArgumentException(s"expected $attribute in yaml $filePath found $config")).asInstanceOf[T]
+
+  def getAttributeOrElseException[T: TypeTag](attribute: String, config: Map[String, Any]): T = {
+    config.getOrElse(attribute, throw new IllegalArgumentException(s"expected $attribute in yaml, found $config")).asInstanceOf[T]
+  }
+
+
+  /**
+   * Turn java.util.Map into scala Map.
+   * Handles java ArrayList and LinkedHashMap conversions only.
+   * Do not use for generic conversions - Specifically designed to handle the snake yaml java map outputs
+   */
+  private def toScalaCollections(m: util.Map[_, _]): Map[String, Any] = {
+    var scalaMap = ListMap[String, Any]()
+    val it = WrapAsScala.mapAsScalaMap(m).iterator
+    while (it.hasNext) {
+      val tuple = it.next().asInstanceOf[(String, Any)]
+      val newVal = tuple match {
+        case (key, value: java.util.List[_]) => {
+          key.toString -> value.asScala.toSeq.map {
+            case v: util.Map[String, Any] => toScalaCollections(v)
+            case v: Any => v
+          }
+        }
+        case (key, value: java.util.Map[String, Any]) => key.toString -> toScalaCollections(value)
+        case (key, value) => key.toString -> value
+      }
+      scalaMap = scalaMap.+(newVal)
+    }
+    scalaMap
+  }
+
+  /** METHODS BELOW USED TO HELP WITH TESTING * */
+
+  def getYamlConfigurationWithOverrides(configurationPath: String, overridesConfigurationPath: String): Map[String, Any] = {
+    val overrides = getYamlConfigurationAsScala(overridesConfigurationPath)
+    getYamlConfigurationWithOverrides(configurationPath, overrides)
+  }
+
+  def getYamlConfigurationWithOverrides(configurationPath: String, overrides: Map[String, Any]) = {
+    val original = getYamlConfigurationAsScala(configurationPath)
+    deepMerge(original, overrides)
+  }
+
+  /**
+   * Helps with doing a deep merge of maps. See test case for example.
+   * Does not merge lists. Just replaces a list with new list (merging lists too difficult and raises questions about item duplication/equality)
+   */
+  def deepMerge(original: Map[String, Any], overrides: Map[String, Any]): Map[String, Any] = {
+    var updated = original
+    overrides foreach {
+      case (k: String, v: Map[String, Any]) => {
+        updated.get(k) match {
+          case (Some(origMap: Map[String, Any])) => {
+            val g = deepMerge(origMap, v)
+            updated = updated + (k -> g)
+          }
+          case _ => updated = updated + (k -> v)
+        }
+      }
+      case (k: String, v: Any) => updated = updated + (k -> v)
+    }
+    updated
+  }
+
+}
+package com.hsbc.gbm.api.spark
+
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
+import org.slf4j.LoggerFactory
+
+import scala.collection.immutable.Map
+
+object SparkHelp {
+
+  private val LOGGER = LoggerFactory.getLogger(this.getClass.getName)
+
+  private final val SPARK_CONFIG_KEY = "spark"
+  private final val SPARK_MASTER_URL_KEY = "spark.master"
+
+  def createSparkSession(applicationName: String): SparkSession = createSparkSession(applicationName, None)
+
+  def createSparkSession(applicationName: String, configPath: String): SparkSession = createSparkSession(applicationName, Some(configPath))
+
+  def createSparkSession(applicationName: String, configPath: Option[String]): SparkSession = {
+    try {
+      val yamlConfig = configPath match {
+        case Some(path) => ApplicationConfiguration.getYamlConfigurationAsScala(path)
+        case None => ApplicationConfiguration.getYamlConfigurationAsScala(null)
+      }
+      val sparkConf = createSparkConf(applicationName, yamlConfig)
+      val session = SparkSession.builder.config(sparkConf).enableHiveSupport.getOrCreate
+      LOGGER.info("Spark Session Created Successfully!")
+      session
+    } catch {
+      case e: Exception => throw new RuntimeException("Error in initializing spark session ", e)
+    }
+  }
+
+  private def createSparkConf(applicationName: String, config: Map[String, Any]): SparkConf = {
+
+    val sparkConf = new SparkConf().setAppName(applicationName)
+    val sparkConfig = ApplicationConfiguration.getConfigurationByKey(SPARK_CONFIG_KEY, config)
+
+    sparkConfig.foreach {
+      case (SPARK_MASTER_URL_KEY, url: String) =>
+        if (!sparkConf.contains(SPARK_MASTER_URL_KEY) || null == sparkConf.get(SPARK_MASTER_URL_KEY))
+          sparkConf.setMaster(url)
+        LOGGER.info(s"Set spark master url to: $url")
+
+      case (key, value: String) =>
+        if (!sparkConf.contains(key) || null == sparkConf.get(key))
+          sparkConf.set(key, value)
+        LOGGER.info(s"Loaded spark property - key: $key value: $value")
+    }
+    sparkConf
+  }
+}
+package com.hsbc.gbm.api.spark;
+
+import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.AbstractConstruct;
+import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.nodes.Node;
+import org.yaml.snakeyaml.nodes.ScalarNode;
+import org.yaml.snakeyaml.nodes.Tag;
+import org.yaml.snakeyaml.representer.Representer;
+import org.yaml.snakeyaml.resolver.Resolver;
+
+import java.io.InputStream;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class YamlConfigReader {
+
+    private static Constructor constructor = new MyConstructor();
+
+    private static Pattern systemPropertyMatcher = Pattern.compile("\\$\\{([^}^{]+)\\}");
+
+    private static class ImportConstruct extends AbstractConstruct {
+        @Override
+        public Object construct(Node node) {
+            if (!(node instanceof ScalarNode)) {
+                throw new IllegalArgumentException("Non-scalar !import: " + node.toString());
+            }
+
+            ScalarNode scalarNode = (ScalarNode) node;
+            String value = scalarNode.getValue();
+            Matcher match = systemPropertyMatcher.matcher(value);
+            while (match.find()) {
+                String group = match.group();
+                String sysPropName = group.substring(2, group.length() - 1);
+                String sysProp = System.getProperty(sysPropName);
+                if (sysProp == null) {
+                    throw new IllegalArgumentException("Could not find System Property: " + sysPropName);
+                }
+                value = value.replace(group, sysProp);
+            }
+            return value;
+
+        }
+    }
+
+    private static class MyConstructor extends Constructor {
+        MyConstructor() {
+            yamlConstructors.put(new Tag("!path"), new ImportConstruct());
+        }
+    }
+
+    public static class CustomResolver extends Resolver {
+        /* this method is used to parse scalars as strings */
+        @Override
+        protected void addImplicitResolvers() {
+            addImplicitResolver(new Tag("!path"), systemPropertyMatcher, null);
+        }
+    }
+
+    public static Map readYamlFromResources(InputStream input) {
+        Yaml yaml = new Yaml(constructor, new Representer(), new DumperOptions(), new CustomResolver());
+        return (Map) yaml.load(input);
+    }
+
+    public static void mergeMap(Map originMap, Map mergeMap) {
+        originMap.putAll(mergeMap);
+    }
+
+}
+cat: ./src/test: Is a directory
+cat: ./src/test/java: Is a directory
+cat: ./src/test/java/com: Is a directory
+cat: ./src/test/java/com/hsbc: Is a directory
+cat: ./src/test/java/com/hsbc/gbm: Is a directory
+cat: ./src/test/java/com/hsbc/gbm/api: Is a directory
+cat: ./src/test/java/com/hsbc/gbm/api/util: Is a directory
+package com.hsbc.gbm.api.util;
+
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * com.hsbc.gbm.api.util
+ *
+ * @author Ekko Liu
+ */
+@Slf4j
+public class AesUtilsTest {
+
+    @Test
+    public void encryptOrDecryptTest() {
+        try {
+            if ("Windows_NT".equals(System.getenv("OS"))) {
+                List<String> strings = AesUtils.encryptOrDecrypt("c:/sandbox/encrypt_key.txt", false, "hello", "world", "12345678",
+                        "worldworldworldworld");
+                AesUtils.encryptOrDecrypt("c:/sandbox/encrypt_key.txt", false, "zBwg93daY1yBCPS2Z4qn3g==");
+                Assert.assertNotNull("succeed", strings);
+            } else {
+                log.info("This test does not need to be run in this environment!");
+            }
+        } catch (Exception e) {
+            log.error("error message:", e);
+            log.info("The test failed, but it can be ignored");
+        }
+    }
+
+
+}
+cat: ./src/test/resources: Is a directory
+spark:
+  - spark.master: "local"
+  - spark.local.dir : "/tmp/spark-temp"
+  - spark.sql.catalogImplementation: hive
+  - spark.sql.warehouse.dir: "/user/hive/warehouse"
+  - hive.metastore.warehouse.dir: "/user/hive/warehouse"
+  - derby.system.home: "/user/hive/"
+  #- javax.jdo.option.ConnectionURL: "jdbc:derby:;databaseName=C:\\user\\hive\\metastore_db;create=false"
+  - kryoserializer: org.apache.spark.sql.execution.columnar.CachedBatch,[[B,org.apache.spark.sql.catalyst.expressions.GenericInternalRow
+elastic:
+  - es.nodes: "localhost"
+  - es.net.http.auth.user: "elastic"
+  - es.net.http.auth.pass: "changeme"
+  - es.port: "9200"
+  - es.index.auto.create: "true"
+  - cluster.name: "elasticsearch"
+  - client.transport.sniff: "true"
+  - client.transport.ignore_cluster_name: "true"
+  - es.xpack.security.user: "elastic:changeme"
+  - index.auto.create: true
+  - index.number_of_replicas: 0
+  - index.refresh_interval: 1s# Change this to set Spark log level
+#log4j.logger.org.apache.spark=WARN
+
+# Silence akka remoting
+#log4j.logger.Remoting=WARN
+
+# Ignore messages below warning level from Jetty, because it's a bit verbose
+#log4j.logger.org.eclipse.jetty=WARN
+
+# Set everything to be logged to the console
+log4j.rootCategory=info, console
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.target=System.err
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%d{yy/MM/dd HH:mm:ss} %p %c{1}: %m%n
+
+# Settings to quiet third party logs that are too verbose
+log4j.logger.org.eclipse.jetty=WARN
+log4j.logger.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
+log4j.logger.org.apache.spark.repl.SparkIMain$exprTyper=WARN
+log4j.logger.org.apache.spark.repl.SparkILoop$SparkILoopInterpreter=WARN
+
+
+log4j.rootLogger=info, console
+cat: ./src/test/resources/test-data: Is a directory
+Tresata_Id_Sub|Tresata_Id_RefA|Tresata_Id_RefB|Account_Number|Customer_Role|Best_1_Ref_legal_name|Customer_Name_Address|Customer_Name_Address_1|Customer_Name_Address_2|Customer_Name_Address_3|Customer_Name_Address_4|Customer_Name_Address_5|Customer_Reference|Customer_Transaction_Reference|Customer_Bank_Branch|Customer_Bank_Location|Customer_Reimbursment_Bank_Branch_ID|Customer_Reimbursment_Account_Number|CounterParty_Name_Address|CounterParty_Name_Address_1|CounterParty_Name_Address_2|CounterParty_Name_Address_3|CounterParty_Name_Address_4|CounterParty_Name_Address_5|CounterParty_Bank_Location|CounterParty_Reference|CounterParty_Transaction_Reference|CounterParty_Bank_Branch_ID|CounterParty_Bank_Branch_Name|Import_From_Country_Code|Export_To_Country_Code|CounterParty_Reimbursment_Bank_Branch_ID|CounterParty_Reimbursment_Account_Number|Payment_Reference_Link|Import_Export_Ind|Product|Product_Code|Product_Description|Bill_Reference_Number|DC_Reference_Number|DC_Version_Number|Loan_Reference_Number|Shipment_Guarantee_Ref_Number|Bill_Of_Landing_Date|Bill_Of_Landing_Number|Goods_Code|Goods_Code_Description|Commodity_Code|Product_Unique_Reference_Number|Booking_Country|Transaction_Amount|Transaction_Currency|Transaction_Amount_USD|Transaction_Date|Transaction_Time|Shipping_From|Shipping_To|Port_Code|Source|Outstanding_Amount|Counterparty_Account_Number|Start_Date|Due_Date|Completed_Date|End_Date|Outstanding_Amount_USD|group_member_code|last_updated_time|product_status|hie_source_date|last_updated_date|Local_Currency|Transaction_Amount_LCY|KDB_Date|KDB_Currency_Pair|KDB_Rate|System
+null|null|null|BDLDM001234567|Buyer|null|TAMISHNASYNTHETI...|TAMISHNASYNTHETI...|PLOTNO.129,130....|NISHATNAGAR,TONG...|BANGLADESH|null|000123456789|null|1|BD|MMBIMNYR|BDLDM12345678|ETAFILACCESSORIE...|null|null|null|null|null|BD|null|BPCDAK146638L|LDMDAK|DHAKAMAINBRANCH|BD|BD|MMBIMNYR|BDLDM00123456789|BRDAK133299DAK|Import|Bill|BR|IMPORTBILLSRECE...|DAK133299DAK|131344|null|null|;|null|||OTHERS|IP|DAK133299DAK|BD|105703.5|USD|105703.5|2021-01-25|191846|GAZIPUR|GAZIPUR|0|IPBLMSP|0.0|null|2021-01-25|2021-02-01|2021-01-25|null|0.0|LDM|191846|E|20210205|2021-01-25|BDT|null|null|null|null|HIEcat: ./src/test/scala: Is a directory
+cat: ./src/test/scala/com: Is a directory
+cat: ./src/test/scala/com/hsbc: Is a directory
+cat: ./src/test/scala/com/hsbc/gbm: Is a directory
+cat: ./src/test/scala/com/hsbc/gbm/api: Is a directory
+package com.hsbc.gbm.api
+
+import com.hsbc.gbm.api.indexing.IndexingStep
+import com.hsbc.gbm.api.spark.SparkHelp.createSparkSession
+import com.hsbc.gbm.api.util.AesUtils
+import org.apache.spark.sql.types.DataTypes
+import org.apache.spark.sql.{DataFrame, SaveMode}
+import org.scalatest.{BeforeAndAfterAll, FunSuite}
+import org.slf4j.LoggerFactory
+
+class IndexTest extends FunSuite
+  with BeforeAndAfterAll {
+
+  private val LOGGER = LoggerFactory.getLogger(this.getClass.getName)
+
+  implicit val spark = createSparkSession(this.getClass.getName)
+
+  val gtrfParqPath = "test-run/inputs/global-gtrf-asset/gtrf-asset.parq"
+
+  override def beforeAll(): Unit = {
+    //    save overwrite the parquet as partitioned one
+    super.beforeAll()
+    val csvPath = "indexer-service-api/src/test/resources/test-data/gtrf.csv"
+    val gtrfCSV: DataFrame = spark.read.option("delimiter", "|")
+      .option("header", "true").csv(csvPath)
+    val gtrfCSV2 = gtrfCSV
+      .withColumn("Transaction_Amount", gtrfCSV.col("Transaction_Amount").cast(DataTypes.DoubleType))
+      .withColumn("Transaction_Amount_USD", gtrfCSV.col("Transaction_Amount_USD").cast(DataTypes.DoubleType))
+      .withColumn("Outstanding_Amount", gtrfCSV.col("Outstanding_Amount").cast(DataTypes.DoubleType))
+      .withColumn("Outstanding_Amount_USD", gtrfCSV.col("Outstanding_Amount_USD").cast(DataTypes.DoubleType))
+      .withColumn("Transaction_Amount_LCY", gtrfCSV.col("Transaction_Amount_LCY").cast(DataTypes.DoubleType))
+    gtrfCSV2.write.partitionBy("System")
+      .mode(SaveMode.Overwrite).parquet(gtrfParqPath)
+  }
+
+  // local ES info
+  val node = "g77BRbxH4DFikhPSYyMjvqYxK8m+fwBpTjjdXmplOh0="
+  val netssl = "qCy8suErSZvulwOpRGsTtg=="
+  val user = "Ywbj0SCYKQG6t0JtErvnHQ=="
+  val auth = "Nmeu3KAELpygYZI6MKXzXg=="
+
+  test("Test indexing indexer-service-gtrf") {
+    if (System.getenv("OS") === "Windows_NT") {
+      val strings = AesUtils.encryptOrDecrypt("c:/sandbox/encrypt_key.txt", true, node, netssl, user, auth)
+      LOGGER.info("--------gtrf test start-------------")
+      val parqPath = gtrfParqPath + "/System=HIE"
+      // ES version used in test is lower than 6, so the index name will have "/gtrf"
+      val index = "indexer-service-test-gtrf-hie-2021-10-03_af"
+      IndexingStep.dataProcessing(parqPath, index, strings.get(0), strings.get(1).toBoolean, strings.get(2), strings.get(3))
+      LOGGER.info("--------gtrf test end-------------")
+    } else {
+      LOGGER.info("This test does not need to be run in this environment!")
+    }
+  }
+
+
+}
